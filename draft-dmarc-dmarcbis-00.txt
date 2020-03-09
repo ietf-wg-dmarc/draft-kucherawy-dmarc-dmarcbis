@@ -161,7 +161,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
        B.2.3.  Per-Message Failure Reports Directed to Third
                Party . . . . . . . . . . . . . . . . . . . . . . . .  59
        B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report
-               URIs  . . . . . . . . . . . . . . . . . . . . . . . .  61
+               URIs  . . . . . . . . . . . . . . . . . . . . . . . .  60
 
 
 
@@ -170,11 +170,11 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 3]
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-     B.3.  Mail Receiver Example . . . . . . . . . . . . . . . . . .  62
+     B.3.  Mail Receiver Example . . . . . . . . . . . . . . . . . .  61
        B.3.1.  Processing of SMTP Time . . . . . . . . . . . . . . .  62
      B.4.  Utilization of Aggregate Feedback: Example  . . . . . . .  63
      B.5.  mailto Transport Example  . . . . . . . . . . . . . . . .  64
-   Appendix C.  DMARC XML Schema . . . . . . . . . . . . . . . . . .  65
+   Appendix C.  DMARC XML Schema . . . . . . . . . . . . . . . . . .  64
    Appendix D.  Acknowledgements . . . . . . . . . . . . . . . . . .  71
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  71
 
@@ -2658,29 +2658,29 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 11.  Normative References
 
-   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
-              Authentication Failure Reporting Using the Abuse Reporting
-              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
-              <https://www.rfc-editor.org/info/rfc6652>.
+   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
+              Insensitivity Clarification", RFC 4343,
+              DOI 10.17487/RFC4343, January 2006,
+              <https://www.rfc-editor.org/info/rfc4343>.
 
-   [RFC5890]  Klensin, J., "Internationalized Domain Names for
-              Applications (IDNA): Definitions and Document Framework",
-              RFC 5890, DOI 10.17487/RFC5890, August 2010,
-              <https://www.rfc-editor.org/info/rfc5890>.
+   [RFC1035]  Mockapetris, P., "Domain names - implementation and
+              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
+              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
 
-   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
-              Extensions (MIME) Part One: Format of Internet Message
-              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
-              <https://www.rfc-editor.org/info/rfc2045>.
+   [RFC7208]  Kitterman, S., "Sender Policy Framework (SPF) for
+              Authorizing Use of Domains in Email, Version 1", RFC 7208,
+              DOI 10.17487/RFC7208, April 2014,
+              <https://www.rfc-editor.org/info/rfc7208>.
 
-   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
-              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
-              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
+   [RFC6651]  Kucherawy, M., "Extensions to DomainKeys Identified Mail
+              (DKIM) for Failure Reporting", RFC 6651,
+              DOI 10.17487/RFC6651, June 2012,
+              <https://www.rfc-editor.org/info/rfc6651>.
 
-   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
-              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
-              <https://www.rfc-editor.org/info/rfc6713>.
-
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
 
 
@@ -2690,10 +2690,10 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 48]
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-   [RFC7208]  Kitterman, S., "Sender Policy Framework (SPF) for
-              Authorizing Use of Domains in Email, Version 1", RFC 7208,
-              DOI 10.17487/RFC7208, April 2014,
-              <https://www.rfc-editor.org/info/rfc7208>.
+   [RFC5890]  Klensin, J., "Internationalized Domain Names for
+              Applications (IDNA): Definitions and Document Framework",
+              RFC 5890, DOI 10.17487/RFC5890, August 2010,
+              <https://www.rfc-editor.org/info/rfc5890>.
 
    [RFC5322]  Resnick, P., Ed., "Internet Message Format", RFC 5322,
               DOI 10.17487/RFC5322, October 2008,
@@ -2704,39 +2704,39 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               RFC 3986, DOI 10.17487/RFC3986, January 2005,
               <https://www.rfc-editor.org/info/rfc3986>.
 
-   [RFC6651]  Kucherawy, M., "Extensions to DomainKeys Identified Mail
-              (DKIM) for Failure Reporting", RFC 6651,
-              DOI 10.17487/RFC6651, June 2012,
-              <https://www.rfc-editor.org/info/rfc6651>.
-
    [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
               DOI 10.17487/RFC5321, October 2008,
               <https://www.rfc-editor.org/info/rfc5321>.
 
-   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
-              Insensitivity Clarification", RFC 4343,
-              DOI 10.17487/RFC4343, January 2006,
-              <https://www.rfc-editor.org/info/rfc4343>.
+   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
+              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
+              <https://www.rfc-editor.org/info/rfc6713>.
 
-   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234,
-              DOI 10.17487/RFC5234, January 2008,
-              <https://www.rfc-editor.org/info/rfc5234>.
+   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
+              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
+              <https://www.rfc-editor.org/info/rfc4949>.
+
+   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
+              Authentication Failure Reporting Using the Abuse Reporting
+              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
+              <https://www.rfc-editor.org/info/rfc6652>.
+
+   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
+              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
+              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
 
    [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
               "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
               RFC 6376, DOI 10.17487/RFC6376, September 2011,
               <https://www.rfc-editor.org/info/rfc6376>.
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
+   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/info/rfc5234>.
 
-   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
-              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
-              <https://www.rfc-editor.org/info/rfc4949>.
-
+   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part One: Format of Internet Message
 
 
 
@@ -2746,30 +2746,14 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 49]
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-   [RFC1035]  Mockapetris, P., "Domain names - implementation and
-              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
-              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
+              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
+              <https://www.rfc-editor.org/info/rfc2045>.
 
 12.  Informative References
 
-   [RFC5695]  Akhter, A., Asati, R., and C. Pignataro, "MPLS Forwarding
-              Benchmarking Methodology for IP Flows", RFC 5695,
-              DOI 10.17487/RFC5695, November 2009,
-              <https://www.rfc-editor.org/info/rfc5695>.
-
-   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
-              for Delivery Status Notifications", RFC 3464,
-              DOI 10.17487/RFC3464, January 2003,
-              <https://www.rfc-editor.org/info/rfc3464>.
-
-   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
-              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
-              <https://www.rfc-editor.org/info/rfc2142>.
-
-   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
-              Identified Mail (DKIM) Service Overview", RFC 5585,
-              DOI 10.17487/RFC5585, July 2009,
-              <https://www.rfc-editor.org/info/rfc5585>.
+   [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
+              DOI 10.17487/RFC5598, July 2009,
+              <https://www.rfc-editor.org/info/rfc5598>.
 
    [RFC5863]  Hansen, T., Siegel, E., Hallam-Baker, P., and D. Crocker,
               "DomainKeys Identified Mail (DKIM) Development,
@@ -2777,22 +2761,38 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               DOI 10.17487/RFC5863, May 2010,
               <https://www.rfc-editor.org/info/rfc5863>.
 
-   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
-              Rose, "DNS Security Introduction and Requirements",
-              RFC 4033, DOI 10.17487/RFC4033, March 2005,
-              <https://www.rfc-editor.org/info/rfc4033>.
-
-   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
-              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
-              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
-
    [RFC7001]  Kucherawy, M., "Message Header Field for Indicating
               Message Authentication Status", RFC 7001,
               DOI 10.17487/RFC7001, September 2013,
               <https://www.rfc-editor.org/info/rfc7001>.
 
-   [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
-              IANA Considerations Section in RFCs", RFC 5226,
+   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
+              for Delivery Status Notifications", RFC 3464,
+              DOI 10.17487/RFC3464, January 2003,
+              <https://www.rfc-editor.org/info/rfc3464>.
+
+   [RFC5695]  Akhter, A., Asati, R., and C. Pignataro, "MPLS Forwarding
+              Benchmarking Methodology for IP Flows", RFC 5695,
+              DOI 10.17487/RFC5695, November 2009,
+              <https://www.rfc-editor.org/info/rfc5695>.
+
+   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
+              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
+              <https://www.rfc-editor.org/info/rfc2142>.
+
+   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "DNS Security Introduction and Requirements",
+              RFC 4033, DOI 10.17487/RFC4033, March 2005,
+              <https://www.rfc-editor.org/info/rfc4033>.
+
+   [RFC4686]  Fenton, J., "Analysis of Threats Motivating DomainKeys
+              Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
+              September 2006, <https://www.rfc-editor.org/info/rfc4686>.
+
+   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
+              Identified Mail (DKIM) Service Overview", RFC 5585,
+              DOI 10.17487/RFC5585, July 2009,
+              <https://www.rfc-editor.org/info/rfc5585>.
 
 
 
@@ -2801,13 +2801,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 50]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
-
-              DOI 10.17487/RFC5226, May 2008,
-              <https://www.rfc-editor.org/info/rfc5226>.
-
-   [RFC4686]  Fenton, J., "Analysis of Threats Motivating DomainKeys
-              Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
-              September 2006, <https://www.rfc-editor.org/info/rfc4686>.
 
    [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
               "DomainKeys Identified Mail (DKIM) Author Domain Signing
@@ -2818,9 +2811,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
-              DOI 10.17487/RFC5598, July 2009,
-              <https://www.rfc-editor.org/info/rfc5598>.
+   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
+              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
+              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
+
+   [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
+              IANA Considerations Section in RFCs", RFC 5226,
+              DOI 10.17487/RFC5226, May 2008,
+              <https://www.rfc-editor.org/info/rfc5226>.
 
 Appendix A.  Technology Considerations
 
@@ -2850,6 +2848,8 @@ A.1.  S/MIME
    materialize.  DMARC can revisit this choice after those barriers are
    addressed.
 
+   S/MIME has extensive deployment in specific market segments
+   (government, for example) but does not enjoy similar widespread
 
 
 
@@ -2858,8 +2858,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 51]
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-   S/MIME has extensive deployment in specific market segments
-   (government, for example) but does not enjoy similar widespread
    deployment over the general Internet, and this shows no signs of
    changing.  DKIM and SPF both are deployed widely over the general
    Internet, and their adoption rates continue to be positive.
@@ -2906,6 +2904,8 @@ A.3.  Sender Header Field
    was a protocol-level option for DomainKeys, but on evolution to DKIM,
    this property was removed.
 
+   The DMARC development team considered this and decided not to include
+   support for doing so, for the following reasons:
 
 
 
@@ -2913,9 +2913,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 52]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
-
-   The DMARC development team considered this and decided not to include
-   support for doing so, for the following reasons:
 
    1.  The main user protection approach is to be concerned with what
        the user sees when a message is rendered.  There is no consistent
@@ -2962,6 +2959,9 @@ A.5.  Issues with ADSP in Operation
 
    1.  ADSP has no support for subdomains, i.e., the ADSP record for
        example.com does not explicitly or implicitly apply to
+       subdomain.example.com.  If wildcarding is not applied, then
+       spammers can trivially bypass ADSP by sending from a subdomain
+       with no ADSP record.
 
 
 
@@ -2969,10 +2969,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 53]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
-
-       subdomain.example.com.  If wildcarding is not applied, then
-       spammers can trivially bypass ADSP by sending from a subdomain
-       with no ADSP record.
 
    2.  Nonexistent subdomains are explicitly out of scope in ADSP.
        There is nothing in ADSP that states receivers should simply
@@ -3017,7 +3013,11 @@ A.6.  Organizational Domain Discovery Issues
    records, but these too are not fully reliable, as the partitioning of
    the DNS is not always done at administrative boundaries.
 
-
+   When seeking domain-specific policy based on an arbitrary domain
+   name, one could "climb the tree", dropping labels off the left end of
+   the name until the root is reached or a policy is discovered, but
+   then one could craft a name that has a large number of nonsense
+   labels; this would cause a Mail Receiver to attempt a large number of
 
 
 
@@ -3026,11 +3026,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 54]
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-   When seeking domain-specific policy based on an arbitrary domain
-   name, one could "climb the tree", dropping labels off the left end of
-   the name until the root is reached or a policy is discovered, but
-   then one could craft a name that has a large number of nonsense
-   labels; this would cause a Mail Receiver to attempt a large number of
    queries in search of a policy record.  Sending many such messages
    constitutes an amplified denial-of-service attack.
 
@@ -3071,7 +3066,12 @@ B.1.1.  SPF
 
    Example 1: SPF in alignment:
 
+    MAIL FROM: <sender@example.com>
 
+    From: sender@example.com
+    Date: Fri, Feb 15 2002 16:54:30 -0800
+    To: receiver@example.org
+    Subject: here's a sample
 
 
 
@@ -3081,13 +3081,6 @@ Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 55]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
-
-    MAIL FROM: <sender@example.com>
-
-    From: sender@example.com
-    Date: Fri, Feb 15 2002 16:54:30 -0800
-    To: receiver@example.org
-    Subject: here's a sample
 
    In this case, the RFC5321.MailFrom parameter and the RFC5322.From
    field have identical DNS domains.  Thus, the identifiers are in
@@ -3127,17 +3120,6 @@ B.1.2.  DKIM
 
    Example 1: DKIM in alignment:
 
-
-
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 56]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
     DKIM-Signature: v=1; ...; d=example.com; ...
     From: sender@example.com
     Date: Fri, Feb 15 2002 16:54:30 -0800
@@ -3148,6 +3130,13 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    identical DNS domains.  Thus, the identifiers are in alignment.
 
    Example 2: DKIM in alignment (parent):
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 56]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
     DKIM-Signature: v=1; ...; d=example.com; ...
     From: sender@child.example.com
@@ -3186,14 +3175,6 @@ B.2.1.  Entire Domain, Monitoring Only
    with a policy that will solicit aggregate feedback from receivers
    without affecting how the messages are processed, in order to:
 
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 57]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    *  Confirm that its legitimate messages are authenticating correctly
 
    *  Verify that all authorized message sources have implemented
@@ -3204,6 +3185,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    The Domain Owner accomplishes this by constructing a policy record
    indicating that:
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 57]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    *  The version of DMARC being used is "DMARC1" ("v=DMARC1;")
 
@@ -3241,15 +3230,6 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
    problems, they wish to request per-message failure reports when
    authentication failures occur.
 
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 58]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    Not all Receivers will honor such a request, but the Domain Owner
    feels that any reports it does receive will be helpful enough to
    justify publishing this record.  The default per-message report
@@ -3261,6 +3241,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    *  Per-message failure reports should be sent via email to the
       address "auth-reports@example.com" ("ruf=mailto:auth-
       reports@example.com")
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 58]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    The DMARC policy record might look like this when retrieved using a
    common command-line tool (the output shown would appear on a single
@@ -3299,13 +3287,6 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
    common command-line tool (the output shown would appear on a single
    line but is wrapped here for publication):
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 59]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    % dig +short TXT _dmarc.example.com.  "v=DMARC1; p=none;
    rua=mailto:dmarc-feedback@example.com; ruf=mailto:auth-
    reports@thirdparty.example.net"
@@ -3315,6 +3296,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    (following the conventional zone file format):
 
    ; DMARC record for the domain example.com
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 59]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    _dmarc IN TXT ( "v=DMARC1; p=none; " "rua=mailto:dmarc-
    feedback@example.com; " "ruf=mailto:auth-
@@ -3352,16 +3342,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    Intermediaries and other third parties should refer to {#verifying-
    external-destinations} for the full details of this mechanism.
 
-
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 60]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
 B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
 
    The Domain Owner has implemented SPF and DKIM in a subdomain used for
@@ -3374,13 +3354,21 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
    sent to mailboxes hosted by participating receivers.  Aggregate
    feedback reports will be sent to a mailbox within the Organizational
    Domain, and to a mailbox at a third party selected and authorized to
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 60]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    receive same by the Domain Owner.  Aggregate reports sent to the
    third party are limited to a maximum size of ten megabytes.
 
    The Domain Owner will accomplish this by constructing a policy record
    indicating that:
 
-   *  The version of DMARC being used is "DMARC1" ("v=DMARC1")
+   *  The version of DMARC being used is "DMARC1" ("v=DMARC1;")
 
    *  It is applied only to this subdomain (record is published at
       "_dmarc.test.example.com" and not "_dmarc.example.com")
@@ -3409,15 +3397,6 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
    might create an entry like the following in the appropriate zone
    file:
 
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 61]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
      ; DMARC record for the domain example.com
 
      _dmarc IN  TXT  ( "v=DMARC1; p=quarantine; "
@@ -3431,6 +3410,13 @@ B.3.  Mail Receiver Example
    SPF and DKIM, and possess the ability to collect relevant information
    from various email-processing stages to provide feedback to Domain
    Owners (possibly via Report Receivers).
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 61]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
 B.3.1.  Processing of SMTP Time
 
@@ -3466,14 +3452,6 @@ B.3.1.  Processing of SMTP Time
        "v=DMARC1; p=reject; aspf=r;
         rua=mailto:dmarc-feedback@example.com"
 
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 62]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    In the above sample, both the SPF-authenticated Identifier and the
    DKIM-authenticated Identifier align with the Author Domain.  The Mail
    Receiver considers the above email to pass the DMARC check, avoiding
@@ -3488,6 +3466,13 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    from a known and trusted forwarder (that happens to break both SPF
    and DKIM), then the Mail Receiver may choose to ignore the Domain
    Owner's policy.
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 62]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    The Mail Receiver is now ready to reply to the DATA command.  If the
    DMARC check yields that the message is to be rejected, then the Mail
@@ -3523,13 +3508,6 @@ B.4.  Utilization of Aggregate Feedback: Example
    Domain Owner, the Domain Owner can use aggregate report data to
    verify ongoing authentication practices of the third party.
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 63]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    Data on email that only partially passes underlying authentication
    checks provides visibility into problems that need to be addressed by
    the Domain Owner.  For example, if either SPF or DKIM fails to pass,
@@ -3544,6 +3522,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    Data on email that fails all underlying authentication checks
    provides baseline visibility on how the Domain Owner's domain is
    being received at the Mail Receiver.  Based on this visibility, the
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 63]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    Domain Owner can begin deployment of authentication technologies
    across uncovered email sources.  Additionally, the Domain Owner may
    come to an understanding of how its domain is being misused.
@@ -3572,20 +3558,6 @@ B.5.  mailto Transport Example
 
    This is an aggregate report from mail.receiver.example.
 
-
-
-
-
-
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 64]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
      ------=_NextPart_000_024E_01CC9B0A.AFE54C00
      Content-Type: application/gzip
      Content-Transfer-Encoding: base64
@@ -3606,6 +3578,13 @@ Appendix C.  DMARC XML Schema
 
    The following is the proposed initial schema for producing XML-
    formatted aggregate reports as described in this document.
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 64]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    NOTE: Per the definition of XML, unless otherwise specified in the
    schema below, the minOccurs and maxOccurs values for each element are
@@ -3634,14 +3613,6 @@ Appendix C.  DMARC XML Schema
        <xs:element name="report_id" type="xs:string"/>
        <xs:element name="date_range" type="DateRangeType"/>
        <xs:element name="error" type="xs:string" minOccurs="0"
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 65]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
                    maxOccurs="unbounded"/>
      </xs:sequence>
    </xs:complexType>
@@ -3663,6 +3634,13 @@ Internet-Draft                tjw-dmarcbis                    March 2020
        <xs:enumeration value="reject"/>
      </xs:restriction>
    </xs:simpleType>
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 65]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    <!-- The DMARC policy that applied to the messages in
         this report. -->
@@ -3690,14 +3668,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    <!-- The DMARC-aligned authentication result. -->
    <xs:simpleType name="DMARCResultType">
      <xs:restriction base="xs:string">
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 66]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
        <xs:enumeration value="pass"/>
        <xs:enumeration value="fail"/>
      </xs:restriction>
@@ -3720,6 +3690,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
         classes of override reasons if they want to be more
         specific than "other"? -->
    <xs:complexType name="PolicyOverrideReason">
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 66]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
      <xs:all>
        <xs:element name="type" type="PolicyOverrideType"/>
        <xs:element name="comment" type="xs:string"
@@ -3746,14 +3724,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
         http://www.java2s.com/Code/XML/XML-Schema/
              IPv6addressesareeasiertodescribeusingasimpleregex.htm -->
    <xs:simpleType name="IPAddress">
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 67]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
      <xs:restriction base="xs:string">
        <xs:pattern value="((1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]).){3}
                    (1?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])|
@@ -3776,6 +3746,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    </xs:complexType>
 
    <xs:complexType name="IdentifierType">
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 67]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
      <xs:all>
        <!-- The envelope recipient domain. -->
        <xs:element name="envelope_to" type="xs:string"
@@ -3803,13 +3781,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
      </xs:restriction>
    </xs:simpleType>
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 68]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    <xs:complexType name="DKIMAuthResultType">
      <xs:all>
        <!-- The "d=" parameter in the signature. -->
@@ -3831,6 +3802,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    <!-- SPF domain scope. -->
    <xs:simpleType name="SPFDomainScope">
      <xs:restriction base="xs:string">
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 68]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
        <xs:enumeration value="helo"/>
        <xs:enumeration value="mfrom"/>
      </xs:restriction>
@@ -3858,14 +3837,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
        <!-- The scope of the checked domain. -->
        <xs:element name="scope" type="SPFDomainScope" minOccurs="1"/>
        <!-- The SPF verification result. -->
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 69]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
        <xs:element name="result" type="SPFResultType"
                    minOccurs="1"/>
      </xs:all>
@@ -3887,6 +3858,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    <!-- This element contains all the authentication results that
         were evaluated by the receiving system for the given set of
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 69]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
         messages. -->
    <xs:complexType name="RecordType">
      <xs:sequence>
@@ -3915,13 +3894,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    Descriptions of the PolicyOverrideTypes:
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 70]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    forwarded: The message was relayed via a known forwarder, or local
    heuristics identified the message as likely having been forwarded.
    There is no expectation that authentication would pass.
@@ -3941,6 +3913,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    the "pct" setting in the DMARC policy record.
 
    trusted_forwarder: Message authentication failure was anticipated by
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 70]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    other evidence linking the message to a locally maintained list of
    known and trusted forwarders.
 
@@ -3970,14 +3951,6 @@ Appendix D.  Acknowledgements
 
 Authors' Addresses
 
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 71]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    Murray S. Kucherawy
 
    Email: superuser@gmail.com
@@ -4000,33 +3973,4 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 72]
+Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 71]

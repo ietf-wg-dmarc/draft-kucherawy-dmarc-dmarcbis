@@ -2646,7 +2646,7 @@ third party are limited to a maximum size of ten megabytes.
 The Domain Owner will accomplish this by constructing a policy record
 indicating that:
 
-*  The version of DMARC being used is "DMARC1" ("v=DMARC1")
+*  The version of DMARC being used is "DMARC1" ("v=DMARC1;")
 
 *  It is applied only to this subdomain (record is published at
    "_dmarc.test.example.com" and not "_dmarc.example.com")
