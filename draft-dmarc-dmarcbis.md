@@ -1676,7 +1676,7 @@ version of [@!RFC6591] as follows:
     independently produce an AFRF message for any or all of the
     underlying authentication methods.
 
-8.  Minimum Implementations
+#  Minimum Implementations
 
 A minimum implementation of DMARC has the following characteristics:
 
@@ -1691,7 +1691,7 @@ A minimum implementation of DMARC has the following characteristics:
 *  If acting as a Mail Receiver, fully implements the provisions of
    {#mail-receiver-actions}.
 
-9.  Privacy Considerations
+#  Privacy Considerations
 
 This section discusses security issues specific to private data that
 may be included in the interactions that are part of DMARC.
@@ -1921,8 +1921,9 @@ Defined:  [@RFC7001]
 
 Auth Method:  dmarc (added)
 
-Meaning:  No DMARC policy record was published for the aligned
-   identifier, or no aligned identifier could be extracted.
+Meaning:  
+:   No DMARC policy record was published for the aligned
+identifier, or no aligned identifier could be extracted.
 
 Status:  active
 
@@ -1934,9 +1935,9 @@ Defined:  [@RFC7001]
 
 Auth Method:  dmarc (added)
 
-Meaning:  A DMARC policy record was published for the aligned
-   identifier, and at least one of the authentication mechanisms
-   passed.
+Meaning:  
+:   A DMARC policy record was published for the aligned
+identifier, and at least one of the authentication mechanisms passed.
 
 Status:  active
 
@@ -1948,8 +1949,9 @@ Defined:  [@RFC7001]
 
 Auth Method:  dmarc (added)
 
-Meaning:  A DMARC policy record was published for the aligned
-   identifier, and none of the authentication mechanisms passed.
+Meaning:  
+:   A DMARC policy record was published for the aligned
+identifier, and none of the authentication mechanisms passed.
 
 Status:  active
 
@@ -1961,8 +1963,9 @@ Defined:  [@RFC7001]
 
 Auth Method:  dmarc (added)
 
-Meaning:  A temporary error occurred during DMARC evaluation.  A
-   later attempt might produce a final result.
+Meaning:  
+:   A temporary error occurred during DMARC evaluation.  A
+later attempt might produce a final result.
 
 Status:  active
 
@@ -1974,9 +1977,10 @@ Defined:  [@RFC7001]
 
 Auth Method:  dmarc (added)
 
-Meaning:  A permanent error occurred during DMARC evaluation, such as
-   encountering a syntactically incorrect DMARC record.  A later
-   attempt is unlikely to produce a final result.
+Meaning:  
+:   A permanent error occurred during DMARC evaluation, such as
+encountering a syntactically incorrect DMARC record.  A later
+attempt is unlikely to produce a final result.
 
 Status:  active
 
@@ -1987,9 +1991,10 @@ registry:
 
 Field Name:  Identity-Alignment
 
-Description:  indicates whether the message about which a report is
-   being generated had any identifiers in alignment as defined in
-   RFC 7489
+Description:  
+:   indicates whether the message about which a report is
+being generated had any identifiers in alignment as defined in
+RFC 7489
 
 Multiple Appearances:  No
 
@@ -2084,12 +2089,12 @@ penetration attacks.
 Thus, Domain Owners will need to harden these addresses against
 various attacks, including but not limited to:
 
-o  high-volume denial-of-service attacks;
+*  high-volume denial-of-service attacks;
 
-o  deliberate construction of malformed reports intended to identify
+*  deliberate construction of malformed reports intended to identify
    or exploit parsing or processing vulnerabilities;
 
-o  deliberate construction of reports containing false claims for the
+*  deliberate construction of reports containing false claims for the
    Submitter or Reported-Domain fields, including the possibility of
    false data from compromised but known Mail Receivers.
 
@@ -2125,23 +2130,23 @@ to be undertaken.
 There are a few possible mechanisms that attempt mitigation of these
 attacks, such as the following:
 
-o  If the display name is found to include an email address (as
-   specified in [@!RFC5322]), execute the DMARC mechanism on the domain
-   name found there rather than the domain name discovered
-   originally.  However, this addresses only a very specific attack
-   space, and spoofers can easily circumvent it by simply not using
-   an email address in the display name.  There are also known cases
-   of legitimate uses of an email address in the display name with a
-   domain different from the one in the address portion, e.g.,
+*   If the display name is found to include an email address (as
+    specified in [@!RFC5322]), execute the DMARC mechanism on the domain
+    name found there rather than the domain name discovered
+    originally.  However, this addresses only a very specific attack
+    space, and spoofers can easily circumvent it by simply not using
+    an email address in the display name.  There are also known cases
+    of legitimate uses of an email address in the display name with a
+    domain different from the one in the address portion, e.g.,
 
-     From: "user@example.org via Bug Tracker" <support@example.com>
+      From: "user@example.org via Bug Tracker" <support@example.com>
 
-o  In the MUA, only show the display name if the DMARC mechanism
+*  In the MUA, only show the display name if the DMARC mechanism
    succeeds.  This too is easily defeated, as an attacker could
    arrange to pass the DMARC tests while fraudulently using another
    domain name in the display name.
 
-o  In the MUA, only show the display name if the DMARC mechanism
+*  In the MUA, only show the display name if the DMARC mechanism
    passes and the email address thus validated matches one found in
    the receiving user's list of known addresses.
 
@@ -2405,18 +2410,21 @@ The following SPF examples assume that SPF produces a passing result.
 
 Example 1: SPF in alignment:
 
+~~~
      MAIL FROM: <sender@example.com>
 
      From: sender@example.com
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the RFC5321.MailFrom parameter and the RFC5322.From
 field have identical DNS domains.  Thus, the identifiers are in
 alignment.
 
 Example 2: SPF in alignment (parent):
+~~~
 
      MAIL FROM: <sender@child.example.com>
 
@@ -2424,6 +2432,7 @@ Example 2: SPF in alignment (parent):
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the RFC5322.From parameter includes a DNS domain that
 is a parent of the RFC5321.MailFrom domain.  Thus, the identifiers
@@ -2432,12 +2441,14 @@ Owner, and not in alignment if strict SPF mode is requested.
 
 Example 3: SPF not in alignment:
 
+~~~
      MAIL FROM: <sender@example.net>
 
      From: sender@child.example.com
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the RFC5321.MailFrom parameter includes a DNS domain
 that is neither the same as nor a parent of the RFC5322.From domain.
@@ -2450,22 +2461,26 @@ Alignment cannot exist with a DKIM signature that does not verify.
 
 Example 1: DKIM in alignment:
 
+~~~
      DKIM-Signature: v=1; ...; d=example.com; ...
      From: sender@example.com
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the DKIM "d=" parameter and the RFC5322.From field have
 identical DNS domains.  Thus, the identifiers are in alignment.
 
 Example 2: DKIM in alignment (parent):
 
+~~~
      DKIM-Signature: v=1; ...; d=example.com; ...
      From: sender@child.example.com
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the DKIM signature's "d=" parameter includes a DNS
 domain that is a parent of the RFC5322.From domain.  Thus, the
@@ -2474,11 +2489,13 @@ mode.
 
 Example 3: DKIM not in alignment:
 
+~~~
      DKIM-Signature: v=1; ...; d=sample.net; ...
      From: sender@child.example.com
      Date: Fri, Feb 15 2002 16:54:30 -0800
      To: receiver@example.org
      Subject: here's a sample
+~~~
 
 In this case, the DKIM signature's "d=" parameter includes a DNS
 domain that is neither the same as nor a parent of the RFC5322.From
@@ -2645,10 +2662,12 @@ To publish such a record, the DNS administrator for example.net might
 create an entry like the following in the appropriate zone file
 (following the conventional zone file format):
 
+~~~
   ; zone file for thirdparty.example.net
   ; Accept DMARC failure reports on behalf of example.com
 
   example.com._report._dmarc   IN   TXT    "v=DMARC1;"
+~~~
 
 Intermediaries and other third parties should refer to {#verifying-external-destinations}
 for the full details of this mechanism.
