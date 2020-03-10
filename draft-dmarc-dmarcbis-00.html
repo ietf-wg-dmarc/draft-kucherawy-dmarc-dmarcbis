@@ -1086,7 +1086,7 @@ tr:nth-child(2n+1) > td {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">tjw-dmarcbis</td>
+<td class="center">DMARCbis</td>
 <td class="right">March 2020</td>
 </tr></thead>
 <tfoot><tr>
@@ -1727,42 +1727,65 @@ another role.  This document does not address the distinctions among
 such roles; the reader is encouraged to become familiar with that
 material before continuing.<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4">The following terms are also used:<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">Authenticated Identifiers:  Domain-level identifiers that are
-   validated using authentication technologies are referred to as
-   "Authenticated Identifiers".  See {#authenicated-mechanisms} for details about
-   the supported mechanisms.<a href="#section-3-5" class="pilcrow">¶</a></p>
-<p id="section-3-6">Author Domain:  The domain name of the apparent author, as extracted
-   from the RFC5322.From field.<a href="#section-3-6" class="pilcrow">¶</a></p>
-<p id="section-3-7">Domain Owner:  An entity or organization that owns a DNS domain.  The
-   term "owns" here indicates that the entity or organization being
-   referenced holds the registration of that DNS domain.  Domain
-   Owners range from complex, globally distributed organizations, to
-   service providers working on behalf of non-technical clients, to
-   individuals responsible for maintaining personal domains.  This
-   specification uses this term as analogous to an Administrative
-   Management Domain as defined in <span>[<a href="#RFC5598" class="xref">RFC5598</a>]</span>.  It can also refer
-   to delegates, such as Report Receivers, when those are outside of
-   their immediate management domain.<a href="#section-3-7" class="pilcrow">¶</a></p>
-<p id="section-3-8">Identifier Alignment:  When the domain in the RFC5322.From address
-   matches a domain validated by SPF or DKIM (or both), it has
-   Identifier Alignment.<a href="#section-3-8" class="pilcrow">¶</a></p>
-<p id="section-3-9">Mail Receiver:  The entity or organization that receives and
-   processes email.  Mail Receivers operate one or more Internet-
-   facing Mail Transport Agents (MTAs).<a href="#section-3-9" class="pilcrow">¶</a></p>
-<p id="section-3-10">Organizational Domain:  The domain that was registered with a domain
-   name registrar.  In the absence of more accurate methods,
-   heuristics are used to determine this, since it is not always the
-   case that the registered domain name is simply a top-level DNS
-   domain plus one component (e.g., "example.com", where "com" is a
-   top-level domain).  The Organizational Domain is determined by
-   applying the algorithm found in {#organizational-domain}.<a href="#section-3-10" class="pilcrow">¶</a></p>
-<p id="section-3-11">Report Receiver:  An operator that receives reports from another
-   operator implementing the reporting mechanism described in this
-   document.  Such an operator might be receiving reports about its
-   own messages, or reports about messages related to another
-   operator.  This term applies collectively to the system components
-   that receive and process these reports and the organizations that
-   operate them.<a href="#section-3-11" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-3-5">
+        <dt id="section-3-5.1">Authenticated Identifiers:<br>
+        </dt>
+<dd id="section-3-5.2">Domain-level identifiers that are
+validated using authentication technologies are referred to as
+"Authenticated Identifiers".  See {#authenicated-mechanisms} for details about
+the supported mechanisms.<a href="#section-3-5.2" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.3">Author Domain:<br>
+        </dt>
+<dd id="section-3-5.4">The domain name of the apparent author, as extracted
+from the RFC5322.From field.<a href="#section-3-5.4" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.5">Domain Owner:<br>
+        </dt>
+<dd id="section-3-5.6">An entity or organization that owns a DNS domain.  The
+term "owns" here indicates that the entity or organization being
+referenced holds the registration of that DNS domain.  Domain
+Owners range from complex, globally distributed organizations, to
+service providers working on behalf of non-technical clients, to
+individuals responsible for maintaining personal domains.  This
+specification uses this term as analogous to an Administrative
+Management Domain as defined in <span>[<a href="#RFC5598" class="xref">RFC5598</a>]</span>.  It can also refer
+to delegates, such as Report Receivers, when those are outside of
+their immediate management domain.<a href="#section-3-5.6" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.7">Identifier Alignment:<br>
+        </dt>
+<dd id="section-3-5.8">When the domain in the RFC5322.From address
+matches a domain validated by SPF or DKIM (or both), it has
+Identifier Alignment.<a href="#section-3-5.8" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.9">Mail Receiver:<br>
+        </dt>
+<dd id="section-3-5.10">The entity or organization that receives and
+processes email.  Mail Receivers operate one or more Internet-
+facing Mail Transport Agents (MTAs).<a href="#section-3-5.10" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.11">Organizational Domain:<br>
+        </dt>
+<dd id="section-3-5.12">The domain that was registered with a domain
+name registrar.  In the absence of more accurate methods,
+heuristics are used to determine this, since it is not always the
+case that the registered domain name is simply a top-level DNS
+domain plus one component (e.g., "example.com", where "com" is a
+top-level domain).  The Organizational Domain is determined by
+applying the algorithm found in {#organizational-domain}.<a href="#section-3-5.12" class="pilcrow">¶</a>
+</dd>
+<dt id="section-3-5.13">Report Receiver:<br>
+        </dt>
+<dd id="section-3-5.14">An operator that receives reports from another
+operator implementing the reporting mechanism described in this
+document.  Such an operator might be receiving reports about its
+own messages, or reports about messages related to another
+operator.  This term applies collectively to the system components
+that receive and process these reports and the organizations that
+operate them.<a href="#section-3-5.14" class="pilcrow">¶</a>
+</dd>
+</dl>
 <div id="identifier-alignment">
 <section id="section-3.1">
         <h3 id="name-identifier-alignment">
@@ -2033,72 +2056,73 @@ as defined in {#terminology}.<a href="#section-4.2-7.2.1" class="pilcrow">¶</a>
                     | Mailbox |   |  Engine   |     | Verifier |
                     +---------+   +-----------+     +----------+
 
+
+  MSA = Mail Submission Agent
+  MDA = Mail Delivery Agent
 </pre><a href="#section-4.3-1" class="pilcrow">¶</a>
 </div>
-<p id="section-4.3-2">MSA = Mail Submission Agent
-  MDA = Mail Delivery Agent<a href="#section-4.3-2" class="pilcrow">¶</a></p>
-<p id="section-4.3-3">The above diagram shows a simple flow of messages through a DMARC-
+<p id="section-4.3-2">The above diagram shows a simple flow of messages through a DMARC-
 aware system.  Solid lines denote the actual message flow, dotted
 lines involve DNS queries used to retrieve message policy related to
 the supported message authentication schemes, and asterisk lines
 indicate data exchange between message-handling modules and message
 authentication modules.  "sMTA" is the sending MTA, and "rMTA" is the
-receiving MTA.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
-<p id="section-4.3-4">In essence, the steps are as follows:<a href="#section-4.3-4" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.3-5">
-          <li id="section-4.3-5.1">
-            <p id="section-4.3-5.1.1">Domain Owner constructs an SPF policy and publishes it in its
+receiving MTA.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">In essence, the steps are as follows:<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.3-4">
+          <li id="section-4.3-4.1">
+            <p id="section-4.3-4.1.1">Domain Owner constructs an SPF policy and publishes it in its
  DNS database as per <span>[<a href="#RFC7208" class="xref">RFC7208</a>]</span>.  Domain Owner also configures its
  system for DKIM signing as described in <span>[<a href="#RFC6376" class="xref">RFC6376</a>]</span>.  Finally, Domain
- Owner publishes via the DNS a DMARC message-handling policy.<a href="#section-4.3-5.1.1" class="pilcrow">¶</a></p>
+ Owner publishes via the DNS a DMARC message-handling policy.<a href="#section-4.3-4.1.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.2">
-            <p id="section-4.3-5.2.1">Author generates a message and hands the message to Domain
- Owner's designated mail submission service.<a href="#section-4.3-5.2.1" class="pilcrow">¶</a></p>
+<li id="section-4.3-4.2">
+            <p id="section-4.3-4.2.1">Author generates a message and hands the message to Domain
+ Owner's designated mail submission service.<a href="#section-4.3-4.2.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.3">
-            <p id="section-4.3-5.3.1">Submission service passes relevant details to the DKIM signing
+<li id="section-4.3-4.3">
+            <p id="section-4.3-4.3.1">Submission service passes relevant details to the DKIM signing
  module in order to generate a DKIM signature to be applied to
- the message.<a href="#section-4.3-5.3.1" class="pilcrow">¶</a></p>
+ the message.<a href="#section-4.3-4.3.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.4">
-            <p id="section-4.3-5.4.1">Submission service relays the now-signed message to its
+<li id="section-4.3-4.4">
+            <p id="section-4.3-4.4.1">Submission service relays the now-signed message to its
  designated transport service for routing to its intended
- recipient(s).<a href="#section-4.3-5.4.1" class="pilcrow">¶</a></p>
+ recipient(s).<a href="#section-4.3-4.4.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.5">
-            <p id="section-4.3-5.5.1">Message may pass through other relays but eventually arrives at
- a recipient's transport service.<a href="#section-4.3-5.5.1" class="pilcrow">¶</a></p>
+<li id="section-4.3-4.5">
+            <p id="section-4.3-4.5.1">Message may pass through other relays but eventually arrives at
+ a recipient's transport service.<a href="#section-4.3-4.5.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.6">
-            <p id="section-4.3-5.6.1">Recipient delivery service conducts SPF and DKIM authentication
+<li id="section-4.3-4.6">
+            <p id="section-4.3-4.6.1">Recipient delivery service conducts SPF and DKIM authentication
  checks by passing the necessary data to their respective
  modules, each of which requires queries to the Author Domain's
- DNS data (when identifiers are aligned; see below).<a href="#section-4.3-5.6.1" class="pilcrow">¶</a></p>
+ DNS data (when identifiers are aligned; see below).<a href="#section-4.3-4.6.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.7">
-            <p id="section-4.3-5.7.1">The results of these are passed to the DMARC module along with
+<li id="section-4.3-4.7">
+            <p id="section-4.3-4.7.1">The results of these are passed to the DMARC module along with
  the Author's domain.  The DMARC module attempts to retrieve a
  policy from the DNS for that domain.  If none is found, the
  DMARC module determines the Organizational Domain and repeats
  the attempt to retrieve a policy from the DNS.  (This is
- described in further detail in {#policy-discovery}.)<a href="#section-4.3-5.7.1" class="pilcrow">¶</a></p>
+ described in further detail in {#policy-discovery}.)<a href="#section-4.3-4.7.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.8">
-            <p id="section-4.3-5.8.1">If a policy is found, it is combined with the Author's domain
+<li id="section-4.3-4.8">
+            <p id="section-4.3-4.8.1">If a policy is found, it is combined with the Author's domain
  and the SPF and DKIM results to produce a DMARC policy result (a
  "pass" or "fail") and can optionally cause one of two kinds of
- reports to be generated (not shown).<a href="#section-4.3-5.8.1" class="pilcrow">¶</a></p>
+ reports to be generated (not shown).<a href="#section-4.3-4.8.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.9">
-            <p id="section-4.3-5.9.1">Recipient transport service either delivers the message to the
+<li id="section-4.3-4.9">
+            <p id="section-4.3-4.9.1">Recipient transport service either delivers the message to the
  recipient inbox or takes other local policy action based on the
- DMARC result (not shown).<a href="#section-4.3-5.9.1" class="pilcrow">¶</a></p>
+ DMARC result (not shown).<a href="#section-4.3-4.9.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-4.3-5.10">
-            <p id="section-4.3-5.10.1">When requested, Recipient transport service collects data from
+<li id="section-4.3-4.10">
+            <p id="section-4.3-4.10.1">When requested, Recipient transport service collects data from
  the message delivery session to be used in providing feedback
- (see {#dmarc-feedback}).<a href="#section-4.3-5.10.1" class="pilcrow">¶</a></p>
+ (see {#dmarc-feedback}).<a href="#section-4.3-4.10.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
 </section>
@@ -2234,24 +2258,39 @@ initial set defined in this document.  Only tags defined in this
 document or in later extensions, and thus added to that registry, are
 to be processed; unknown tags MUST be ignored.<a href="#section-6.3-2" class="pilcrow">¶</a></p>
 <p id="section-6.3-3">The following tags are introduced as the initial valid DMARC tags:<a href="#section-6.3-3" class="pilcrow">¶</a></p>
-<p id="section-6.3-4">adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
-   strict or relaxed DKIM Identifier Alignment mode is required by
-   the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
-   are as follows:<a href="#section-6.3-4" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-6.3-4">
+          <dt id="section-6.3-4.1">adkim:<br>
+          </dt>
+<dd id="section-6.3-4.2">(plain-text; OPTIONAL; default is "r".)  Indicates whether
+strict or relaxed DKIM Identifier Alignment mode is required by
+the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
+are as follows:<a href="#section-6.3-4.2" class="pilcrow">¶</a>
+</dd>
+</dl>
 <p id="section-6.3-5">r: relaxed mode<a href="#section-6.3-5" class="pilcrow">¶</a></p>
 <p id="section-6.3-6">s: strict mode<a href="#section-6.3-6" class="pilcrow">¶</a></p>
-<p id="section-6.3-7">aspf:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
-   strict or relaxed SPF Identifier Alignment mode is required by the
-   Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
-   follows:<a href="#section-6.3-7" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-6.3-7">
+          <dt id="section-6.3-7.1">aspf:<br>
+          </dt>
+<dd id="section-6.3-7.2">(plain-text; OPTIONAL; default is "r".)  Indicates whether
+strict or relaxed SPF Identifier Alignment mode is required by the
+Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
+follows:<a href="#section-6.3-7.2" class="pilcrow">¶</a>
+</dd>
+</dl>
 <p id="section-6.3-8">r: relaxed mode<a href="#section-6.3-8" class="pilcrow">¶</a></p>
 <p id="section-6.3-9">s: strict mode<a href="#section-6.3-9" class="pilcrow">¶</a></p>
-<p id="section-6.3-10">fo:  Failure reporting options (plain-text; OPTIONAL; default is "0")
-   Provides requested options for generation of failure reports.
-   Report generators MAY choose to adhere to the requested options.
-   This tag's content MUST be ignored if a "ruf" tag (below) is not
-   also specified.  The value of this tag is a colon-separated list
-   of characters that indicate failure reporting options as follows:<a href="#section-6.3-10" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-6.3-10">
+          <dt id="section-6.3-10.1">fo:<br>
+          </dt>
+<dd id="section-6.3-10.2">Failure reporting options (plain-text; OPTIONAL; default is "0")
+Provides requested options for generation of failure reports.
+Report generators MAY choose to adhere to the requested options.
+This tag's content MUST be ignored if a "ruf" tag (below) is not
+also specified.  The value of this tag is a colon-separated list
+of characters that indicate failure reporting options as follows:<a href="#section-6.3-10.2" class="pilcrow">¶</a>
+</dd>
+</dl>
 <p id="section-6.3-11">0: Generate a DMARC failure report if all underlying
       authentication mechanisms fail to produce an aligned "pass"
       result.<a href="#section-6.3-11" class="pilcrow">¶</a></p>
@@ -2264,13 +2303,17 @@ to be processed; unknown tags MUST be ignored.<a href="#section-6.3-2" class="pi
 <p id="section-6.3-14">s: Generate an SPF failure report if the message failed SPF
       evaluation, regardless of its alignment.  SPF-specific
       reporting is described in <span>[<a href="#RFC6652" class="xref">RFC6652</a>]</span>.<a href="#section-6.3-14" class="pilcrow">¶</a></p>
-<p id="section-6.3-15">p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
-   records).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  Policy applies to the domain
-   queried and to subdomains, unless subdomain policy is explicitly
-   described using the "sp" tag.  This tag is mandatory for policy
-   records only, but not for third-party reporting records (see
-   {#verifying-external-destinations}).  Possible values are as follows:<a href="#section-6.3-15" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-6.3-15">
+          <dt id="section-6.3-15.1">p:</dt>
+<dd id="section-6.3-15.2">Requested Mail Receiver policy (plain-text; REQUIRED for policy
+records).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  Policy applies to the domain
+queried and to subdomains, unless subdomain policy is explicitly
+described using the "sp" tag.  This tag is mandatory for policy
+records only, but not for third-party reporting records (see
+{#verifying-external-destinations}).  Possible values are as follows:<a href="#section-6.3-15.2" class="pilcrow">¶</a>
+</dd>
+</dl>
 <p id="section-6.3-16">none:  The Domain Owner requests no specific action be taken
       regarding delivery of messages.<a href="#section-6.3-16" class="pilcrow">¶</a></p>
 <p id="section-6.3-17">quarantine:  The Domain Owner wishes to have email that fails the
@@ -2282,94 +2325,120 @@ to be processed; unknown tags MUST be ignored.<a href="#section-6.3-2" class="pi
       email that fails the DMARC mechanism check.  Rejection SHOULD
       occur during the SMTP transaction.  See {#rejecting-messages} for some
       discussion of SMTP rejection methods and their implications.<a href="#section-6.3-18" class="pilcrow">¶</a></p>
-<p id="section-6.3-19">pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
-   default is 100).  Percentage of messages from the Domain Owner's
-   mail stream to which the DMARC policy is to be applied.  However,
-   this MUST NOT be applied to the DMARC-generated reports, all of
-   which must be sent and received unhindered.  The purpose of the
-   "pct" tag is to allow Domain Owners to enact a slow rollout
-   enforcement of the DMARC mechanism.  The prospect of "all or
-   nothing" is recognized as preventing many organizations from
-   experimenting with strong authentication-based mechanisms.  See
-   {#message-sampling} for details.  Note that random selection based on
-   this percentage, such as the following pseudocode, is adequate:<a href="#section-6.3-19" class="pilcrow">¶</a></p>
-<div class="artwork art-text alignLeft" id="section-6.3-20">
-<pre>if (random mod 100) &lt; pct then
+<dl class="dlParallel" id="section-6.3-19">
+          <dt id="section-6.3-19.1">pct:<br>
+          </dt>
+<dd id="section-6.3-19.2">
+            <p id="section-6.3-19.2.1">(plain-text integer between 0 and 100, inclusive; OPTIONAL;
+default is 100).  Percentage of messages from the Domain Owner's
+mail stream to which the DMARC policy is to be applied.  However,
+this MUST NOT be applied to the DMARC-generated reports, all of
+which must be sent and received unhindered.  The purpose of the
+"pct" tag is to allow Domain Owners to enact a slow rollout
+enforcement of the DMARC mechanism.  The prospect of "all or
+nothing" is recognized as preventing many organizations from
+experimenting with strong authentication-based mechanisms.  See
+{#message-sampling} for details.  Note that random selection based on
+this percentage, such as the following pseudocode, is adequate:<a href="#section-6.3-19.2.1" class="pilcrow">¶</a></p>
+<p id="section-6.3-19.2.2">if (random mod 100) &lt; pct then
   selected = true
 else
-  selected = false
-</pre><a href="#section-6.3-20" class="pilcrow">¶</a>
-</div>
-<p id="section-6.3-21">rf:  Format to be used for message-specific failure reports (colon-
-   separated plain-text list of values; OPTIONAL; default is "afrf").
-   The value of this tag is a list of one or more report formats as
-   requested by the Domain Owner to be used when a message fails both
-   <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> and <span>[<a href="#RFC6376" class="xref">RFC6376</a>]</span> tests to report details of the individual
-   failure.  The values MUST be present in the registry of reporting
-   formats defined in {#iana-considerations}; a Mail Receiver observing a
-   different value SHOULD ignore it or MAY ignore the entire DMARC
-   record.  For this version, only "afrf" (the auth-failure report
-   type defined in <span>[<a href="#RFC6591" class="xref">RFC6591</a>]</span>) is presently supported.  See {#failure-reports}
-   for details.  For interoperability, the Authentication Failure
-   Reporting Format (AFRF) MUST be supported.<a href="#section-6.3-21" class="pilcrow">¶</a></p>
-<p id="section-6.3-22">ri:  Interval requested between aggregate reports (plain-text 32-bit
-   unsigned integer; OPTIONAL; default is 86400).  Indicates a
-   request to Receivers to generate aggregate reports separated by no
-   more than the requested number of seconds.  DMARC implementations
-   MUST be able to provide daily reports and SHOULD be able to
-   provide hourly reports when requested.  However, anything other
-   than a daily report is understood to be accommodated on a best-
-   effort basis.<a href="#section-6.3-22" class="pilcrow">¶</a></p>
-<p id="section-6.3-23">rua:  Addresses to which aggregate feedback is to be sent (comma-
-   separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
-   exclamation point that is part of such a DMARC URI MUST be encoded
-   per Section 2.1 of <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> so as to distinguish it from the list
-   delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  See {#external-report-addresses}
-   for additional considerations.  Any valid URI can be specified.  A
-   Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
-   the ability to send a DMARC report via electronic mail.  If not
-   provided, Mail Receivers MUST NOT generate aggregate feedback
-   reports.  URIs not supported by Mail Receivers MUST be ignored.
-   The aggregate feedback report format is described in {#aggregate-reports}<a href="#section-6.3-23" class="pilcrow">¶</a></p>
-<p id="section-6.3-24">ruf:  Addresses to which message-specific failure information is to
-   be reported (comma-separated plain-text list of DMARC URIs;
-   OPTIONAL).  If present, the Domain Owner is requesting Mail
-   Receivers to send detailed failure reports about messages that
-   fail the DMARC evaluation in specific ways (see the "fo" tag
-   above).  The format of the message to be generated MUST follow the
-   format specified for the "rf" tag.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  A Mail Receiver
-   MUST implement support for a "mailto:" URI, i.e., the ability to
-   send a DMARC report via electronic mail.  If not provided, Mail
-   Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
-   additional considerations.<a href="#section-6.3-24" class="pilcrow">¶</a></p>
-<p id="section-6.3-25">sp:  Requested Mail Receiver policy for all subdomains (plain-text;
-   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  It applies only to subdomains of
-   the domain queried and not to the domain itself.  Its syntax is
-   identical to that of the "p" tag defined above.  If absent, the
-   policy specified by the "p" tag MUST be applied for subdomains.
-   Note that "sp" will be ignored for DMARC records published on
-   subdomains of Organizational Domains due to the effect of the
-   DMARC policy discovery mechanism described in {#policy-discovery}.<a href="#section-6.3-25" class="pilcrow">¶</a></p>
-<p id="section-6.3-26">v: Version (plain-text; REQUIRED).  Identifies the record retrieved
-   as a DMARC record.  It MUST have the value of "DMARC1".  The value
-   of this tag MUST match precisely; if it does not or it is absent,
-   the entire retrieved record MUST be ignored.  It MUST be the first
-   tag in the list.<a href="#section-6.3-26" class="pilcrow">¶</a></p>
-<p id="section-6.3-27">A DMARC policy record MUST comply with the formal specification found
+  selected = false<a href="#section-6.3-19.2.2" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.3">rf:<br>
+          </dt>
+<dd id="section-6.3-19.4">
+            <p id="section-6.3-19.4.1">Format to be used for message-specific failure reports (colon-
+separated plain-text list of values; OPTIONAL; default is "afrf").
+The value of this tag is a list of one or more report formats as
+requested by the Domain Owner to be used when a message fails both
+<span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> and <span>[<a href="#RFC6376" class="xref">RFC6376</a>]</span> tests to report details of the individual
+failure.  The values MUST be present in the registry of reporting
+formats defined in {#iana-considerations}; a Mail Receiver observing a
+different value SHOULD ignore it or MAY ignore the entire DMARC
+record.  For this version, only "afrf" (the auth-failure report
+type defined in <span>[<a href="#RFC6591" class="xref">RFC6591</a>]</span>) is presently supported.  See {#failure-reports}
+for details.  For interoperability, the Authentication Failure
+Reporting Format (AFRF) MUST be supported.<a href="#section-6.3-19.4.1" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.5">ri:<br>
+          </dt>
+<dd id="section-6.3-19.6">
+            <p id="section-6.3-19.6.1">Interval requested between aggregate reports (plain-text 32-bit
+unsigned integer; OPTIONAL; default is 86400).  Indicates a
+request to Receivers to generate aggregate reports separated by no
+more than the requested number of seconds.  DMARC implementations
+MUST be able to provide daily reports and SHOULD be able to
+provide hourly reports when requested.  However, anything other
+than a daily report is understood to be accommodated on a best-
+effort basis.<a href="#section-6.3-19.6.1" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.7">rua:<br>
+          </dt>
+<dd id="section-6.3-19.8">
+            <p id="section-6.3-19.8.1">Addresses to which aggregate feedback is to be sent (comma-
+separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
+exclamation point that is part of such a DMARC URI MUST be encoded
+per Section 2.1 of <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span> so as to distinguish it from the list
+delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  See {#external-report-addresses}
+for additional considerations.  Any valid URI can be specified.  A
+Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
+the ability to send a DMARC report via electronic mail.  If not
+provided, Mail Receivers MUST NOT generate aggregate feedback
+reports.  URIs not supported by Mail Receivers MUST be ignored.
+The aggregate feedback report format is described in {#aggregate-reports}<a href="#section-6.3-19.8.1" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.9">ruf:<br>
+          </dt>
+<dd id="section-6.3-19.10">
+            <p id="section-6.3-19.10.1">Addresses to which message-specific failure information is to
+be reported (comma-separated plain-text list of DMARC URIs;
+OPTIONAL).  If present, the Domain Owner is requesting Mail
+Receivers to send detailed failure reports about messages that
+fail the DMARC evaluation in specific ways (see the "fo" tag
+above).  The format of the message to be generated MUST follow the
+format specified for the "rf" tag.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  A Mail Receiver
+MUST implement support for a "mailto:" URI, i.e., the ability to
+send a DMARC report via electronic mail.  If not provided, Mail
+Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
+additional considerations.<a href="#section-6.3-19.10.1" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.11">sp:<br>
+          </dt>
+<dd id="section-6.3-19.12">
+            <p id="section-6.3-19.12.1">Requested Mail Receiver policy for all subdomains (plain-text;
+OPTIONAL).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  It applies only to subdomains of
+the domain queried and not to the domain itself.  Its syntax is
+identical to that of the "p" tag defined above.  If absent, the
+policy specified by the "p" tag MUST be applied for subdomains.
+Note that "sp" will be ignored for DMARC records published on
+subdomains of Organizational Domains due to the effect of the
+DMARC policy discovery mechanism described in {#policy-discovery}.<a href="#section-6.3-19.12.1" class="pilcrow">¶</a></p>
+</dd>
+<dt id="section-6.3-19.13">v:</dt>
+<dd id="section-6.3-19.14">
+            <p id="section-6.3-19.14.1">Version (plain-text; REQUIRED).  Identifies the record retrieved
+as a DMARC record.  It MUST have the value of "DMARC1".  The value
+of this tag MUST match precisely; if it does not or it is absent,
+the entire retrieved record MUST be ignored.  It MUST be the first
+tag in the list.<a href="#section-6.3-19.14.1" class="pilcrow">¶</a></p>
+</dd>
+</dl>
+<p id="section-6.3-20">A DMARC policy record MUST comply with the formal specification found
 in {#formal-definition} in that the "v" and "p" tags MUST be present and MUST
 appear in that order.  Unknown tags MUST be ignored.  Syntax errors
 in the remainder of the record SHOULD be discarded in favor of
-default values (if any) or ignored outright.<a href="#section-6.3-27" class="pilcrow">¶</a></p>
-<p id="section-6.3-28">Note that given the rules of the previous paragraph, addition of a
+default values (if any) or ignored outright.<a href="#section-6.3-20" class="pilcrow">¶</a></p>
+<p id="section-6.3-21">Note that given the rules of the previous paragraph, addition of a
 new tag into the registered list of tags does not itself require a
 new version of DMARC to be generated (with a corresponding change to
 the "v" tag's value), but a change to any existing tags does require
-a new version of DMARC.<a href="#section-6.3-28" class="pilcrow">¶</a></p>
+a new version of DMARC.<a href="#section-6.3-21" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="formal-definition">
@@ -2379,12 +2448,14 @@ a new version of DMARC.<a href="#section-6.3-28" class="pilcrow">¶</a></p>
         </h3>
 <p id="section-6.4-1">The formal definition of the DMARC format, using <span>[<a href="#RFC5234" class="xref">RFC5234</a>]</span>, is as
 follows:<a href="#section-6.4-1" class="pilcrow">¶</a></p>
-<p id="section-6.4-2">dmarc-uri       = URI [ "!" 1*DIGIT [ "k" / "m" / "g" / "t" ] ]
-                    ; "URI" is imported from <span>[<a href="#RFC3986" class="xref">RFC3986</a>]</span>; commas (ASCII
+<div class="artwork art-text alignLeft" id="section-6.4-2">
+<pre>  dmarc-uri       = URI [ "!" 1*DIGIT [ "k" / "m" / "g" / "t" ] ]
+                    ; "URI" is imported from [RFC3986]; commas (ASCII
                     ; 0x2C) and exclamation points (ASCII 0x21)
                     ; MUST be encoded; the numeric portion MUST fit
-                    ; within an unsigned 64-bit integer<a href="#section-6.4-2" class="pilcrow">¶</a></p>
-<p id="section-6.4-3">dmarc-record    = dmarc-version dmarc-sep
+                    ; within an unsigned 64-bit integer
+
+  dmarc-record    = dmarc-version dmarc-sep
                     [dmarc-request]
                     [dmarc-sep dmarc-srequest]
                     [dmarc-sep dmarc-auri]
@@ -2397,36 +2468,50 @@ follows:<a href="#section-6.4-1" class="pilcrow">¶</a></p>
                     [dmarc-sep dmarc-percent]
                     [dmarc-sep]
                     ; components other than dmarc-version and
-                    ; dmarc-request may appear in any order<a href="#section-6.4-3" class="pilcrow">¶</a></p>
-<p id="section-6.4-4">dmarc-version   = "v" *WSP "=" *WSP %x44 %x4d %x41 %x52 %x43 %x31<a href="#section-6.4-4" class="pilcrow">¶</a></p>
-<p id="section-6.4-5">dmarc-sep       = *WSP %x3b *WSP<a href="#section-6.4-5" class="pilcrow">¶</a></p>
-<p id="section-6.4-6">dmarc-request   = "p" *WSP "=" *WSP
-                    ( "none" / "quarantine" / "reject" )<a href="#section-6.4-6" class="pilcrow">¶</a></p>
-<p id="section-6.4-7">dmarc-srequest  = "sp" *WSP "=" *WSP
-                    ( "none" / "quarantine" / "reject" )<a href="#section-6.4-7" class="pilcrow">¶</a></p>
-<p id="section-6.4-8">dmarc-auri      = "rua" *WSP "=" *WSP
-                    dmarc-uri <em>(</em>WSP "," *WSP dmarc-uri)<a href="#section-6.4-8" class="pilcrow">¶</a></p>
-<p id="section-6.4-9">dmarc-furi      = "ruf" *WSP "=" *WSP
-                    dmarc-uri <em>(</em>WSP "," *WSP dmarc-uri)<a href="#section-6.4-9" class="pilcrow">¶</a></p>
-<p id="section-6.4-10">dmarc-adkim     = "adkim" *WSP "=" *WSP
-                    ( "r" / "s" )<a href="#section-6.4-10" class="pilcrow">¶</a></p>
-<p id="section-6.4-11">dmarc-aspf      = "aspf" *WSP "=" *WSP
-                    ( "r" / "s" )<a href="#section-6.4-11" class="pilcrow">¶</a></p>
-<p id="section-6.4-12">dmarc-ainterval = "ri" *WSP "=" <em>WSP 1</em>DIGIT<a href="#section-6.4-12" class="pilcrow">¶</a></p>
-<p id="section-6.4-13">dmarc-fo        = "fo" *WSP "=" *WSP
+                    ; dmarc-request may appear in any order
+
+  dmarc-version   = "v" *WSP "=" *WSP %x44 %x4d %x41 %x52 %x43 %x31
+
+  dmarc-sep       = *WSP %x3b *WSP
+
+  dmarc-request   = "p" *WSP "=" *WSP
+                    ( "none" / "quarantine" / "reject" )
+
+  dmarc-srequest  = "sp" *WSP "=" *WSP
+                    ( "none" / "quarantine" / "reject" )
+
+  dmarc-auri      = "rua" *WSP "=" *WSP
+                    dmarc-uri *(*WSP "," *WSP dmarc-uri)
+
+  dmarc-furi      = "ruf" *WSP "=" *WSP
+                    dmarc-uri *(*WSP "," *WSP dmarc-uri)
+
+  dmarc-adkim     = "adkim" *WSP "=" *WSP
+                    ( "r" / "s" )
+
+  dmarc-aspf      = "aspf" *WSP "=" *WSP
+                    ( "r" / "s" )
+
+  dmarc-ainterval = "ri" *WSP "=" *WSP 1*DIGIT
+
+  dmarc-fo        = "fo" *WSP "=" *WSP
                     ( "0" / "1" / "d" / "s" )
-                    <em>(</em>WSP ":" *WSP ( "0" / "1" / "d" / "s" ))<a href="#section-6.4-13" class="pilcrow">¶</a></p>
-<p id="section-6.4-14">dmarc-rfmt      = "rf"  *WSP "=" *WSP Keyword <em>(</em>WSP ":" Keyword)
-                    ; registered reporting formats only<a href="#section-6.4-14" class="pilcrow">¶</a></p>
-<p id="section-6.4-15">dmarc-percent   = "pct" *WSP "=" <em>WSP
-                    1</em>3DIGIT<a href="#section-6.4-15" class="pilcrow">¶</a></p>
-<p id="section-6.4-16">"Keyword" is imported from Section 4.1.2 of <span>[<a href="#RFC5321" class="xref">RFC5321</a>]</span>.<a href="#section-6.4-16" class="pilcrow">¶</a></p>
-<p id="section-6.4-17">A size limitation in a dmarc-uri, if provided, is interpreted as a
+                    *(*WSP ":" *WSP ( "0" / "1" / "d" / "s" ))
+
+  dmarc-rfmt      = "rf"  *WSP "=" *WSP Keyword *(*WSP ":" Keyword)
+                    ; registered reporting formats only
+
+  dmarc-percent   = "pct" *WSP "=" *WSP
+                    1*3DIGIT
+</pre><a href="#section-6.4-2" class="pilcrow">¶</a>
+</div>
+<p id="section-6.4-3">"Keyword" is imported from Section 4.1.2 of <span>[<a href="#RFC5321" class="xref">RFC5321</a>]</span>.<a href="#section-6.4-3" class="pilcrow">¶</a></p>
+<p id="section-6.4-4">A size limitation in a dmarc-uri, if provided, is interpreted as a
 count of units followed by an OPTIONAL unit size ("k" for kilobytes,
 "m" for megabytes, "g" for gigabytes, "t" for terabytes).  Without a
 unit, the number is presumed to be a basic byte count.  Note that the
 units are considered to be powers of two; a kilobyte is 2^10, a
-megabyte is 2^20, etc.<a href="#section-6.4-17" class="pilcrow">¶</a></p>
+megabyte is 2^20, etc.<a href="#section-6.4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="domain-owner-actions">
@@ -2986,63 +3071,78 @@ chances of acceptance of the report at some compute cost.  The
 aggregate data SHOULD be present using the media type "application/
 gzip" if compressed (see <span>[<a href="#RFC6713" class="xref">RFC6713</a>]</span>), and "text/xml" otherwise.  The
 filename is typically constructed using the following ABNF:<a href="#section-7.2.1.1-2" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-3">filename = receiver "!" policy-domain "!" begin-timestamp
-             "!" end-timestamp [ "!" unique-id ] "." extension<a href="#section-7.2.1.1-3" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-4">unique-id = 1*(ALPHA / DIGIT)<a href="#section-7.2.1.1-4" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-5">receiver = domain
-             ; imported from <span>[<a href="#RFC5322" class="xref">RFC5322</a>]</span><a href="#section-7.2.1.1-5" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-6">policy-domain   = domain<a href="#section-7.2.1.1-6" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-7">begin-timestamp = 1*DIGIT
+<div class="artwork art-text alignLeft" id="section-7.2.1.1-3">
+<pre>  filename = receiver "!" policy-domain "!" begin-timestamp
+             "!" end-timestamp [ "!" unique-id ] "." extension
+
+  unique-id = 1*(ALPHA / DIGIT)
+
+  receiver = domain
+             ; imported from [@!RFC5322]
+
+  policy-domain   = domain
+
+  begin-timestamp = 1*DIGIT
                     ; seconds since 00:00:00 UTC January 1, 1970
                     ; indicating start of the time range contained
-                    ; in the report<a href="#section-7.2.1.1-7" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-8">end-timestamp = 1*DIGIT
+                    ; in the report
+
+  end-timestamp = 1*DIGIT
                   ; seconds since 00:00:00 UTC January 1, 1970
                   ; indicating end of the time range contained
-                  ; in the report<a href="#section-7.2.1.1-8" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-9">extension = "xml" / "xml.gz"<a href="#section-7.2.1.1-9" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-10">The extension MUST be "xml" for a plain XML file, or "xml.gz" for an
-XML file compressed using GZIP.<a href="#section-7.2.1.1-10" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-11">"unique-id" allows an optional unique ID generated by the Mail
+                  ; in the report
+
+  extension = "xml" / "xml.gz"
+</pre><a href="#section-7.2.1.1-3" class="pilcrow">¶</a>
+</div>
+<p id="section-7.2.1.1-4">The extension MUST be "xml" for a plain XML file, or "xml.gz" for an
+XML file compressed using GZIP.<a href="#section-7.2.1.1-4" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-5">"unique-id" allows an optional unique ID generated by the Mail
 Receiver to distinguish among multiple reports generated
-simultaneously by different sources within the same Domain Owner.<a href="#section-7.2.1.1-11" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-12">For example, this is a possible filename for the gzip file of a
+simultaneously by different sources within the same Domain Owner.<a href="#section-7.2.1.1-5" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-6">For example, this is a possible filename for the gzip file of a
 report to the Domain Owner "example.com" from the Mail Receiver
-"mail.receiver.example":<a href="#section-7.2.1.1-12" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-13">mail.receiver.example!example.com!1013662812!1013749130.gz<a href="#section-7.2.1.1-13" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-14">No specific MIME message structure is required.  It is presumed that
+"mail.receiver.example":<a href="#section-7.2.1.1-6" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-7">mail.receiver.example!example.com!1013662812!1013749130.gz<a href="#section-7.2.1.1-7" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-8">No specific MIME message structure is required.  It is presumed that
 the aggregate reporting address will be equipped to extract MIME
 parts with the prescribed media type and filename and ignore the
-rest.<a href="#section-7.2.1.1-14" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-15">Email streams carrying DMARC feedback data MUST conform to the DMARC
+rest.<a href="#section-7.2.1.1-8" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-9">Email streams carrying DMARC feedback data MUST conform to the DMARC
 mechanism, thereby resulting in an aligned "pass" (see {#identifier-alignment}).
 This practice minimizes the risk of report consumers processing
-fraudulent reports.<a href="#section-7.2.1.1-15" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-16">The RFC5322.Subject field for individual report submissions SHOULD
-conform to the following ABNF:<a href="#section-7.2.1.1-16" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-17">dmarc-subject = %x52.65.70.6f.72.74 1<em>FWS       ; "Report"
-                  %x44.6f.6d.61.69.6e.3a 1</em>FWS    ; "Domain:"
-                  domain-name 1<em>FWS               ; from RFC 6376
+fraudulent reports.<a href="#section-7.2.1.1-9" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-10">The RFC5322.Subject field for individual report submissions SHOULD
+conform to the following ABNF:<a href="#section-7.2.1.1-10" class="pilcrow">¶</a></p>
+<div class="artwork art-text alignLeft" id="section-7.2.1.1-11">
+<pre>  dmarc-subject = %x52.65.70.6f.72.74 1*FWS       ; "Report"
+                  %x44.6f.6d.61.69.6e.3a 1*FWS    ; "Domain:"
+                  domain-name 1*FWS               ; from RFC 6376
                   %x53.75.62.6d.69.74.74.65.72.3a ; "Submitter:"
-                  1</em>FWS domain-name 1*FWS
+                  1*FWS domain-name 1*FWS
                   %x52.65.70.6f.72.74.2d.49.44.3a ; "Report-ID:"
-                  msg-id                          ; from RFC 5322<a href="#section-7.2.1.1-17" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-18">The first domain-name indicates the DNS domain name about which the
+                  msg-id                          ; from RFC 5322
+</pre><a href="#section-7.2.1.1-11" class="pilcrow">¶</a>
+</div>
+<p id="section-7.2.1.1-12">The first domain-name indicates the DNS domain name about which the
 report was generated.  The second domain-name indicates the DNS
 domain name representing the Mail Receiver generating the report.
 The purpose of the Report-ID: portion of the field is to enable the
 Domain Owner to identify and ignore duplicate reports that might be
-sent by a Mail Receiver.<a href="#section-7.2.1.1-18" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-19">For instance, this is a possible Subject field for a report to the
+sent by a Mail Receiver.<a href="#section-7.2.1.1-12" class="pilcrow">¶</a></p>
+<p id="section-7.2.1.1-13">For instance, this is a possible Subject field for a report to the
 Domain Owner "example.com" from the Mail Receiver
-"mail.receiver.example".  It is line-wrapped as allowed by <span>[<a href="#RFC5322" class="xref">RFC5322</a>]</span>:<a href="#section-7.2.1.1-19" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-20">Subject: Report Domain: example.com
+"mail.receiver.example".  It is line-wrapped as allowed by <span>[<a href="#RFC5322" class="xref">RFC5322</a>]</span>:<a href="#section-7.2.1.1-13" class="pilcrow">¶</a></p>
+<div class="artwork art-text alignLeft" id="section-7.2.1.1-14">
+<pre>  Subject: Report Domain: example.com
       Submitter: mail.receiver.example
-      Report-ID: &lt;2002.02.15.1&gt;<a href="#section-7.2.1.1-20" class="pilcrow">¶</a></p>
-<p id="section-7.2.1.1-21">This transport mechanism potentially encounters a problem when
+      Report-ID: &lt;2002.02.15.1&gt;
+</pre><a href="#section-7.2.1.1-14" class="pilcrow">¶</a>
+</div>
+<p id="section-7.2.1.1-15">This transport mechanism potentially encounters a problem when
 feedback data size exceeds maximum allowable attachment sizes for
 either the generator or the consumer.  See {#error-reports} for further
-discussion.<a href="#section-7.2.1.1-21" class="pilcrow">¶</a></p>
+discussion.<a href="#section-7.2.1.1-15" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="other-methods">
@@ -3070,24 +3170,42 @@ all other listed URIs.<a href="#section-7.2.2-1" class="pilcrow">¶</a></p>
 MUST be included that contains field-value pairs such as those found
 in Section 2 of <span>[<a href="#RFC3464" class="xref">RFC3464</a>]</span>.  The fields required, which may appear in any
 order, are as follows:<a href="#section-7.2.2-2" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-3">Report-Date:  A <span>[<a href="#RFC5322" class="xref">RFC5322</a>]</span>-formatted date expression indicating when the
-   transport failure occurred.<a href="#section-7.2.2-3" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-4">Report-Domain:  The domain-name about which the failed report was
-   generated.<a href="#section-7.2.2-4" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-5">Report-ID:  The Report-ID: that the report tried to use.<a href="#section-7.2.2-5" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-6">Report-Size:  The size, in bytes, of the report that was unable to be
-   sent.  This MUST represent the number of bytes that the Mail
-   Receiver attempted to send.  Where more than one transport system
-   was attempted, the sizes may be different; in such cases, separate
-   error reports MUST be generated so that this value matches the
-   actual attempt that was made.<a href="#section-7.2.2-6" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-7">Submitter:  The domain-name representing the Mail Receiver that
-   generated, but was unable to submit, the report.<a href="#section-7.2.2-7" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-8">Submitting-URI:  The URI(s) to which the Mail Receiver tried, but
-   failed, to submit the report.<a href="#section-7.2.2-8" class="pilcrow">¶</a></p>
-<p id="section-7.2.2-9">An additional text/plain part MAY be included that gives a human-
+<dl class="dlParallel" id="section-7.2.2-3">
+            <dt id="section-7.2.2-3.1">Report-Date:<br>
+            </dt>
+<dd id="section-7.2.2-3.2">A <span>[<a href="#RFC5322" class="xref">RFC5322</a>]</span>-formatted date expression indicating when the
+transport failure occurred.<a href="#section-7.2.2-3.2" class="pilcrow">¶</a>
+</dd>
+<dt id="section-7.2.2-3.3">Report-Domain:<br>
+            </dt>
+<dd id="section-7.2.2-3.4">The domain-name about which the failed report was generated.<a href="#section-7.2.2-3.4" class="pilcrow">¶</a>
+</dd>
+<dt id="section-7.2.2-3.5">Report-ID:<br>
+            </dt>
+<dd id="section-7.2.2-3.6">The Report-ID: that the report tried to use.<a href="#section-7.2.2-3.6" class="pilcrow">¶</a>
+</dd>
+<dt id="section-7.2.2-3.7">Report-Size:<br>
+            </dt>
+<dd id="section-7.2.2-3.8">The size, in bytes, of the report that was unable to be
+sent.  This MUST represent the number of bytes that the Mail
+Receiver attempted to send.  Where more than one transport system
+was attempted, the sizes may be different; in such cases, separate
+error reports MUST be generated so that this value matches the
+actual attempt that was made.<a href="#section-7.2.2-3.8" class="pilcrow">¶</a>
+</dd>
+<dt id="section-7.2.2-3.9">Submitter:</dt>
+<dd id="section-7.2.2-3.10">The domain-name representing the Mail Receiver that
+generated, but was unable to submit, the report.<a href="#section-7.2.2-3.10" class="pilcrow">¶</a>
+</dd>
+<dt id="section-7.2.2-3.11">Submitting-URI:<br>
+            </dt>
+<dd id="section-7.2.2-3.12">The URI(s) to which the Mail Receiver tried, but
+failed, to submit the report.<a href="#section-7.2.2-3.12" class="pilcrow">¶</a>
+</dd>
+</dl>
+<p id="section-7.2.2-4">An additional text/plain part MAY be included that gives a human-
 readable explanation of the above and MAY also include a URI that can
-be used to seek assistance.<a href="#section-7.2.2-9" class="pilcrow">¶</a></p>
+be used to seek assistance.<a href="#section-7.2.2-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -3178,47 +3296,53 @@ separated list of authentication mechanism names that produced an
 aligned identity, or the keyword "none" if none did.  ABNF:<a href="#section-7.3.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
-<p id="section-7.3.1-3">id-align     = "Identity-Alignment:" <a href="%22none%22%20/%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dmarc-method%20*(%20%5BCFWS%5D%20%22,%22%20%5BCFWS%5D%20dmarc-method">CFWS</a> )
-                 [CFWS]<a href="#section-7.3.1-3" class="pilcrow">¶</a></p>
-<p id="section-7.3.1-4">dmarc-method = ( "dkim" / "spf" )
-                 ; each may appear at most once in an id-align<a href="#section-7.3.1-4" class="pilcrow">¶</a></p>
-<ol start="3" type="1" class="normal type-1" id="section-7.3.1-5">
-            <li id="section-7.3.1-5.1">
-              <p id="section-7.3.1-5.1.1">Authentication Failure Type "dmarc" is defined, which is to be
+<div class="artwork art-text alignLeft" id="section-7.3.1-3">
+<pre>  id-align     = "Identity-Alignment:" [CFWS]
+                 ( "none" /
+                   dmarc-method *( [CFWS] "," [CFWS] dmarc-method ) )
+                 [CFWS]
+
+  dmarc-method = ( "dkim" / "spf" )
+                 ; each may appear at most once in an id-align
+</pre><a href="#section-7.3.1-3" class="pilcrow">¶</a>
+</div>
+<ol start="3" type="1" class="normal type-1" id="section-7.3.1-4">
+            <li id="section-7.3.1-4.1">
+              <p id="section-7.3.1-4.1.1">Authentication Failure Type "dmarc" is defined, which is to be
 used when a failure report is generated because some or all of
 the authentication mechanisms failed to produce aligned
 identifiers.  Note that a failure report generator MAY also
 independently produce an AFRF message for any or all of the
-underlying authentication methods.<a href="#section-7.3.1-5.1.1" class="pilcrow">¶</a></p>
+underlying authentication methods.<a href="#section-7.3.1-4.1.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-7.3.1-5.2">
-              <p id="section-7.3.1-5.2.1">Minimum Implementations<a href="#section-7.3.1-5.2.1" class="pilcrow">¶</a></p>
+<li id="section-7.3.1-4.2">
+              <p id="section-7.3.1-4.2.1">Minimum Implementations<a href="#section-7.3.1-4.2.1" class="pilcrow">¶</a></p>
 </li>
 </ol>
-<p id="section-7.3.1-6">A minimum implementation of DMARC has the following characteristics:<a href="#section-7.3.1-6" class="pilcrow">¶</a></p>
+<p id="section-7.3.1-5">A minimum implementation of DMARC has the following characteristics:<a href="#section-7.3.1-5" class="pilcrow">¶</a></p>
 <ul>
-<li id="section-7.3.1-7.1">
-              <p id="section-7.3.1-7.1.1">Is able to send and/or receive reports at least daily;<a href="#section-7.3.1-7.1.1" class="pilcrow">¶</a></p>
+<li id="section-7.3.1-6.1">
+              <p id="section-7.3.1-6.1.1">Is able to send and/or receive reports at least daily;<a href="#section-7.3.1-6.1.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-7.3.1-7.2">
-              <p id="section-7.3.1-7.2.1">Is able to send and/or receive reports using "mailto" URIs;<a href="#section-7.3.1-7.2.1" class="pilcrow">¶</a></p>
+<li id="section-7.3.1-6.2">
+              <p id="section-7.3.1-6.2.1">Is able to send and/or receive reports using "mailto" URIs;<a href="#section-7.3.1-6.2.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-7.3.1-7.3">
-              <p id="section-7.3.1-7.3.1">Other than in exceptional circumstances such as resource
+<li id="section-7.3.1-6.3">
+              <p id="section-7.3.1-6.3.1">Other than in exceptional circumstances such as resource
 exhaustion, can generate or accept a report up to ten megabytes in
-size;<a href="#section-7.3.1-7.3.1" class="pilcrow">¶</a></p>
+size;<a href="#section-7.3.1-6.3.1" class="pilcrow">¶</a></p>
 </li>
-<li id="section-7.3.1-7.4">
-              <p id="section-7.3.1-7.4.1">If acting as a Mail Receiver, fully implements the provisions of
-{#mail-receiver-actions}.<a href="#section-7.3.1-7.4.1" class="pilcrow">¶</a></p>
+<li id="section-7.3.1-6.4">
+              <p id="section-7.3.1-6.4.1">If acting as a Mail Receiver, fully implements the provisions of
+{#mail-receiver-actions}.<a href="#section-7.3.1-6.4.1" class="pilcrow">¶</a></p>
 </li>
 </ul>
-<ol start="9" type="1" class="normal type-1" id="section-7.3.1-8">
-            <li id="section-7.3.1-8.1">Privacy Considerations<a href="#section-7.3.1-8.1" class="pilcrow">¶</a>
+<ol start="9" type="1" class="normal type-1" id="section-7.3.1-7">
+            <li id="section-7.3.1-7.1">Privacy Considerations<a href="#section-7.3.1-7.1" class="pilcrow">¶</a>
 </li>
 </ol>
-<p id="section-7.3.1-9">This section discusses security issues specific to private data that
-may be included in the interactions that are part of DMARC.<a href="#section-7.3.1-9" class="pilcrow">¶</a></p>
+<p id="section-7.3.1-8">This section discusses security issues specific to private data that
+may be included in the interactions that are part of DMARC.<a href="#section-7.3.1-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -3541,34 +3665,85 @@ Mail Receivers.<a href="#section-9.4-2" class="pilcrow">¶</a></p>
 specification are to avoid changing the semantics of existing records
 when processed by implementations conforming to prior specifications.<a href="#section-9.4-3" class="pilcrow">¶</a></p>
 <p id="section-9.4-4">The initial set of entries in this registry is as follows:<a href="#section-9.4-4" class="pilcrow">¶</a></p>
-<p id="section-9.4-5">+----------+-------------+---------+------------------------------+
- | Tag Name | Reference   | Status  | Description                  |
- +----------+-------------+---------+------------------------------+
- |  adkim   |  RFC 7489   | current | DKIM alignment mode          |
- +----------+-------------+---------+------------------------------+
- |   aspf   |  RFC 7489   | current | SPF alignment mode           |
- +----------+-------------+---------+------------------------------+
- |    fo    |  RFC 7489   | current | Failure reporting options    |
- +----------+-------------+---------+------------------------------+
- |     p    |  RFC 7489   | current | Requested handling policy    |
- +----------+-------------+---------+------------------------------+
- |    pct   |  RFC 7489   | current | Sampling rate                |
- +----------+-------------+---------+------------------------------+
- |    rf    |  RFC 7489   | current | Failure reporting format(s)  |
- +----------+-------------+---------+------------------------------+
- |    ri    |  RFC 7489   | current | Aggregate Reporting interval |
- +----------+-------------+---------+------------------------------+
- |    rua   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | aggregate data               |
- +----------+-------------+---------+------------------------------+
- |    ruf   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | failure data                 |
- +----------+-------------+---------+------------------------------+
- |    sp    |  RFC 7489   | current | Requested handling policy    |
- |          |             |         | for subdomains               |
- +----------+-------------+---------+------------------------------+
- |     v    |  RFC 7489   | current | Specification version        |
- +----------+-------------+---------+------------------------------+<a href="#section-9.4-5" class="pilcrow">¶</a></p>
+<table class="center" id="table-1">
+          <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Tag Name</th>
+              <th class="text-left" rowspan="1" colspan="1">Reference</th>
+              <th class="text-left" rowspan="1" colspan="1">Status</th>
+              <th class="text-left" rowspan="1" colspan="1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">adkim</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">DKIM alignment mode</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">aspf</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">SPF alignment mode</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">fo</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Failure reporting options</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">p</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Requested handling policy</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">pct</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Sampling rate</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">rf</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Failure reporting format(s)</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">ri</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Aggregate Reporting interval</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">rua</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Reporting URI(s) for aggregate data</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">ruf</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Reporting URI(s) for failure data</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">sp</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Requested handling policy for subdomains</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">v</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Specification version</td>
+            </tr>
+          </tbody>
+        </table>
 </section>
 </div>
 <div id="dmarc-report-format-registry">
@@ -3590,14 +3765,25 @@ confirm that the provided specification adequately describes the
 report format and clearly presents how it would be used within the
 DMARC context by Domain Owners and Mail Receivers.<a href="#section-9.5-2" class="pilcrow">¶</a></p>
 <p id="section-9.5-3">The initial entry in this registry is as follows:<a href="#section-9.5-3" class="pilcrow">¶</a></p>
-<p id="section-9.5-4">+--------+-------------+---------+-----------------------------+
- | Format | Reference   | Status  | Description                 |
- |  Name  |             |         |                             |
- +--------+-------------+---------+-----------------------------+
- | afrf   |  RFC 7489   | current | Authentication Failure      |
- |        |             |         | Reporting Format (see       |
- |        |             |         | <span>[<a href="#RFC6591" class="xref">RFC6591</a>]</span>)                     |
- +--------+-------------+---------+-----------------------------+<a href="#section-9.5-4" class="pilcrow">¶</a></p>
+<table class="center" id="table-2">
+          <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Format Name</th>
+              <th class="text-left" rowspan="1" colspan="1">Reference</th>
+              <th class="text-left" rowspan="1" colspan="1">Status</th>
+              <th class="text-left" rowspan="1" colspan="1">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">afrf</td>
+              <td class="text-left" rowspan="1" colspan="1">RFC 7489</td>
+              <td class="text-left" rowspan="1" colspan="1">current</td>
+              <td class="text-left" rowspan="1" colspan="1">Authentication Failure Reporting Format (see <span>[<a href="#RFC6591" class="xref">RFC6591</a>]</span>)</td>
+            </tr>
+          </tbody>
+        </table>
 </section>
 </div>
 </section>
@@ -3749,54 +3935,54 @@ could reveal private information.<a href="#section-10.6-2" class="pilcrow">¶</a
 <a href="#section-11" class="section-number selfRef">11. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
-<dt id="RFC7208">[RFC7208]</dt>
-<dd>
-<span class="refAuthor">Kitterman, S.</span>, <span class="refTitle">"Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1"</span>, <span class="seriesInfo">RFC 7208</span>, <span class="seriesInfo">DOI 10.17487/RFC7208</span>, <time datetime="2014-04">April 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7208">https://www.rfc-editor.org/info/rfc7208</a>&gt;</span>. </dd>
-<dt id="RFC1035">[RFC1035]</dt>
-<dd>
-<span class="refAuthor">Mockapetris, P.</span>, <span class="refTitle">"Domain names - implementation and specification"</span>, <span class="seriesInfo">STD 13</span>, <span class="seriesInfo">RFC 1035</span>, <span class="seriesInfo">DOI 10.17487/RFC1035</span>, <time datetime="1987-11">November 1987</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc1035">https://www.rfc-editor.org/info/rfc1035</a>&gt;</span>. </dd>
-<dt id="RFC6651">[RFC6651]</dt>
-<dd>
-<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"Extensions to DomainKeys Identified Mail (DKIM) for Failure Reporting"</span>, <span class="seriesInfo">RFC 6651</span>, <span class="seriesInfo">DOI 10.17487/RFC6651</span>, <time datetime="2012-06">June 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6651">https://www.rfc-editor.org/info/rfc6651</a>&gt;</span>. </dd>
-<dt id="RFC2119">[RFC2119]</dt>
-<dd>
-<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </dd>
-<dt id="RFC6376">[RFC6376]</dt>
-<dd>
-<span class="refAuthor">Crocker, D., Ed.</span><span class="refAuthor">, Hansen, T., Ed.</span><span class="refAuthor">, and M. Kucherawy, Ed.</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Signatures"</span>, <span class="seriesInfo">STD 76</span>, <span class="seriesInfo">RFC 6376</span>, <span class="seriesInfo">DOI 10.17487/RFC6376</span>, <time datetime="2011-09">September 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6376">https://www.rfc-editor.org/info/rfc6376</a>&gt;</span>. </dd>
-<dt id="RFC5321">[RFC5321]</dt>
-<dd>
-<span class="refAuthor">Klensin, J.</span>, <span class="refTitle">"Simple Mail Transfer Protocol"</span>, <span class="seriesInfo">RFC 5321</span>, <span class="seriesInfo">DOI 10.17487/RFC5321</span>, <time datetime="2008-10">October 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5321">https://www.rfc-editor.org/info/rfc5321</a>&gt;</span>. </dd>
-<dt id="RFC4949">[RFC4949]</dt>
-<dd>
-<span class="refAuthor">Shirey, R.</span>, <span class="refTitle">"Internet Security Glossary, Version 2"</span>, <span class="seriesInfo">FYI 36</span>, <span class="seriesInfo">RFC 4949</span>, <span class="seriesInfo">DOI 10.17487/RFC4949</span>, <time datetime="2007-08">August 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4949">https://www.rfc-editor.org/info/rfc4949</a>&gt;</span>. </dd>
-<dt id="RFC2045">[RFC2045]</dt>
-<dd>
-<span class="refAuthor">Freed, N.</span><span class="refAuthor"> and N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 2045</span>, <span class="seriesInfo">DOI 10.17487/RFC2045</span>, <time datetime="1996-11">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2045">https://www.rfc-editor.org/info/rfc2045</a>&gt;</span>. </dd>
-<dt id="RFC6713">[RFC6713]</dt>
-<dd>
-<span class="refAuthor">Levine, J.</span>, <span class="refTitle">"The 'application/zlib' and 'application/gzip' Media Types"</span>, <span class="seriesInfo">RFC 6713</span>, <span class="seriesInfo">DOI 10.17487/RFC6713</span>, <time datetime="2012-08">August 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6713">https://www.rfc-editor.org/info/rfc6713</a>&gt;</span>. </dd>
-<dt id="RFC3986">[RFC3986]</dt>
-<dd>
-<span class="refAuthor">Berners-Lee, T.</span><span class="refAuthor">, Fielding, R.</span><span class="refAuthor">, and L. Masinter</span>, <span class="refTitle">"Uniform Resource Identifier (URI): Generic Syntax"</span>, <span class="seriesInfo">STD 66</span>, <span class="seriesInfo">RFC 3986</span>, <span class="seriesInfo">DOI 10.17487/RFC3986</span>, <time datetime="2005-01">January 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;</span>. </dd>
-<dt id="RFC4343">[RFC4343]</dt>
-<dd>
-<span class="refAuthor">Eastlake 3rd, D.</span>, <span class="refTitle">"Domain Name System (DNS) Case Insensitivity Clarification"</span>, <span class="seriesInfo">RFC 4343</span>, <span class="seriesInfo">DOI 10.17487/RFC4343</span>, <time datetime="2006-01">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4343">https://www.rfc-editor.org/info/rfc4343</a>&gt;</span>. </dd>
-<dt id="RFC6591">[RFC6591]</dt>
-<dd>
-<span class="refAuthor">Fontana, H.</span>, <span class="refTitle">"Authentication Failure Reporting Using the Abuse Reporting Format"</span>, <span class="seriesInfo">RFC 6591</span>, <span class="seriesInfo">DOI 10.17487/RFC6591</span>, <time datetime="2012-04">April 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6591">https://www.rfc-editor.org/info/rfc6591</a>&gt;</span>. </dd>
-<dt id="RFC5890">[RFC5890]</dt>
-<dd>
-<span class="refAuthor">Klensin, J.</span>, <span class="refTitle">"Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework"</span>, <span class="seriesInfo">RFC 5890</span>, <span class="seriesInfo">DOI 10.17487/RFC5890</span>, <time datetime="2010-08">August 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5890">https://www.rfc-editor.org/info/rfc5890</a>&gt;</span>. </dd>
 <dt id="RFC5322">[RFC5322]</dt>
 <dd>
 <span class="refAuthor">Resnick, P., Ed.</span>, <span class="refTitle">"Internet Message Format"</span>, <span class="seriesInfo">RFC 5322</span>, <span class="seriesInfo">DOI 10.17487/RFC5322</span>, <time datetime="2008-10">October 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5322">https://www.rfc-editor.org/info/rfc5322</a>&gt;</span>. </dd>
-<dt id="RFC6652">[RFC6652]</dt>
+<dt id="RFC4343">[RFC4343]</dt>
 <dd>
-<span class="refAuthor">Kitterman, S.</span>, <span class="refTitle">"Sender Policy Framework (SPF) Authentication Failure Reporting Using the Abuse Reporting Format"</span>, <span class="seriesInfo">RFC 6652</span>, <span class="seriesInfo">DOI 10.17487/RFC6652</span>, <time datetime="2012-06">June 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6652">https://www.rfc-editor.org/info/rfc6652</a>&gt;</span>. </dd>
+<span class="refAuthor">Eastlake 3rd, D.</span>, <span class="refTitle">"Domain Name System (DNS) Case Insensitivity Clarification"</span>, <span class="seriesInfo">RFC 4343</span>, <span class="seriesInfo">DOI 10.17487/RFC4343</span>, <time datetime="2006-01">January 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4343">https://www.rfc-editor.org/info/rfc4343</a>&gt;</span>. </dd>
+<dt id="RFC1035">[RFC1035]</dt>
+<dd>
+<span class="refAuthor">Mockapetris, P.</span>, <span class="refTitle">"Domain names - implementation and specification"</span>, <span class="seriesInfo">STD 13</span>, <span class="seriesInfo">RFC 1035</span>, <span class="seriesInfo">DOI 10.17487/RFC1035</span>, <time datetime="1987-11">November 1987</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc1035">https://www.rfc-editor.org/info/rfc1035</a>&gt;</span>. </dd>
+<dt id="RFC4949">[RFC4949]</dt>
+<dd>
+<span class="refAuthor">Shirey, R.</span>, <span class="refTitle">"Internet Security Glossary, Version 2"</span>, <span class="seriesInfo">FYI 36</span>, <span class="seriesInfo">RFC 4949</span>, <span class="seriesInfo">DOI 10.17487/RFC4949</span>, <time datetime="2007-08">August 2007</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4949">https://www.rfc-editor.org/info/rfc4949</a>&gt;</span>. </dd>
+<dt id="RFC2119">[RFC2119]</dt>
+<dd>
+<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </dd>
+<dt id="RFC3986">[RFC3986]</dt>
+<dd>
+<span class="refAuthor">Berners-Lee, T.</span><span class="refAuthor">, Fielding, R.</span><span class="refAuthor">, and L. Masinter</span>, <span class="refTitle">"Uniform Resource Identifier (URI): Generic Syntax"</span>, <span class="seriesInfo">STD 66</span>, <span class="seriesInfo">RFC 3986</span>, <span class="seriesInfo">DOI 10.17487/RFC3986</span>, <time datetime="2005-01">January 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc3986">https://www.rfc-editor.org/info/rfc3986</a>&gt;</span>. </dd>
+<dt id="RFC2045">[RFC2045]</dt>
+<dd>
+<span class="refAuthor">Freed, N.</span><span class="refAuthor"> and N. Borenstein</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies"</span>, <span class="seriesInfo">RFC 2045</span>, <span class="seriesInfo">DOI 10.17487/RFC2045</span>, <time datetime="1996-11">November 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2045">https://www.rfc-editor.org/info/rfc2045</a>&gt;</span>. </dd>
+<dt id="RFC6376">[RFC6376]</dt>
+<dd>
+<span class="refAuthor">Crocker, D., Ed.</span><span class="refAuthor">, Hansen, T., Ed.</span><span class="refAuthor">, and M. Kucherawy, Ed.</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Signatures"</span>, <span class="seriesInfo">STD 76</span>, <span class="seriesInfo">RFC 6376</span>, <span class="seriesInfo">DOI 10.17487/RFC6376</span>, <time datetime="2011-09">September 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6376">https://www.rfc-editor.org/info/rfc6376</a>&gt;</span>. </dd>
+<dt id="RFC7208">[RFC7208]</dt>
+<dd>
+<span class="refAuthor">Kitterman, S.</span>, <span class="refTitle">"Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1"</span>, <span class="seriesInfo">RFC 7208</span>, <span class="seriesInfo">DOI 10.17487/RFC7208</span>, <time datetime="2014-04">April 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7208">https://www.rfc-editor.org/info/rfc7208</a>&gt;</span>. </dd>
+<dt id="RFC5890">[RFC5890]</dt>
+<dd>
+<span class="refAuthor">Klensin, J.</span>, <span class="refTitle">"Internationalized Domain Names for Applications (IDNA): Definitions and Document Framework"</span>, <span class="seriesInfo">RFC 5890</span>, <span class="seriesInfo">DOI 10.17487/RFC5890</span>, <time datetime="2010-08">August 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5890">https://www.rfc-editor.org/info/rfc5890</a>&gt;</span>. </dd>
+<dt id="RFC6713">[RFC6713]</dt>
+<dd>
+<span class="refAuthor">Levine, J.</span>, <span class="refTitle">"The 'application/zlib' and 'application/gzip' Media Types"</span>, <span class="seriesInfo">RFC 6713</span>, <span class="seriesInfo">DOI 10.17487/RFC6713</span>, <time datetime="2012-08">August 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6713">https://www.rfc-editor.org/info/rfc6713</a>&gt;</span>. </dd>
+<dt id="RFC6651">[RFC6651]</dt>
+<dd>
+<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"Extensions to DomainKeys Identified Mail (DKIM) for Failure Reporting"</span>, <span class="seriesInfo">RFC 6651</span>, <span class="seriesInfo">DOI 10.17487/RFC6651</span>, <time datetime="2012-06">June 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6651">https://www.rfc-editor.org/info/rfc6651</a>&gt;</span>. </dd>
+<dt id="RFC5321">[RFC5321]</dt>
+<dd>
+<span class="refAuthor">Klensin, J.</span>, <span class="refTitle">"Simple Mail Transfer Protocol"</span>, <span class="seriesInfo">RFC 5321</span>, <span class="seriesInfo">DOI 10.17487/RFC5321</span>, <time datetime="2008-10">October 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5321">https://www.rfc-editor.org/info/rfc5321</a>&gt;</span>. </dd>
 <dt id="RFC5234">[RFC5234]</dt>
 <dd>
 <span class="refAuthor">Crocker, D., Ed.</span><span class="refAuthor"> and P. Overell</span>, <span class="refTitle">"Augmented BNF for Syntax Specifications: ABNF"</span>, <span class="seriesInfo">STD 68</span>, <span class="seriesInfo">RFC 5234</span>, <span class="seriesInfo">DOI 10.17487/RFC5234</span>, <time datetime="2008-01">January 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5234">https://www.rfc-editor.org/info/rfc5234</a>&gt;</span>. </dd>
+<dt id="RFC6652">[RFC6652]</dt>
+<dd>
+<span class="refAuthor">Kitterman, S.</span>, <span class="refTitle">"Sender Policy Framework (SPF) Authentication Failure Reporting Using the Abuse Reporting Format"</span>, <span class="seriesInfo">RFC 6652</span>, <span class="seriesInfo">DOI 10.17487/RFC6652</span>, <time datetime="2012-06">June 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6652">https://www.rfc-editor.org/info/rfc6652</a>&gt;</span>. </dd>
+<dt id="RFC6591">[RFC6591]</dt>
+<dd>
+<span class="refAuthor">Fontana, H.</span>, <span class="refTitle">"Authentication Failure Reporting Using the Abuse Reporting Format"</span>, <span class="seriesInfo">RFC 6591</span>, <span class="seriesInfo">DOI 10.17487/RFC6591</span>, <time datetime="2012-04">April 2012</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6591">https://www.rfc-editor.org/info/rfc6591</a>&gt;</span>. </dd>
 </dl>
 </section>
 <section id="section-12">
@@ -3804,48 +3990,48 @@ could reveal private information.<a href="#section-10.6-2" class="pilcrow">¶</a
 <a href="#section-12" class="section-number selfRef">12. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
       </h2>
 <dl class="references">
-<dt id="RFC3464">[RFC3464]</dt>
-<dd>
-<span class="refAuthor">Moore, K.</span><span class="refAuthor"> and G. Vaudreuil</span>, <span class="refTitle">"An Extensible Message Format for Delivery Status Notifications"</span>, <span class="seriesInfo">RFC 3464</span>, <span class="seriesInfo">DOI 10.17487/RFC3464</span>, <time datetime="2003-01">January 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc3464">https://www.rfc-editor.org/info/rfc3464</a>&gt;</span>. </dd>
-<dt id="RFC6377">[RFC6377]</dt>
-<dd>
-<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) and Mailing Lists"</span>, <span class="seriesInfo">BCP 167</span>, <span class="seriesInfo">RFC 6377</span>, <span class="seriesInfo">DOI 10.17487/RFC6377</span>, <time datetime="2011-09">September 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6377">https://www.rfc-editor.org/info/rfc6377</a>&gt;</span>. </dd>
 <dt id="RFC5863">[RFC5863]</dt>
 <dd>
 <span class="refAuthor">Hansen, T.</span><span class="refAuthor">, Siegel, E.</span><span class="refAuthor">, Hallam-Baker, P.</span><span class="refAuthor">, and D. Crocker</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Development, Deployment, and Operations"</span>, <span class="seriesInfo">RFC 5863</span>, <span class="seriesInfo">DOI 10.17487/RFC5863</span>, <time datetime="2010-05">May 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5863">https://www.rfc-editor.org/info/rfc5863</a>&gt;</span>. </dd>
-<dt id="RFC7001">[RFC7001]</dt>
+<dt id="RFC3464">[RFC3464]</dt>
 <dd>
-<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"Message Header Field for Indicating Message Authentication Status"</span>, <span class="seriesInfo">RFC 7001</span>, <span class="seriesInfo">DOI 10.17487/RFC7001</span>, <time datetime="2013-09">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7001">https://www.rfc-editor.org/info/rfc7001</a>&gt;</span>. </dd>
-<dt id="RFC4686">[RFC4686]</dt>
-<dd>
-<span class="refAuthor">Fenton, J.</span>, <span class="refTitle">"Analysis of Threats Motivating DomainKeys Identified Mail (DKIM)"</span>, <span class="seriesInfo">RFC 4686</span>, <span class="seriesInfo">DOI 10.17487/RFC4686</span>, <time datetime="2006-09">September 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4686">https://www.rfc-editor.org/info/rfc4686</a>&gt;</span>. </dd>
-<dt id="RFC5598">[RFC5598]</dt>
-<dd>
-<span class="refAuthor">Crocker, D.</span>, <span class="refTitle">"Internet Mail Architecture"</span>, <span class="seriesInfo">RFC 5598</span>, <span class="seriesInfo">DOI 10.17487/RFC5598</span>, <time datetime="2009-07">July 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5598">https://www.rfc-editor.org/info/rfc5598</a>&gt;</span>. </dd>
-<dt id="RFC8174">[RFC8174]</dt>
-<dd>
-<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </dd>
+<span class="refAuthor">Moore, K.</span><span class="refAuthor"> and G. Vaudreuil</span>, <span class="refTitle">"An Extensible Message Format for Delivery Status Notifications"</span>, <span class="seriesInfo">RFC 3464</span>, <span class="seriesInfo">DOI 10.17487/RFC3464</span>, <time datetime="2003-01">January 2003</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc3464">https://www.rfc-editor.org/info/rfc3464</a>&gt;</span>. </dd>
 <dt id="RFC5965">[RFC5965]</dt>
 <dd>
 <span class="refAuthor">Shafranovich, Y.</span><span class="refAuthor">, Levine, J.</span><span class="refAuthor">, and M. Kucherawy</span>, <span class="refTitle">"An Extensible Format for Email Feedback Reports"</span>, <span class="seriesInfo">RFC 5965</span>, <span class="seriesInfo">DOI 10.17487/RFC5965</span>, <time datetime="2010-08">August 2010</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5965">https://www.rfc-editor.org/info/rfc5965</a>&gt;</span>. </dd>
+<dt id="RFC4686">[RFC4686]</dt>
+<dd>
+<span class="refAuthor">Fenton, J.</span>, <span class="refTitle">"Analysis of Threats Motivating DomainKeys Identified Mail (DKIM)"</span>, <span class="seriesInfo">RFC 4686</span>, <span class="seriesInfo">DOI 10.17487/RFC4686</span>, <time datetime="2006-09">September 2006</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4686">https://www.rfc-editor.org/info/rfc4686</a>&gt;</span>. </dd>
 <dt id="RFC5226">[RFC5226]</dt>
 <dd>
 <span class="refAuthor">Narten, T.</span><span class="refAuthor"> and H. Alvestrand</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">RFC 5226</span>, <span class="seriesInfo">DOI 10.17487/RFC5226</span>, <time datetime="2008-05">May 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5226">https://www.rfc-editor.org/info/rfc5226</a>&gt;</span>. </dd>
-<dt id="RFC2142">[RFC2142]</dt>
-<dd>
-<span class="refAuthor">Crocker, D.</span>, <span class="refTitle">"Mailbox Names for Common Services, Roles and Functions"</span>, <span class="seriesInfo">RFC 2142</span>, <span class="seriesInfo">DOI 10.17487/RFC2142</span>, <time datetime="1997-05">May 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2142">https://www.rfc-editor.org/info/rfc2142</a>&gt;</span>. </dd>
-<dt id="RFC5617">[RFC5617]</dt>
-<dd>
-<span class="refAuthor">Allman, E.</span><span class="refAuthor">, Fenton, J.</span><span class="refAuthor">, Delany, M.</span><span class="refAuthor">, and J. Levine</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Author Domain Signing Practices (ADSP)"</span>, <span class="seriesInfo">RFC 5617</span>, <span class="seriesInfo">DOI 10.17487/RFC5617</span>, <time datetime="2009-08">August 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5617">https://www.rfc-editor.org/info/rfc5617</a>&gt;</span>. </dd>
-<dt id="RFC5585">[RFC5585]</dt>
-<dd>
-<span class="refAuthor">Hansen, T.</span><span class="refAuthor">, Crocker, D.</span><span class="refAuthor">, and P. Hallam-Baker</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Service Overview"</span>, <span class="seriesInfo">RFC 5585</span>, <span class="seriesInfo">DOI 10.17487/RFC5585</span>, <time datetime="2009-07">July 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5585">https://www.rfc-editor.org/info/rfc5585</a>&gt;</span>. </dd>
 <dt id="Best-Guess-SPF">[Best-Guess-SPF]</dt>
 <dd>
 <span class="refAuthor">Kitterman, S.</span>, <span class="refTitle">"Sender Policy Framework: Best guess record (FAQ entry)"</span>, <time datetime="2010-05">May 2010</time>, <span>&lt;<a href="http://www.openspf.org/FAQ/Best_guess_record">http://www.openspf.org/FAQ/Best_guess_record</a>&gt;</span>. </dd>
 <dt id="RFC4033">[RFC4033]</dt>
 <dd>
 <span class="refAuthor">Arends, R.</span><span class="refAuthor">, Austein, R.</span><span class="refAuthor">, Larson, M.</span><span class="refAuthor">, Massey, D.</span><span class="refAuthor">, and S. Rose</span>, <span class="refTitle">"DNS Security Introduction and Requirements"</span>, <span class="seriesInfo">RFC 4033</span>, <span class="seriesInfo">DOI 10.17487/RFC4033</span>, <time datetime="2005-03">March 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc4033">https://www.rfc-editor.org/info/rfc4033</a>&gt;</span>. </dd>
+<dt id="RFC5617">[RFC5617]</dt>
+<dd>
+<span class="refAuthor">Allman, E.</span><span class="refAuthor">, Fenton, J.</span><span class="refAuthor">, Delany, M.</span><span class="refAuthor">, and J. Levine</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Author Domain Signing Practices (ADSP)"</span>, <span class="seriesInfo">RFC 5617</span>, <span class="seriesInfo">DOI 10.17487/RFC5617</span>, <time datetime="2009-08">August 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5617">https://www.rfc-editor.org/info/rfc5617</a>&gt;</span>. </dd>
+<dt id="RFC7001">[RFC7001]</dt>
+<dd>
+<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"Message Header Field for Indicating Message Authentication Status"</span>, <span class="seriesInfo">RFC 7001</span>, <span class="seriesInfo">DOI 10.17487/RFC7001</span>, <time datetime="2013-09">September 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc7001">https://www.rfc-editor.org/info/rfc7001</a>&gt;</span>. </dd>
+<dt id="RFC8174">[RFC8174]</dt>
+<dd>
+<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </dd>
+<dt id="RFC5585">[RFC5585]</dt>
+<dd>
+<span class="refAuthor">Hansen, T.</span><span class="refAuthor">, Crocker, D.</span><span class="refAuthor">, and P. Hallam-Baker</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) Service Overview"</span>, <span class="seriesInfo">RFC 5585</span>, <span class="seriesInfo">DOI 10.17487/RFC5585</span>, <time datetime="2009-07">July 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5585">https://www.rfc-editor.org/info/rfc5585</a>&gt;</span>. </dd>
+<dt id="RFC2142">[RFC2142]</dt>
+<dd>
+<span class="refAuthor">Crocker, D.</span>, <span class="refTitle">"Mailbox Names for Common Services, Roles and Functions"</span>, <span class="seriesInfo">RFC 2142</span>, <span class="seriesInfo">DOI 10.17487/RFC2142</span>, <time datetime="1997-05">May 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2142">https://www.rfc-editor.org/info/rfc2142</a>&gt;</span>. </dd>
+<dt id="RFC6377">[RFC6377]</dt>
+<dd>
+<span class="refAuthor">Kucherawy, M.</span>, <span class="refTitle">"DomainKeys Identified Mail (DKIM) and Mailing Lists"</span>, <span class="seriesInfo">BCP 167</span>, <span class="seriesInfo">RFC 6377</span>, <span class="seriesInfo">DOI 10.17487/RFC6377</span>, <time datetime="2011-09">September 2011</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc6377">https://www.rfc-editor.org/info/rfc6377</a>&gt;</span>. </dd>
+<dt id="RFC5598">[RFC5598]</dt>
+<dd>
+<span class="refAuthor">Crocker, D.</span>, <span class="refTitle">"Internet Mail Architecture"</span>, <span class="seriesInfo">RFC 5598</span>, <span class="seriesInfo">DOI 10.17487/RFC5598</span>, <time datetime="2009-07">July 2009</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc5598">https://www.rfc-editor.org/info/rfc5598</a>&gt;</span>. </dd>
 </dl>
 </section>
 <div id="technology-considerations">
@@ -4247,14 +4433,21 @@ policy (no "pct" tag present, so the default of 100% applies)<a href="#section-b
 </ul>
 <p id="section-b.2.1-5">The DMARC policy record might look like this when retrieved using a
 common command-line tool:<a href="#section-b.2.1-5" class="pilcrow">¶</a></p>
-<p id="section-b.2.1-6">% dig +short TXT _dmarc.example.com.
-  "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com"<a href="#section-b.2.1-6" class="pilcrow">¶</a></p>
+<div class="artwork art-text alignLeft" id="section-b.2.1-6">
+<pre>  % dig +short TXT _dmarc.example.com.
+  "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com"
+</pre><a href="#section-b.2.1-6" class="pilcrow">¶</a>
+</div>
 <p id="section-b.2.1-7">To publish such a record, the DNS administrator for the Domain Owner
 creates an entry like the following in the appropriate zone file
 (following the conventional zone file format):<a href="#section-b.2.1-7" class="pilcrow">¶</a></p>
-<p id="section-b.2.1-8">; DMARC record for the domain example.com<a href="#section-b.2.1-8" class="pilcrow">¶</a></p>
-<p id="section-b.2.1-9">_dmarc  IN TXT ( "v=DMARC1; p=none; "
-                   "rua=mailto:dmarc-feedback@example.com" )<a href="#section-b.2.1-9" class="pilcrow">¶</a></p>
+<div class="artwork art-text alignLeft" id="section-b.2.1-8">
+<pre>  ; DMARC record for the domain example.com
+
+  _dmarc  IN TXT ( "v=DMARC1; p=none; "
+                   "rua=mailto:dmarc-feedback@example.com" )
+</pre><a href="#section-b.2.1-8" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 <div id="entire-domain-monitoring-only-per-message-reports">
@@ -4283,16 +4476,23 @@ address "auth-reports@example.com"
 <p id="section-b.2.2-5">The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):<a href="#section-b.2.2-5" class="pilcrow">¶</a></p>
-<p id="section-b.2.2-6">% dig +short TXT _dmarc.example.com.
+<div class="artwork art-text alignLeft" id="section-b.2.2-6">
+<pre>  % dig +short TXT _dmarc.example.com.
   "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
-   ruf=mailto:auth-reports@example.com"<a href="#section-b.2.2-6" class="pilcrow">¶</a></p>
+   ruf=mailto:auth-reports@example.com"
+</pre><a href="#section-b.2.2-6" class="pilcrow">¶</a>
+</div>
 <p id="section-b.2.2-7">To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):<a href="#section-b.2.2-7" class="pilcrow">¶</a></p>
-<p id="section-b.2.2-8">; DMARC record for the domain example.com<a href="#section-b.2.2-8" class="pilcrow">¶</a></p>
-<p id="section-b.2.2-9">_dmarc  IN TXT ( "v=DMARC1; p=none; "
+<div class="artwork art-text alignLeft" id="section-b.2.2-8">
+<pre> ; DMARC record for the domain example.com
+
+ _dmarc  IN TXT ( "v=DMARC1; p=none; "
                   "rua=mailto:dmarc-feedback@example.com; "
-                  "ruf=mailto:auth-reports@example.com" )<a href="#section-b.2.2-9" class="pilcrow">¶</a></p>
+                  "ruf=mailto:auth-reports@example.com" )
+</pre><a href="#section-b.2.2-8" class="pilcrow">¶</a>
+</div>
 </section>
 </div>
 <div id="per-message-failure-reports-directed-to-third-party">
@@ -4317,43 +4517,50 @@ address "auth-reports@thirdparty.example.net"
 <p id="section-b.2.3-4">The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):<a href="#section-b.2.3-4" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-5">% dig +short TXT _dmarc.example.com.
+<div class="artwork art-text alignLeft" id="section-b.2.3-5">
+<pre>  % dig +short TXT _dmarc.example.com.
   "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
-   ruf=mailto:auth-reports@thirdparty.example.net"<a href="#section-b.2.3-5" class="pilcrow">¶</a></p>
+   ruf=mailto:auth-reports@thirdparty.example.net"
+</pre><a href="#section-b.2.3-5" class="pilcrow">¶</a>
+</div>
 <p id="section-b.2.3-6">To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):<a href="#section-b.2.3-6" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-7">; DMARC record for the domain example.com<a href="#section-b.2.3-7" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-8">_dmarc IN TXT ( "v=DMARC1; p=none; "
+<div class="artwork art-text alignLeft" id="section-b.2.3-7">
+<pre>  ; DMARC record for the domain example.com
+
+  _dmarc IN TXT ( "v=DMARC1; p=none; "
                   "rua=mailto:dmarc-feedback@example.com; "
-                  "ruf=mailto:auth-reports@thirdparty.example.net" )<a href="#section-b.2.3-8" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-9">Because the address used in the "ruf" tag is outside the
+                  "ruf=mailto:auth-reports@thirdparty.example.net" )
+</pre><a href="#section-b.2.3-7" class="pilcrow">¶</a>
+</div>
+<p id="section-b.2.3-8">Because the address used in the "ruf" tag is outside the
 Organizational Domain in which this record is published, conforming
 Receivers will implement additional checks as described in
 {#verifying-external-destinations} of this document.  In order to pass these additional
 checks, the third party will need to publish an additional DNS record
-as follows:<a href="#section-b.2.3-9" class="pilcrow">¶</a></p>
+as follows:<a href="#section-b.2.3-8" class="pilcrow">¶</a></p>
 <ul>
-<li id="section-b.2.3-10.1">Given the DMARC record published by the Domain Owner at
+<li id="section-b.2.3-9.1">Given the DMARC record published by the Domain Owner at
 "<em>dmarc.example.com", the DNS administrator for the third party
 will need to publish a TXT resource record at
 "example.com.</em>report._dmarc.thirdparty.example.net" with the value
-"v=DMARC1;".<a href="#section-b.2.3-10.1" class="pilcrow">¶</a>
+"v=DMARC1;".<a href="#section-b.2.3-9.1" class="pilcrow">¶</a>
 </li>
 </ul>
-<p id="section-b.2.3-11">The resulting DNS record might look like this when retrieved using a
+<p id="section-b.2.3-10">The resulting DNS record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
-line but is wrapped here for publication):<a href="#section-b.2.3-11" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-12">% dig +short TXT example.com.<em>report.</em>dmarc.thirdparty.example.net
-  "v=DMARC1;"<a href="#section-b.2.3-12" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-13">To publish such a record, the DNS administrator for example.net might
+line but is wrapped here for publication):<a href="#section-b.2.3-10" class="pilcrow">¶</a></p>
+<p id="section-b.2.3-11">% dig +short TXT example.com.<em>report.</em>dmarc.thirdparty.example.net
+  "v=DMARC1;"<a href="#section-b.2.3-11" class="pilcrow">¶</a></p>
+<p id="section-b.2.3-12">To publish such a record, the DNS administrator for example.net might
 create an entry like the following in the appropriate zone file
-(following the conventional zone file format):<a href="#section-b.2.3-13" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-14">; zone file for thirdparty.example.net
-  ; Accept DMARC failure reports on behalf of example.com<a href="#section-b.2.3-14" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-15">example.com.<em>report.</em>dmarc   IN   TXT    "v=DMARC1;"<a href="#section-b.2.3-15" class="pilcrow">¶</a></p>
-<p id="section-b.2.3-16">Intermediaries and other third parties should refer to {#verifying-external-destinations}
-for the full details of this mechanism.<a href="#section-b.2.3-16" class="pilcrow">¶</a></p>
+(following the conventional zone file format):<a href="#section-b.2.3-12" class="pilcrow">¶</a></p>
+<p id="section-b.2.3-13">; zone file for thirdparty.example.net
+  ; Accept DMARC failure reports on behalf of example.com<a href="#section-b.2.3-13" class="pilcrow">¶</a></p>
+<p id="section-b.2.3-14">example.com.<em>report.</em>dmarc   IN   TXT    "v=DMARC1;"<a href="#section-b.2.3-14" class="pilcrow">¶</a></p>
+<p id="section-b.2.3-15">Intermediaries and other third parties should refer to {#verifying-external-destinations}
+for the full details of this mechanism.<a href="#section-b.2.3-15" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="subdomain-sampling-and-multiple-aggregate-report-uris">
@@ -4548,7 +4755,8 @@ come to an understanding of how its domain is being misused.<a href="#section-b.
 <p id="section-b.5-2">mailto:dmarc-feedback@example.com<a href="#section-b.5-2" class="pilcrow">¶</a></p>
 <p id="section-b.5-3">A sample aggregate report from the Mail Receiver at
 mail.receiver.example follows:<a href="#section-b.5-3" class="pilcrow">¶</a></p>
-<p id="section-b.5-4">DKIM-Signature: v=1; ...; d=mail.receiver.example; ...
+<div class="artwork art-text alignLeft" id="section-b.5-4">
+<pre>  DKIM-Signature: v=1; ...; d=mail.receiver.example; ...
   From: dmarc-reporting@mail.receiver.example
   Date: Fri, Feb 15 2002 16:54:30 -0800
   To: dmarc-feedback@example.com
@@ -4557,15 +4765,18 @@ mail.receiver.example follows:<a href="#section-b.5-3" class="pilcrow">¶</a></p
       Report-ID: &lt;2002.02.15.1&gt;
   MIME-Version: 1.0
   Content-Type: multipart/alternative;
-      boundary="----=<em>NextPart</em>000<em>024E</em>01CC9B0A.AFE54C00"
-  Content-Language: en-us<a href="#section-b.5-4" class="pilcrow">¶</a></p>
-<p id="section-b.5-5">This is a multipart message in MIME format.<a href="#section-b.5-5" class="pilcrow">¶</a></p>
-<p id="section-b.5-6">------=<em>NextPart</em>000<em>024E</em>01CC9B0A.AFE54C00
+      boundary="----=_NextPart_000_024E_01CC9B0A.AFE54C00"
+  Content-Language: en-us
+
+  This is a multipart message in MIME format.
+
+  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
   Content-Type: text/plain; charset="us-ascii"
-  Content-Transfer-Encoding: 7bit<a href="#section-b.5-6" class="pilcrow">¶</a></p>
-<p id="section-b.5-7">This is an aggregate report from mail.receiver.example.<a href="#section-b.5-7" class="pilcrow">¶</a></p>
-<div class="artwork art-text alignLeft" id="section-b.5-8">
-<pre>  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
+  Content-Transfer-Encoding: 7bit
+
+  This is an aggregate report from mail.receiver.example.
+
+  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
   Content-Type: application/gzip
   Content-Transfer-Encoding: base64
   Content-Disposition: attachment;
@@ -4575,12 +4786,12 @@ mail.receiver.example follows:<a href="#section-b.5-3" class="pilcrow">¶</a></p
   &lt;gzipped content of report&gt;
 
   ------=_NextPart_000_024E_01CC9B0A.AFE54C00--
-</pre><a href="#section-b.5-8" class="pilcrow">¶</a>
+</pre><a href="#section-b.5-4" class="pilcrow">¶</a>
 </div>
-<p id="section-b.5-9">Not shown in the above example is that the Mail Receiver's feedback
+<p id="section-b.5-5">Not shown in the above example is that the Mail Receiver's feedback
 should be authenticated using SPF.  Also, the value of the "filename"
 MIME parameter is wrapped for printing in this specification but
-would normally appear as one continuous string.<a href="#section-b.5-9" class="pilcrow">¶</a></p>
+would normally appear as one continuous string.<a href="#section-b.5-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -4863,25 +5074,43 @@ set to 1.<a href="#section-appendix.c-2" class="pilcrow">¶</a></p>
 </pre><a href="#section-appendix.c-3" class="pilcrow">¶</a>
 </div>
 <p id="section-appendix.c-4">Descriptions of the PolicyOverrideTypes:<a href="#section-appendix.c-4" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-5">forwarded:  The message was relayed via a known forwarder, or local
-   heuristics identified the message as likely having been forwarded.
-   There is no expectation that authentication would pass.<a href="#section-appendix.c-5" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-6">local_policy:  The Mail Receiver's local policy exempted the message
-   from being subjected to the Domain Owner's requested policy
-   action.<a href="#section-appendix.c-6" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-7">mailing_list:  Local heuristics determined that the message arrived
-   via a mailing list, and thus authentication of the original
-   message was not expected to succeed.<a href="#section-appendix.c-7" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-8">other:  Some policy exception not covered by the other entries in
-   this list occurred.  Additional detail can be found in the
-   PolicyOverrideReason's "comment" field.<a href="#section-appendix.c-8" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-9">sampled_out:  The message was exempted from application of policy by
-   the "pct" setting in the DMARC policy record.<a href="#section-appendix.c-9" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-10">trusted_forwarder:  Message authentication failure was anticipated by
-   other evidence linking the message to a locally maintained list of
-   known and trusted forwarders.<a href="#section-appendix.c-10" class="pilcrow">¶</a></p>
-<p id="section-appendix.c-11">The "version" for reports generated per this specification MUST be
-the value 1.0.<a href="#section-appendix.c-11" class="pilcrow">¶</a></p>
+<dl class="dlParallel" id="section-appendix.c-5">
+        <dt id="section-appendix.c-5.1">forwarded:<br>
+        </dt>
+<dd id="section-appendix.c-5.2">The message was relayed via a known forwarder, or local
+heuristics identified the message as likely having been forwarded.
+There is no expectation that authentication would pass.<a href="#section-appendix.c-5.2" class="pilcrow">¶</a>
+</dd>
+<dt id="section-appendix.c-5.3">local_policy:</dt>
+<dd id="section-appendix.c-5.4">The Mail Receiver's local policy exempted the message
+from being subjected to the Domain Owner's requested policy action.<a href="#section-appendix.c-5.4" class="pilcrow">¶</a>
+</dd>
+<dt id="section-appendix.c-5.5">mailing_list:<br>
+        </dt>
+<dd id="section-appendix.c-5.6">Local heuristics determined that the message arrived
+via a mailing list, and thus authentication of the original
+message was not expected to succeed.<a href="#section-appendix.c-5.6" class="pilcrow">¶</a>
+</dd>
+<dt id="section-appendix.c-5.7">other:<br>
+        </dt>
+<dd id="section-appendix.c-5.8">Some policy exception not covered by the other entries in
+this list occurred.  Additional detail can be found in the
+PolicyOverrideReason's "comment" field.<a href="#section-appendix.c-5.8" class="pilcrow">¶</a>
+</dd>
+<dt id="section-appendix.c-5.9">sampled_out:<br>
+        </dt>
+<dd id="section-appendix.c-5.10">The message was exempted from application of policy by
+the "pct" setting in the DMARC policy record.<a href="#section-appendix.c-5.10" class="pilcrow">¶</a>
+</dd>
+<dt id="section-appendix.c-5.11">trusted_forwarder:<br>
+        </dt>
+<dd id="section-appendix.c-5.12">Message authentication failure was anticipated by
+other evidence linking the message to a locally maintained list of
+known and trusted forwarders.<a href="#section-appendix.c-5.12" class="pilcrow">¶</a>
+</dd>
+</dl>
+<p id="section-appendix.c-6">The "version" for reports generated per this specification MUST be
+the value 1.0.<a href="#section-appendix.c-6" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgements">

@@ -3,7 +3,7 @@
 <rfc version="3" ipr="trust200902" docName="draft-dmarc-dmarcbis-00" submissionType="IETF" category="std" xml:lang="en" xmlns:xi="http://www.w3.org/2001/XInclude" consensus="true">
 
 <front>
-<title abbrev="tjw-dmarcbis">Domain-based Message Authentication, Reporting, and Conformance (DMARC)</title><seriesInfo value="draft-dmarc-dmarcbis-00" stream="IETF" status="standard" name="Internet-Draft"></seriesInfo>
+<title abbrev="DMARCbis">Domain-based Message Authentication, Reporting, and Conformance (DMARC)</title><seriesInfo value="draft-dmarc-dmarcbis-00" stream="IETF" status="standard" name="Internet-Draft"></seriesInfo>
 <author initials="M." surname="Kucherawy (ed)" fullname="Murray S. Kucherawy"><organization> </organization><address><postal><street></street>
 </postal><email>superuser@gmail.com</email>
 </address></author>
@@ -233,42 +233,59 @@ another role.  This document does not address the distinctions among
 such roles; the reader is encouraged to become familiar with that
 material before continuing.</t>
 <t>The following terms are also used:</t>
-<t>Authenticated Identifiers:  Domain-level identifiers that are
-   validated using authentication technologies are referred to as
-   &quot;Authenticated Identifiers&quot;.  See {#authenicated-mechanisms} for details about
-   the supported mechanisms.</t>
-<t>Author Domain:  The domain name of the apparent author, as extracted
-   from the RFC5322.From field.</t>
-<t>Domain Owner:  An entity or organization that owns a DNS domain.  The
-   term &quot;owns&quot; here indicates that the entity or organization being
-   referenced holds the registration of that DNS domain.  Domain
-   Owners range from complex, globally distributed organizations, to
-   service providers working on behalf of non-technical clients, to
-   individuals responsible for maintaining personal domains.  This
-   specification uses this term as analogous to an Administrative
-   Management Domain as defined in <xref target="RFC5598"></xref>.  It can also refer
-   to delegates, such as Report Receivers, when those are outside of
-   their immediate management domain.</t>
-<t>Identifier Alignment:  When the domain in the RFC5322.From address
-   matches a domain validated by SPF or DKIM (or both), it has
-   Identifier Alignment.</t>
-<t>Mail Receiver:  The entity or organization that receives and
-   processes email.  Mail Receivers operate one or more Internet-
-   facing Mail Transport Agents (MTAs).</t>
-<t>Organizational Domain:  The domain that was registered with a domain
-   name registrar.  In the absence of more accurate methods,
-   heuristics are used to determine this, since it is not always the
-   case that the registered domain name is simply a top-level DNS
-   domain plus one component (e.g., &quot;example.com&quot;, where &quot;com&quot; is a
-   top-level domain).  The Organizational Domain is determined by
-   applying the algorithm found in {#organizational-domain}.</t>
-<t>Report Receiver:  An operator that receives reports from another
-   operator implementing the reporting mechanism described in this
-   document.  Such an operator might be receiving reports about its
-   own messages, or reports about messages related to another
-   operator.  This term applies collectively to the system components
-   that receive and process these reports and the organizations that
-   operate them.</t>
+
+<dl>
+<dt>Authenticated Identifiers:<br />
+</dt>
+<dd>Domain-level identifiers that are
+validated using authentication technologies are referred to as
+&quot;Authenticated Identifiers&quot;.  See {#authenicated-mechanisms} for details about
+the supported mechanisms.</dd>
+<dt>Author Domain:<br />
+</dt>
+<dd>The domain name of the apparent author, as extracted
+from the RFC5322.From field.</dd>
+<dt>Domain Owner:<br />
+</dt>
+<dd>An entity or organization that owns a DNS domain.  The
+term &quot;owns&quot; here indicates that the entity or organization being
+referenced holds the registration of that DNS domain.  Domain
+Owners range from complex, globally distributed organizations, to
+service providers working on behalf of non-technical clients, to
+individuals responsible for maintaining personal domains.  This
+specification uses this term as analogous to an Administrative
+Management Domain as defined in <xref target="RFC5598"></xref>.  It can also refer
+to delegates, such as Report Receivers, when those are outside of
+their immediate management domain.</dd>
+<dt>Identifier Alignment:<br />
+</dt>
+<dd>When the domain in the RFC5322.From address
+matches a domain validated by SPF or DKIM (or both), it has
+Identifier Alignment.</dd>
+<dt>Mail Receiver:<br />
+</dt>
+<dd>The entity or organization that receives and
+processes email.  Mail Receivers operate one or more Internet-
+facing Mail Transport Agents (MTAs).</dd>
+<dt>Organizational Domain:<br />
+</dt>
+<dd>The domain that was registered with a domain
+name registrar.  In the absence of more accurate methods,
+heuristics are used to determine this, since it is not always the
+case that the registered domain name is simply a top-level DNS
+domain plus one component (e.g., &quot;example.com&quot;, where &quot;com&quot; is a
+top-level domain).  The Organizational Domain is determined by
+applying the algorithm found in {#organizational-domain}.</dd>
+<dt>Report Receiver:<br />
+</dt>
+<dd>An operator that receives reports from another
+operator implementing the reporting mechanism described in this
+document.  Such an operator might be receiving reports about its
+own messages, or reports about messages related to another
+operator.  This term applies collectively to the system components
+that receive and process these reports and the organizations that
+operate them.</dd>
+</dl>
 
 <section anchor="identifier-alignment"><name>Identifier Alignment</name>
 <t>Email authentication technologies authenticate various (and
@@ -499,9 +516,10 @@ as defined in {#terminology}.</t>
                     | Mailbox |   |  Engine   |     | Verifier |
                     +---------+   +-----------+     +----------+
 
+
+  MSA = Mail Submission Agent
+  MDA = Mail Delivery Agent
 </sourcecode>
-<t>MSA = Mail Submission Agent
-  MDA = Mail Delivery Agent</t>
 <t>The above diagram shows a simple flow of messages through a DMARC-
 aware system.  Solid lines denote the actual message flow, dotted
 lines involve DNS queries used to retrieve message policy related to
@@ -669,24 +687,39 @@ initial set defined in this document.  Only tags defined in this
 document or in later extensions, and thus added to that registry, are
 to be processed; unknown tags MUST be ignored.</t>
 <t>The following tags are introduced as the initial valid DMARC tags:</t>
-<t>adkim:  (plain-text; OPTIONAL; default is &quot;r&quot;.)  Indicates whether
-   strict or relaxed DKIM Identifier Alignment mode is required by
-   the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
-   are as follows:</t>
+
+<dl>
+<dt>adkim:<br />
+</dt>
+<dd>(plain-text; OPTIONAL; default is &quot;r&quot;.)  Indicates whether
+strict or relaxed DKIM Identifier Alignment mode is required by
+the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
+are as follows:</dd>
+</dl>
 <t>r: relaxed mode</t>
 <t>s: strict mode</t>
-<t>aspf:  (plain-text; OPTIONAL; default is &quot;r&quot;.)  Indicates whether
-   strict or relaxed SPF Identifier Alignment mode is required by the
-   Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
-   follows:</t>
+
+<dl>
+<dt>aspf:<br />
+</dt>
+<dd>(plain-text; OPTIONAL; default is &quot;r&quot;.)  Indicates whether
+strict or relaxed SPF Identifier Alignment mode is required by the
+Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
+follows:</dd>
+</dl>
 <t>r: relaxed mode</t>
 <t>s: strict mode</t>
-<t>fo:  Failure reporting options (plain-text; OPTIONAL; default is &quot;0&quot;)
-   Provides requested options for generation of failure reports.
-   Report generators MAY choose to adhere to the requested options.
-   This tag's content MUST be ignored if a &quot;ruf&quot; tag (below) is not
-   also specified.  The value of this tag is a colon-separated list
-   of characters that indicate failure reporting options as follows:</t>
+
+<dl>
+<dt>fo:<br />
+</dt>
+<dd>Failure reporting options (plain-text; OPTIONAL; default is &quot;0&quot;)
+Provides requested options for generation of failure reports.
+Report generators MAY choose to adhere to the requested options.
+This tag's content MUST be ignored if a &quot;ruf&quot; tag (below) is not
+also specified.  The value of this tag is a colon-separated list
+of characters that indicate failure reporting options as follows:</dd>
+</dl>
 <t>0: Generate a DMARC failure report if all underlying
       authentication mechanisms fail to produce an aligned &quot;pass&quot;
       result.</t>
@@ -699,13 +732,17 @@ to be processed; unknown tags MUST be ignored.</t>
 <t>s: Generate an SPF failure report if the message failed SPF
       evaluation, regardless of its alignment.  SPF-specific
       reporting is described in <xref target="RFC6652"></xref>.</t>
-<t>p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
-   records).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  Policy applies to the domain
-   queried and to subdomains, unless subdomain policy is explicitly
-   described using the &quot;sp&quot; tag.  This tag is mandatory for policy
-   records only, but not for third-party reporting records (see
-   {#verifying-external-destinations}).  Possible values are as follows:</t>
+
+<dl>
+<dt>p:</dt>
+<dd>Requested Mail Receiver policy (plain-text; REQUIRED for policy
+records).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  Policy applies to the domain
+queried and to subdomains, unless subdomain policy is explicitly
+described using the &quot;sp&quot; tag.  This tag is mandatory for policy
+records only, but not for third-party reporting records (see
+{#verifying-external-destinations}).  Possible values are as follows:</dd>
+</dl>
 <t>none:  The Domain Owner requests no specific action be taken
       regarding delivery of messages.</t>
 <t>quarantine:  The Domain Owner wishes to have email that fails the
@@ -717,83 +754,104 @@ to be processed; unknown tags MUST be ignored.</t>
       email that fails the DMARC mechanism check.  Rejection SHOULD
       occur during the SMTP transaction.  See {#rejecting-messages} for some
       discussion of SMTP rejection methods and their implications.</t>
-<t>pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
-   default is 100).  Percentage of messages from the Domain Owner's
-   mail stream to which the DMARC policy is to be applied.  However,
-   this MUST NOT be applied to the DMARC-generated reports, all of
-   which must be sent and received unhindered.  The purpose of the
-   &quot;pct&quot; tag is to allow Domain Owners to enact a slow rollout
-   enforcement of the DMARC mechanism.  The prospect of &quot;all or
-   nothing&quot; is recognized as preventing many organizations from
-   experimenting with strong authentication-based mechanisms.  See
-   {#message-sampling} for details.  Note that random selection based on
-   this percentage, such as the following pseudocode, is adequate:</t>
 
-<artwork>if (random mod 100) &lt; pct then
+<dl>
+<dt>pct:<br />
+</dt>
+<dd><t>(plain-text integer between 0 and 100, inclusive; OPTIONAL;
+default is 100).  Percentage of messages from the Domain Owner's
+mail stream to which the DMARC policy is to be applied.  However,
+this MUST NOT be applied to the DMARC-generated reports, all of
+which must be sent and received unhindered.  The purpose of the
+&quot;pct&quot; tag is to allow Domain Owners to enact a slow rollout
+enforcement of the DMARC mechanism.  The prospect of &quot;all or
+nothing&quot; is recognized as preventing many organizations from
+experimenting with strong authentication-based mechanisms.  See
+{#message-sampling} for details.  Note that random selection based on
+this percentage, such as the following pseudocode, is adequate:</t>
+<t>if (random mod 100) &lt; pct then
   selected = true
 else
-  selected = false
-</artwork>
-<t>rf:  Format to be used for message-specific failure reports (colon-
-   separated plain-text list of values; OPTIONAL; default is &quot;afrf&quot;).
-   The value of this tag is a list of one or more report formats as
-   requested by the Domain Owner to be used when a message fails both
-   <xref target="RFC3986"></xref> and <xref target="RFC6376"></xref> tests to report details of the individual
-   failure.  The values MUST be present in the registry of reporting
-   formats defined in {#iana-considerations}; a Mail Receiver observing a
-   different value SHOULD ignore it or MAY ignore the entire DMARC
-   record.  For this version, only &quot;afrf&quot; (the auth-failure report
-   type defined in <xref target="RFC6591"></xref>) is presently supported.  See {#failure-reports}
-   for details.  For interoperability, the Authentication Failure
-   Reporting Format (AFRF) MUST be supported.</t>
-<t>ri:  Interval requested between aggregate reports (plain-text 32-bit
-   unsigned integer; OPTIONAL; default is 86400).  Indicates a
-   request to Receivers to generate aggregate reports separated by no
-   more than the requested number of seconds.  DMARC implementations
-   MUST be able to provide daily reports and SHOULD be able to
-   provide hourly reports when requested.  However, anything other
-   than a daily report is understood to be accommodated on a best-
-   effort basis.</t>
-<t>rua:  Addresses to which aggregate feedback is to be sent (comma-
-   separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
-   exclamation point that is part of such a DMARC URI MUST be encoded
-   per Section 2.1 of <xref target="RFC3986"></xref> so as to distinguish it from the list
-   delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  See {#external-report-addresses}
-   for additional considerations.  Any valid URI can be specified.  A
-   Mail Receiver MUST implement support for a &quot;mailto:&quot; URI, i.e.,
-   the ability to send a DMARC report via electronic mail.  If not
-   provided, Mail Receivers MUST NOT generate aggregate feedback
-   reports.  URIs not supported by Mail Receivers MUST be ignored.
-   The aggregate feedback report format is described in {#aggregate-reports}</t>
-<t>ruf:  Addresses to which message-specific failure information is to
-   be reported (comma-separated plain-text list of DMARC URIs;
-   OPTIONAL).  If present, the Domain Owner is requesting Mail
-   Receivers to send detailed failure reports about messages that
-   fail the DMARC evaluation in specific ways (see the &quot;fo&quot; tag
-   above).  The format of the message to be generated MUST follow the
-   format specified for the &quot;rf&quot; tag.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  A Mail Receiver
-   MUST implement support for a &quot;mailto:&quot; URI, i.e., the ability to
-   send a DMARC report via electronic mail.  If not provided, Mail
-   Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
-   additional considerations.</t>
-<t>sp:  Requested Mail Receiver policy for all subdomains (plain-text;
-   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  It applies only to subdomains of
-   the domain queried and not to the domain itself.  Its syntax is
-   identical to that of the &quot;p&quot; tag defined above.  If absent, the
-   policy specified by the &quot;p&quot; tag MUST be applied for subdomains.
-   Note that &quot;sp&quot; will be ignored for DMARC records published on
-   subdomains of Organizational Domains due to the effect of the
-   DMARC policy discovery mechanism described in {#policy-discovery}.</t>
-<t>v: Version (plain-text; REQUIRED).  Identifies the record retrieved
-   as a DMARC record.  It MUST have the value of &quot;DMARC1&quot;.  The value
-   of this tag MUST match precisely; if it does not or it is absent,
-   the entire retrieved record MUST be ignored.  It MUST be the first
-   tag in the list.</t>
+  selected = false</t>
+</dd>
+<dt>rf:<br />
+</dt>
+<dd><t>Format to be used for message-specific failure reports (colon-
+separated plain-text list of values; OPTIONAL; default is &quot;afrf&quot;).
+The value of this tag is a list of one or more report formats as
+requested by the Domain Owner to be used when a message fails both
+<xref target="RFC3986"></xref> and <xref target="RFC6376"></xref> tests to report details of the individual
+failure.  The values MUST be present in the registry of reporting
+formats defined in {#iana-considerations}; a Mail Receiver observing a
+different value SHOULD ignore it or MAY ignore the entire DMARC
+record.  For this version, only &quot;afrf&quot; (the auth-failure report
+type defined in <xref target="RFC6591"></xref>) is presently supported.  See {#failure-reports}
+for details.  For interoperability, the Authentication Failure
+Reporting Format (AFRF) MUST be supported.</t>
+</dd>
+<dt>ri:<br />
+</dt>
+<dd><t>Interval requested between aggregate reports (plain-text 32-bit
+unsigned integer; OPTIONAL; default is 86400).  Indicates a
+request to Receivers to generate aggregate reports separated by no
+more than the requested number of seconds.  DMARC implementations
+MUST be able to provide daily reports and SHOULD be able to
+provide hourly reports when requested.  However, anything other
+than a daily report is understood to be accommodated on a best-
+effort basis.</t>
+</dd>
+<dt>rua:<br />
+</dt>
+<dd><t>Addresses to which aggregate feedback is to be sent (comma-
+separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
+exclamation point that is part of such a DMARC URI MUST be encoded
+per Section 2.1 of <xref target="RFC3986"></xref> so as to distinguish it from the list
+delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  See {#external-report-addresses}
+for additional considerations.  Any valid URI can be specified.  A
+Mail Receiver MUST implement support for a &quot;mailto:&quot; URI, i.e.,
+the ability to send a DMARC report via electronic mail.  If not
+provided, Mail Receivers MUST NOT generate aggregate feedback
+reports.  URIs not supported by Mail Receivers MUST be ignored.
+The aggregate feedback report format is described in {#aggregate-reports}</t>
+</dd>
+<dt>ruf:<br />
+</dt>
+<dd><t>Addresses to which message-specific failure information is to
+be reported (comma-separated plain-text list of DMARC URIs;
+OPTIONAL).  If present, the Domain Owner is requesting Mail
+Receivers to send detailed failure reports about messages that
+fail the DMARC evaluation in specific ways (see the &quot;fo&quot; tag
+above).  The format of the message to be generated MUST follow the
+format specified for the &quot;rf&quot; tag.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  A Mail Receiver
+MUST implement support for a &quot;mailto:&quot; URI, i.e., the ability to
+send a DMARC report via electronic mail.  If not provided, Mail
+Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
+additional considerations.</t>
+</dd>
+<dt>sp:<br />
+</dt>
+<dd><t>Requested Mail Receiver policy for all subdomains (plain-text;
+OPTIONAL).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  It applies only to subdomains of
+the domain queried and not to the domain itself.  Its syntax is
+identical to that of the &quot;p&quot; tag defined above.  If absent, the
+policy specified by the &quot;p&quot; tag MUST be applied for subdomains.
+Note that &quot;sp&quot; will be ignored for DMARC records published on
+subdomains of Organizational Domains due to the effect of the
+DMARC policy discovery mechanism described in {#policy-discovery}.</t>
+</dd>
+<dt>v:</dt>
+<dd><t>Version (plain-text; REQUIRED).  Identifies the record retrieved
+as a DMARC record.  It MUST have the value of &quot;DMARC1&quot;.  The value
+of this tag MUST match precisely; if it does not or it is absent,
+the entire retrieved record MUST be ignored.  It MUST be the first
+tag in the list.</t>
+</dd>
+</dl>
 <t>A DMARC policy record MUST comply with the formal specification found
 in {#formal-definition} in that the &quot;v&quot; and &quot;p&quot; tags MUST be present and MUST
 appear in that order.  Unknown tags MUST be ignored.  Syntax errors
@@ -809,12 +867,14 @@ a new version of DMARC.</t>
 <section anchor="formal-definition"><name>Formal Definition</name>
 <t>The formal definition of the DMARC format, using <xref target="RFC5234"></xref>, is as
 follows:</t>
-<t>dmarc-uri       = URI [ &quot;!&quot; 1*DIGIT [ &quot;k&quot; / &quot;m&quot; / &quot;g&quot; / &quot;t&quot; ] ]
-                    ; &quot;URI&quot; is imported from <xref target="RFC3986"></xref>; commas (ASCII
+
+<artwork>  dmarc-uri       = URI [ &quot;!&quot; 1*DIGIT [ &quot;k&quot; / &quot;m&quot; / &quot;g&quot; / &quot;t&quot; ] ]
+                    ; &quot;URI&quot; is imported from [RFC3986]; commas (ASCII
                     ; 0x2C) and exclamation points (ASCII 0x21)
                     ; MUST be encoded; the numeric portion MUST fit
-                    ; within an unsigned 64-bit integer</t>
-<t>dmarc-record    = dmarc-version dmarc-sep
+                    ; within an unsigned 64-bit integer
+
+  dmarc-record    = dmarc-version dmarc-sep
                     [dmarc-request]
                     [dmarc-sep dmarc-srequest]
                     [dmarc-sep dmarc-auri]
@@ -827,29 +887,42 @@ follows:</t>
                     [dmarc-sep dmarc-percent]
                     [dmarc-sep]
                     ; components other than dmarc-version and
-                    ; dmarc-request may appear in any order</t>
-<t>dmarc-version   = &quot;v&quot; *WSP &quot;=&quot; *WSP %x44 %x4d %x41 %x52 %x43 %x31</t>
-<t>dmarc-sep       = *WSP %x3b *WSP</t>
-<t>dmarc-request   = &quot;p&quot; *WSP &quot;=&quot; *WSP
-                    ( &quot;none&quot; / &quot;quarantine&quot; / &quot;reject&quot; )</t>
-<t>dmarc-srequest  = &quot;sp&quot; *WSP &quot;=&quot; *WSP
-                    ( &quot;none&quot; / &quot;quarantine&quot; / &quot;reject&quot; )</t>
-<t>dmarc-auri      = &quot;rua&quot; *WSP &quot;=&quot; *WSP
-                    dmarc-uri <em>(</em>WSP &quot;,&quot; *WSP dmarc-uri)</t>
-<t>dmarc-furi      = &quot;ruf&quot; *WSP &quot;=&quot; *WSP
-                    dmarc-uri <em>(</em>WSP &quot;,&quot; *WSP dmarc-uri)</t>
-<t>dmarc-adkim     = &quot;adkim&quot; *WSP &quot;=&quot; *WSP
-                    ( &quot;r&quot; / &quot;s&quot; )</t>
-<t>dmarc-aspf      = &quot;aspf&quot; *WSP &quot;=&quot; *WSP
-                    ( &quot;r&quot; / &quot;s&quot; )</t>
-<t>dmarc-ainterval = &quot;ri&quot; *WSP &quot;=&quot; <em>WSP 1</em>DIGIT</t>
-<t>dmarc-fo        = &quot;fo&quot; *WSP &quot;=&quot; *WSP
+                    ; dmarc-request may appear in any order
+
+  dmarc-version   = &quot;v&quot; *WSP &quot;=&quot; *WSP %x44 %x4d %x41 %x52 %x43 %x31
+
+  dmarc-sep       = *WSP %x3b *WSP
+
+  dmarc-request   = &quot;p&quot; *WSP &quot;=&quot; *WSP
+                    ( &quot;none&quot; / &quot;quarantine&quot; / &quot;reject&quot; )
+
+  dmarc-srequest  = &quot;sp&quot; *WSP &quot;=&quot; *WSP
+                    ( &quot;none&quot; / &quot;quarantine&quot; / &quot;reject&quot; )
+
+  dmarc-auri      = &quot;rua&quot; *WSP &quot;=&quot; *WSP
+                    dmarc-uri *(*WSP &quot;,&quot; *WSP dmarc-uri)
+
+  dmarc-furi      = &quot;ruf&quot; *WSP &quot;=&quot; *WSP
+                    dmarc-uri *(*WSP &quot;,&quot; *WSP dmarc-uri)
+
+  dmarc-adkim     = &quot;adkim&quot; *WSP &quot;=&quot; *WSP
+                    ( &quot;r&quot; / &quot;s&quot; )
+
+  dmarc-aspf      = &quot;aspf&quot; *WSP &quot;=&quot; *WSP
+                    ( &quot;r&quot; / &quot;s&quot; )
+
+  dmarc-ainterval = &quot;ri&quot; *WSP &quot;=&quot; *WSP 1*DIGIT
+
+  dmarc-fo        = &quot;fo&quot; *WSP &quot;=&quot; *WSP
                     ( &quot;0&quot; / &quot;1&quot; / &quot;d&quot; / &quot;s&quot; )
-                    <em>(</em>WSP &quot;:&quot; *WSP ( &quot;0&quot; / &quot;1&quot; / &quot;d&quot; / &quot;s&quot; ))</t>
-<t>dmarc-rfmt      = &quot;rf&quot;  *WSP &quot;=&quot; *WSP Keyword <em>(</em>WSP &quot;:&quot; Keyword)
-                    ; registered reporting formats only</t>
-<t>dmarc-percent   = &quot;pct&quot; *WSP &quot;=&quot; <em>WSP
-                    1</em>3DIGIT</t>
+                    *(*WSP &quot;:&quot; *WSP ( &quot;0&quot; / &quot;1&quot; / &quot;d&quot; / &quot;s&quot; ))
+
+  dmarc-rfmt      = &quot;rf&quot;  *WSP &quot;=&quot; *WSP Keyword *(*WSP &quot;:&quot; Keyword)
+                    ; registered reporting formats only
+
+  dmarc-percent   = &quot;pct&quot; *WSP &quot;=&quot; *WSP
+                    1*3DIGIT
+</artwork>
 <t>&quot;Keyword&quot; is imported from Section 4.1.2 of <xref target="RFC5321"></xref>.</t>
 <t>A size limitation in a dmarc-uri, if provided, is interpreted as a
 count of units followed by an OPTIONAL unit size (&quot;k&quot; for kilobytes,
@@ -1331,21 +1404,29 @@ chances of acceptance of the report at some compute cost.  The
 aggregate data SHOULD be present using the media type &quot;application/
 gzip&quot; if compressed (see <xref target="RFC6713"></xref>), and &quot;text/xml&quot; otherwise.  The
 filename is typically constructed using the following ABNF:</t>
-<t>filename = receiver &quot;!&quot; policy-domain &quot;!&quot; begin-timestamp
-             &quot;!&quot; end-timestamp [ &quot;!&quot; unique-id ] &quot;.&quot; extension</t>
-<t>unique-id = 1*(ALPHA / DIGIT)</t>
-<t>receiver = domain
-             ; imported from <xref target="RFC5322"></xref></t>
-<t>policy-domain   = domain</t>
-<t>begin-timestamp = 1*DIGIT
+
+<artwork>  filename = receiver &quot;!&quot; policy-domain &quot;!&quot; begin-timestamp
+             &quot;!&quot; end-timestamp [ &quot;!&quot; unique-id ] &quot;.&quot; extension
+
+  unique-id = 1*(ALPHA / DIGIT)
+
+  receiver = domain
+             ; imported from [@!RFC5322]
+
+  policy-domain   = domain
+
+  begin-timestamp = 1*DIGIT
                     ; seconds since 00:00:00 UTC January 1, 1970
                     ; indicating start of the time range contained
-                    ; in the report</t>
-<t>end-timestamp = 1*DIGIT
+                    ; in the report
+
+  end-timestamp = 1*DIGIT
                   ; seconds since 00:00:00 UTC January 1, 1970
                   ; indicating end of the time range contained
-                  ; in the report</t>
-<t>extension = &quot;xml&quot; / &quot;xml.gz&quot;</t>
+                  ; in the report
+
+  extension = &quot;xml&quot; / &quot;xml.gz&quot;
+</artwork>
 <t>The extension MUST be &quot;xml&quot; for a plain XML file, or &quot;xml.gz&quot; for an
 XML file compressed using GZIP.</t>
 <t>&quot;unique-id&quot; allows an optional unique ID generated by the Mail
@@ -1365,13 +1446,15 @@ This practice minimizes the risk of report consumers processing
 fraudulent reports.</t>
 <t>The RFC5322.Subject field for individual report submissions SHOULD
 conform to the following ABNF:</t>
-<t>dmarc-subject = %x52.65.70.6f.72.74 1<em>FWS       ; &quot;Report&quot;
-                  %x44.6f.6d.61.69.6e.3a 1</em>FWS    ; &quot;Domain:&quot;
-                  domain-name 1<em>FWS               ; from RFC 6376
+
+<artwork>  dmarc-subject = %x52.65.70.6f.72.74 1*FWS       ; &quot;Report&quot;
+                  %x44.6f.6d.61.69.6e.3a 1*FWS    ; &quot;Domain:&quot;
+                  domain-name 1*FWS               ; from RFC 6376
                   %x53.75.62.6d.69.74.74.65.72.3a ; &quot;Submitter:&quot;
-                  1</em>FWS domain-name 1*FWS
+                  1*FWS domain-name 1*FWS
                   %x52.65.70.6f.72.74.2d.49.44.3a ; &quot;Report-ID:&quot;
-                  msg-id                          ; from RFC 5322</t>
+                  msg-id                          ; from RFC 5322
+</artwork>
 <t>The first domain-name indicates the DNS domain name about which the
 report was generated.  The second domain-name indicates the DNS
 domain name representing the Mail Receiver generating the report.
@@ -1381,9 +1464,11 @@ sent by a Mail Receiver.</t>
 <t>For instance, this is a possible Subject field for a report to the
 Domain Owner &quot;example.com&quot; from the Mail Receiver
 &quot;mail.receiver.example&quot;.  It is line-wrapped as allowed by <xref target="RFC5322"></xref>:</t>
-<t>Subject: Report Domain: example.com
+
+<artwork>  Subject: Report Domain: example.com
       Submitter: mail.receiver.example
-      Report-ID: &lt;2002.02.15.1&gt;</t>
+      Report-ID: &lt;2002.02.15.1&gt;
+</artwork>
 <t>This transport mechanism potentially encounters a problem when
 feedback data size exceeds maximum allowable attachment sizes for
 either the generator or the consumer.  See {#error-reports} for further
@@ -1406,21 +1491,34 @@ all other listed URIs.</t>
 MUST be included that contains field-value pairs such as those found
 in Section 2 of <xref target="RFC3464"></xref>.  The fields required, which may appear in any
 order, are as follows:</t>
-<t>Report-Date:  A <xref target="RFC5322"></xref>-formatted date expression indicating when the
-   transport failure occurred.</t>
-<t>Report-Domain:  The domain-name about which the failed report was
-   generated.</t>
-<t>Report-ID:  The Report-ID: that the report tried to use.</t>
-<t>Report-Size:  The size, in bytes, of the report that was unable to be
-   sent.  This MUST represent the number of bytes that the Mail
-   Receiver attempted to send.  Where more than one transport system
-   was attempted, the sizes may be different; in such cases, separate
-   error reports MUST be generated so that this value matches the
-   actual attempt that was made.</t>
-<t>Submitter:  The domain-name representing the Mail Receiver that
-   generated, but was unable to submit, the report.</t>
-<t>Submitting-URI:  The URI(s) to which the Mail Receiver tried, but
-   failed, to submit the report.</t>
+
+<dl>
+<dt>Report-Date:<br />
+</dt>
+<dd>A <xref target="RFC5322"></xref>-formatted date expression indicating when the
+transport failure occurred.</dd>
+<dt>Report-Domain:<br />
+</dt>
+<dd>The domain-name about which the failed report was generated.</dd>
+<dt>Report-ID:<br />
+</dt>
+<dd>The Report-ID: that the report tried to use.</dd>
+<dt>Report-Size:<br />
+</dt>
+<dd>The size, in bytes, of the report that was unable to be
+sent.  This MUST represent the number of bytes that the Mail
+Receiver attempted to send.  Where more than one transport system
+was attempted, the sizes may be different; in such cases, separate
+error reports MUST be generated so that this value matches the
+actual attempt that was made.</dd>
+<dt>Submitter:</dt>
+<dd>The domain-name representing the Mail Receiver that
+generated, but was unable to submit, the report.</dd>
+<dt>Submitting-URI:<br />
+</dt>
+<dd>The URI(s) to which the Mail Receiver tried, but
+failed, to submit the report.</dd>
+</dl>
 <t>An additional text/plain part MAY be included that gives a human-
 readable explanation of the above and MAY also include a URI that can
 be used to seek assistance.</t>
@@ -1498,11 +1596,15 @@ separated list of authentication mechanism names that produced an
 aligned identity, or the keyword &quot;none&quot; if none did.  ABNF:</t>
 </li>
 </ol>
-<t>id-align     = &quot;Identity-Alignment:&quot; <eref target="&quot;none&quot; /
-                   dmarc-method *( [CFWS] &quot;,&quot; [CFWS] dmarc-method">CFWS</eref> )
-                 [CFWS]</t>
-<t>dmarc-method = ( &quot;dkim&quot; / &quot;spf&quot; )
-                 ; each may appear at most once in an id-align</t>
+
+<artwork>  id-align     = &quot;Identity-Alignment:&quot; [CFWS]
+                 ( &quot;none&quot; /
+                   dmarc-method *( [CFWS] &quot;,&quot; [CFWS] dmarc-method ) )
+                 [CFWS]
+
+  dmarc-method = ( &quot;dkim&quot; / &quot;spf&quot; )
+                 ; each may appear at most once in an id-align
+</artwork>
 
 <ol start="3">
 <li><t>Authentication Failure Type &quot;dmarc&quot; is defined, which is to be
@@ -1803,35 +1905,95 @@ Mail Receivers.</t>
 specification are to avoid changing the semantics of existing records
 when processed by implementations conforming to prior specifications.</t>
 <t>The initial set of entries in this registry is as follows:</t>
-<t>+----------+-------------+---------+------------------------------+
- | Tag Name | Reference   | Status  | Description                  |
- +----------+-------------+---------+------------------------------+
- |  adkim   |  RFC 7489   | current | DKIM alignment mode          |
- +----------+-------------+---------+------------------------------+
- |   aspf   |  RFC 7489   | current | SPF alignment mode           |
- +----------+-------------+---------+------------------------------+
- |    fo    |  RFC 7489   | current | Failure reporting options    |
- +----------+-------------+---------+------------------------------+
- |     p    |  RFC 7489   | current | Requested handling policy    |
- +----------+-------------+---------+------------------------------+
- |    pct   |  RFC 7489   | current | Sampling rate                |
- +----------+-------------+---------+------------------------------+
- |    rf    |  RFC 7489   | current | Failure reporting format(s)  |
- +----------+-------------+---------+------------------------------+
- |    ri    |  RFC 7489   | current | Aggregate Reporting interval |
- +----------+-------------+---------+------------------------------+
- |    rua   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | aggregate data               |
- +----------+-------------+---------+------------------------------+
- |    ruf   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | failure data                 |
- +----------+-------------+---------+------------------------------+
- |    sp    |  RFC 7489   | current | Requested handling policy    |
- |          |             |         | for subdomains               |
- +----------+-------------+---------+------------------------------+
- |     v    |  RFC 7489   | current | Specification version        |
- +----------+-------------+---------+------------------------------+</t>
-</section>
+<table>
+<thead>
+<tr>
+<th align="left">Tag Name</th>
+<th align="left">Reference</th>
+<th align="left">Status</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">adkim</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">DKIM alignment mode</td>
+</tr>
+
+<tr>
+<td align="left">aspf</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">SPF alignment mode</td>
+</tr>
+
+<tr>
+<td align="left">fo</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Failure reporting options</td>
+</tr>
+
+<tr>
+<td align="left">p</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Requested handling policy</td>
+</tr>
+
+<tr>
+<td align="left">pct</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Sampling rate</td>
+</tr>
+
+<tr>
+<td align="left">rf</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Failure reporting format(s)</td>
+</tr>
+
+<tr>
+<td align="left">ri</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Aggregate Reporting interval</td>
+</tr>
+
+<tr>
+<td align="left">rua</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Reporting URI(s) for aggregate data</td>
+</tr>
+
+<tr>
+<td align="left">ruf</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Reporting URI(s) for failure data</td>
+</tr>
+
+<tr>
+<td align="left">sp</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Requested handling policy for subdomains</td>
+</tr>
+
+<tr>
+<td align="left">v</td>
+<td align="left">RFC 7489</td>
+<td align="left">current</td>
+<td align="left">Specification version</td>
+</tr>
+</tbody>
+</table></section>
 
 <section anchor="dmarc-report-format-registry"><name>DMARC Report Format Registry</name>
 <t>Also within &quot;Domain-based Message Authentication, Reporting, and
@@ -1848,15 +2010,25 @@ confirm that the provided specification adequately describes the
 report format and clearly presents how it would be used within the
 DMARC context by Domain Owners and Mail Receivers.</t>
 <t>The initial entry in this registry is as follows:</t>
-<t>+--------+-------------+---------+-----------------------------+
- | Format | Reference   | Status  | Description                 |
- |  Name  |             |         |                             |
- +--------+-------------+---------+-----------------------------+
- | afrf   |  RFC 7489   | current | Authentication Failure      |
- |        |             |         | Reporting Format (see       |
- |        |             |         | <xref target="RFC6591"></xref>)                     |
- +--------+-------------+---------+-----------------------------+</t>
-</section>
+<table>
+<thead>
+<tr>
+<th>Format Name</th>
+<th>Reference</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>afrf</td>
+<td>RFC 7489</td>
+<td>current</td>
+<td>Authentication Failure Reporting Format (see <xref target="RFC6591"></xref>)</td>
+</tr>
+</tbody>
+</table></section>
 </section>
 
 <section anchor="security-considerations"><name>Security Considerations</name>
@@ -1976,36 +2148,29 @@ could reveal private information.</t>
 
 <back>
 <references><name>Normative References</name>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7208.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6651.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6376.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5321.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4949.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2045.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6713.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3986.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4343.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6591.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5890.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5322.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6652.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4343.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4949.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3986.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2045.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6376.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7208.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5890.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6713.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6651.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5321.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5234.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6652.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6591.xml"/>
 </references>
 <references><name>Informative References</name>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3464.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6377.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5863.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7001.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4686.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5598.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3464.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5965.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4686.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5226.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2142.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5617.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5585.xml"/>
 <reference anchor="Best-Guess-SPF" target="http://www.openspf.org/FAQ/Best_guess_record">
   <front>
     <title>Sender Policy Framework: Best guess record (FAQ entry)</title>
@@ -2014,6 +2179,13 @@ could reveal private information.</t>
   </front>
 </reference>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4033.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5617.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7001.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5585.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2142.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6377.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5598.xml"/>
 </references>
 
 <section anchor="technology-considerations"><name>Technology Considerations</name>
@@ -2340,14 +2512,19 @@ policy (no &quot;pct&quot; tag present, so the default of 100% applies)</t>
 </ul>
 <t>The DMARC policy record might look like this when retrieved using a
 common command-line tool:</t>
-<t>% dig +short TXT _dmarc.example.com.
-  &quot;v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com&quot;</t>
+
+<artwork>  % dig +short TXT _dmarc.example.com.
+  &quot;v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com&quot;
+</artwork>
 <t>To publish such a record, the DNS administrator for the Domain Owner
 creates an entry like the following in the appropriate zone file
 (following the conventional zone file format):</t>
-<t>; DMARC record for the domain example.com</t>
-<t>_dmarc  IN TXT ( &quot;v=DMARC1; p=none; &quot;
-                   &quot;rua=mailto:dmarc-feedback@example.com&quot; )</t>
+
+<artwork>  ; DMARC record for the domain example.com
+
+  _dmarc  IN TXT ( &quot;v=DMARC1; p=none; &quot;
+                   &quot;rua=mailto:dmarc-feedback@example.com&quot; )
+</artwork>
 </section>
 
 <section anchor="entire-domain-monitoring-only-per-message-reports"><name>Entire Domain, Monitoring Only, Per-Message Reports</name>
@@ -2372,16 +2549,21 @@ address &quot;auth-reports@example.com&quot;
 <t>The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):</t>
-<t>% dig +short TXT _dmarc.example.com.
+
+<artwork>  % dig +short TXT _dmarc.example.com.
   &quot;v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
-   ruf=mailto:auth-reports@example.com&quot;</t>
+   ruf=mailto:auth-reports@example.com&quot;
+</artwork>
 <t>To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):</t>
-<t>; DMARC record for the domain example.com</t>
-<t>_dmarc  IN TXT ( &quot;v=DMARC1; p=none; &quot;
+
+<artwork> ; DMARC record for the domain example.com
+
+ _dmarc  IN TXT ( &quot;v=DMARC1; p=none; &quot;
                   &quot;rua=mailto:dmarc-feedback@example.com; &quot;
-                  &quot;ruf=mailto:auth-reports@example.com&quot; )</t>
+                  &quot;ruf=mailto:auth-reports@example.com&quot; )
+</artwork>
 </section>
 
 <section anchor="per-message-failure-reports-directed-to-third-party"><name>Per-Message Failure Reports Directed to Third Party</name>
@@ -2402,16 +2584,21 @@ address &quot;auth-reports@thirdparty.example.net&quot;
 <t>The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):</t>
-<t>% dig +short TXT _dmarc.example.com.
+
+<artwork>  % dig +short TXT _dmarc.example.com.
   &quot;v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
-   ruf=mailto:auth-reports@thirdparty.example.net&quot;</t>
+   ruf=mailto:auth-reports@thirdparty.example.net&quot;
+</artwork>
 <t>To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):</t>
-<t>; DMARC record for the domain example.com</t>
-<t>_dmarc IN TXT ( &quot;v=DMARC1; p=none; &quot;
+
+<artwork>  ; DMARC record for the domain example.com
+
+  _dmarc IN TXT ( &quot;v=DMARC1; p=none; &quot;
                   &quot;rua=mailto:dmarc-feedback@example.com; &quot;
-                  &quot;ruf=mailto:auth-reports@thirdparty.example.net&quot; )</t>
+                  &quot;ruf=mailto:auth-reports@thirdparty.example.net&quot; )
+</artwork>
 <t>Because the address used in the &quot;ruf&quot; tag is outside the
 Organizational Domain in which this record is published, conforming
 Receivers will implement additional checks as described in
@@ -2603,7 +2790,8 @@ come to an understanding of how its domain is being misused.</t>
 <t>mailto:dmarc-feedback@example.com</t>
 <t>A sample aggregate report from the Mail Receiver at
 mail.receiver.example follows:</t>
-<t>DKIM-Signature: v=1; ...; d=mail.receiver.example; ...
+
+<artwork>  DKIM-Signature: v=1; ...; d=mail.receiver.example; ...
   From: dmarc-reporting@mail.receiver.example
   Date: Fri, Feb 15 2002 16:54:30 -0800
   To: dmarc-feedback@example.com
@@ -2612,15 +2800,18 @@ mail.receiver.example follows:</t>
       Report-ID: &lt;2002.02.15.1&gt;
   MIME-Version: 1.0
   Content-Type: multipart/alternative;
-      boundary=&quot;----=<em>NextPart</em>000<em>024E</em>01CC9B0A.AFE54C00&quot;
-  Content-Language: en-us</t>
-<t>This is a multipart message in MIME format.</t>
-<t>------=<em>NextPart</em>000<em>024E</em>01CC9B0A.AFE54C00
-  Content-Type: text/plain; charset=&quot;us-ascii&quot;
-  Content-Transfer-Encoding: 7bit</t>
-<t>This is an aggregate report from mail.receiver.example.</t>
+      boundary=&quot;----=_NextPart_000_024E_01CC9B0A.AFE54C00&quot;
+  Content-Language: en-us
 
-<artwork>  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
+  This is a multipart message in MIME format.
+
+  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
+  Content-Type: text/plain; charset=&quot;us-ascii&quot;
+  Content-Transfer-Encoding: 7bit
+
+  This is an aggregate report from mail.receiver.example.
+
+  ------=_NextPart_000_024E_01CC9B0A.AFE54C00
   Content-Type: application/gzip
   Content-Transfer-Encoding: base64
   Content-Disposition: attachment;
@@ -2911,23 +3102,36 @@ set to 1.</t>
 
 </sourcecode>
 <t>Descriptions of the PolicyOverrideTypes:</t>
-<t>forwarded:  The message was relayed via a known forwarder, or local
-   heuristics identified the message as likely having been forwarded.
-   There is no expectation that authentication would pass.</t>
-<t>local_policy:  The Mail Receiver's local policy exempted the message
-   from being subjected to the Domain Owner's requested policy
-   action.</t>
-<t>mailing_list:  Local heuristics determined that the message arrived
-   via a mailing list, and thus authentication of the original
-   message was not expected to succeed.</t>
-<t>other:  Some policy exception not covered by the other entries in
-   this list occurred.  Additional detail can be found in the
-   PolicyOverrideReason's &quot;comment&quot; field.</t>
-<t>sampled_out:  The message was exempted from application of policy by
-   the &quot;pct&quot; setting in the DMARC policy record.</t>
-<t>trusted_forwarder:  Message authentication failure was anticipated by
-   other evidence linking the message to a locally maintained list of
-   known and trusted forwarders.</t>
+
+<dl>
+<dt>forwarded:<br />
+</dt>
+<dd>The message was relayed via a known forwarder, or local
+heuristics identified the message as likely having been forwarded.
+There is no expectation that authentication would pass.</dd>
+<dt>local_policy:</dt>
+<dd>The Mail Receiver's local policy exempted the message
+from being subjected to the Domain Owner's requested policy action.</dd>
+<dt>mailing_list:<br />
+</dt>
+<dd>Local heuristics determined that the message arrived
+via a mailing list, and thus authentication of the original
+message was not expected to succeed.</dd>
+<dt>other:<br />
+</dt>
+<dd>Some policy exception not covered by the other entries in
+this list occurred.  Additional detail can be found in the
+PolicyOverrideReason's &quot;comment&quot; field.</dd>
+<dt>sampled_out:<br />
+</dt>
+<dd>The message was exempted from application of policy by
+the &quot;pct&quot; setting in the DMARC policy record.</dd>
+<dt>trusted_forwarder:<br />
+</dt>
+<dd>Message authentication failure was anticipated by
+other evidence linking the message to a locally maintained list of
+known and trusted forwarders.</dd>
+</dl>
 <t>The &quot;version&quot; for reports generated per this specification MUST be
 the value 1.0.</t>
 </section>

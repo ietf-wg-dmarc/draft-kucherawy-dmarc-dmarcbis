@@ -250,48 +250,55 @@ material before continuing.
 
 The following terms are also used:
 
-Authenticated Identifiers:  Domain-level identifiers that are
-   validated using authentication technologies are referred to as
-   "Authenticated Identifiers".  See {#authenicated-mechanisms} for details about
-   the supported mechanisms.
+Authenticated Identifiers:  
+:   Domain-level identifiers that are
+validated using authentication technologies are referred to as
+"Authenticated Identifiers".  See {#authenicated-mechanisms} for details about
+the supported mechanisms.
 
-Author Domain:  The domain name of the apparent author, as extracted
-   from the RFC5322.From field.
+Author Domain:  
+:   The domain name of the apparent author, as extracted
+from the RFC5322.From field.
 
-Domain Owner:  An entity or organization that owns a DNS domain.  The
-   term "owns" here indicates that the entity or organization being
-   referenced holds the registration of that DNS domain.  Domain
-   Owners range from complex, globally distributed organizations, to
-   service providers working on behalf of non-technical clients, to
-   individuals responsible for maintaining personal domains.  This
-   specification uses this term as analogous to an Administrative
-   Management Domain as defined in [@RFC5598].  It can also refer
-   to delegates, such as Report Receivers, when those are outside of
-   their immediate management domain.
+Domain Owner:  
+:   An entity or organization that owns a DNS domain.  The
+term "owns" here indicates that the entity or organization being
+referenced holds the registration of that DNS domain.  Domain
+Owners range from complex, globally distributed organizations, to
+service providers working on behalf of non-technical clients, to
+individuals responsible for maintaining personal domains.  This
+specification uses this term as analogous to an Administrative
+Management Domain as defined in [@RFC5598].  It can also refer
+to delegates, such as Report Receivers, when those are outside of
+their immediate management domain.
 
-Identifier Alignment:  When the domain in the RFC5322.From address
-   matches a domain validated by SPF or DKIM (or both), it has
-   Identifier Alignment.
+Identifier Alignment:  
+:   When the domain in the RFC5322.From address
+matches a domain validated by SPF or DKIM (or both), it has
+Identifier Alignment.
 
-Mail Receiver:  The entity or organization that receives and
-   processes email.  Mail Receivers operate one or more Internet-
-   facing Mail Transport Agents (MTAs).
+Mail Receiver:  
+:   The entity or organization that receives and
+processes email.  Mail Receivers operate one or more Internet-
+facing Mail Transport Agents (MTAs).
 
-Organizational Domain:  The domain that was registered with a domain
-   name registrar.  In the absence of more accurate methods,
-   heuristics are used to determine this, since it is not always the
-   case that the registered domain name is simply a top-level DNS
-   domain plus one component (e.g., "example.com", where "com" is a
-   top-level domain).  The Organizational Domain is determined by
-   applying the algorithm found in {#organizational-domain}.
+Organizational Domain:  
+:   The domain that was registered with a domain
+name registrar.  In the absence of more accurate methods,
+heuristics are used to determine this, since it is not always the
+case that the registered domain name is simply a top-level DNS
+domain plus one component (e.g., "example.com", where "com" is a
+top-level domain).  The Organizational Domain is determined by
+applying the algorithm found in {#organizational-domain}.
 
-Report Receiver:  An operator that receives reports from another
-   operator implementing the reporting mechanism described in this
-   document.  Such an operator might be receiving reports about its
-   own messages, or reports about messages related to another
-   operator.  This term applies collectively to the system components
-   that receive and process these reports and the organizations that
-   operate them.
+Report Receiver:  
+:   An operator that receives reports from another
+operator implementing the reporting mechanism described in this
+document.  Such an operator might be receiving reports about its
+own messages, or reports about messages related to another
+operator.  This term applies collectively to the system components
+that receive and process these reports and the organizations that
+operate them.
 
 ##  Identifier Alignment {#identifier-alignment}
 
@@ -536,10 +543,10 @@ authentication mechanisms:
                     | Mailbox |   |  Engine   |     | Verifier |
                     +---------+   +-----------+     +----------+
 
-~~~
 
   MSA = Mail Submission Agent
   MDA = Mail Delivery Agent
+~~~
 
 The above diagram shows a simple flow of messages through a DMARC-
 aware system.  Solid lines denote the actual message flow, dotted
@@ -719,30 +726,33 @@ to be processed; unknown tags MUST be ignored.
 
 The following tags are introduced as the initial valid DMARC tags:
 
-adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
-   strict or relaxed DKIM Identifier Alignment mode is required by
-   the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
-   are as follows:
+adkim:  
+:   (plain-text; OPTIONAL; default is "r".)  Indicates whether
+strict or relaxed DKIM Identifier Alignment mode is required by
+the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
+are as follows:
 
    r: relaxed mode
 
    s: strict mode
 
-aspf:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
-   strict or relaxed SPF Identifier Alignment mode is required by the
-   Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
-   follows:
+aspf:  
+:   (plain-text; OPTIONAL; default is "r".)  Indicates whether
+strict or relaxed SPF Identifier Alignment mode is required by the
+Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
+follows:
 
    r: relaxed mode
 
    s: strict mode
 
-fo:  Failure reporting options (plain-text; OPTIONAL; default is "0")
-   Provides requested options for generation of failure reports.
-   Report generators MAY choose to adhere to the requested options.
-   This tag's content MUST be ignored if a "ruf" tag (below) is not
-   also specified.  The value of this tag is a colon-separated list
-   of characters that indicate failure reporting options as follows:
+fo:  
+:   Failure reporting options (plain-text; OPTIONAL; default is "0")
+Provides requested options for generation of failure reports.
+Report generators MAY choose to adhere to the requested options.
+This tag's content MUST be ignored if a "ruf" tag (below) is not
+also specified.  The value of this tag is a colon-separated list
+of characters that indicate failure reporting options as follows:
 
    0: Generate a DMARC failure report if all underlying
       authentication mechanisms fail to produce an aligned "pass"
@@ -760,13 +770,14 @@ fo:  Failure reporting options (plain-text; OPTIONAL; default is "0")
       evaluation, regardless of its alignment.  SPF-specific
       reporting is described in [@!RFC6652].
 
-p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
-   records).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  Policy applies to the domain
-   queried and to subdomains, unless subdomain policy is explicitly
-   described using the "sp" tag.  This tag is mandatory for policy
-   records only, but not for third-party reporting records (see
-   {#verifying-external-destinations}).  Possible values are as follows:
+p: 
+:   Requested Mail Receiver policy (plain-text; REQUIRED for policy
+records).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  Policy applies to the domain
+queried and to subdomains, unless subdomain policy is explicitly
+described using the "sp" tag.  This tag is mandatory for policy
+records only, but not for third-party reporting records (see
+{#verifying-external-destinations}).  Possible values are as follows:
 
    none:  The Domain Owner requests no specific action be taken
       regarding delivery of messages.
@@ -782,88 +793,95 @@ p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
       occur during the SMTP transaction.  See {#rejecting-messages} for some
       discussion of SMTP rejection methods and their implications.
 
-pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
-   default is 100).  Percentage of messages from the Domain Owner's
-   mail stream to which the DMARC policy is to be applied.  However,
-   this MUST NOT be applied to the DMARC-generated reports, all of
-   which must be sent and received unhindered.  The purpose of the
-   "pct" tag is to allow Domain Owners to enact a slow rollout
-   enforcement of the DMARC mechanism.  The prospect of "all or
-   nothing" is recognized as preventing many organizations from
-   experimenting with strong authentication-based mechanisms.  See
-   {#message-sampling} for details.  Note that random selection based on
-   this percentage, such as the following pseudocode, is adequate:
+pct:  
+:   (plain-text integer between 0 and 100, inclusive; OPTIONAL;
+default is 100).  Percentage of messages from the Domain Owner's
+mail stream to which the DMARC policy is to be applied.  However,
+this MUST NOT be applied to the DMARC-generated reports, all of
+which must be sent and received unhindered.  The purpose of the
+"pct" tag is to allow Domain Owners to enact a slow rollout
+enforcement of the DMARC mechanism.  The prospect of "all or
+nothing" is recognized as preventing many organizations from
+experimenting with strong authentication-based mechanisms.  See
+{#message-sampling} for details.  Note that random selection based on
+this percentage, such as the following pseudocode, is adequate:
 
     if (random mod 100) < pct then
       selected = true
     else
       selected = false
 
-rf:  Format to be used for message-specific failure reports (colon-
-   separated plain-text list of values; OPTIONAL; default is "afrf").
-   The value of this tag is a list of one or more report formats as
-   requested by the Domain Owner to be used when a message fails both
-   [@!RFC3986] and [@!RFC6376] tests to report details of the individual
-   failure.  The values MUST be present in the registry of reporting
-   formats defined in {#iana-considerations}; a Mail Receiver observing a
-   different value SHOULD ignore it or MAY ignore the entire DMARC
-   record.  For this version, only "afrf" (the auth-failure report
-   type defined in [@!RFC6591]) is presently supported.  See {#failure-reports} 
-   for details.  For interoperability, the Authentication Failure
-   Reporting Format (AFRF) MUST be supported.
+rf:  
+:   Format to be used for message-specific failure reports (colon-
+separated plain-text list of values; OPTIONAL; default is "afrf").
+The value of this tag is a list of one or more report formats as
+requested by the Domain Owner to be used when a message fails both
+[@!RFC3986] and [@!RFC6376] tests to report details of the individual
+failure.  The values MUST be present in the registry of reporting
+formats defined in {#iana-considerations}; a Mail Receiver observing a
+different value SHOULD ignore it or MAY ignore the entire DMARC
+record.  For this version, only "afrf" (the auth-failure report
+type defined in [@!RFC6591]) is presently supported.  See {#failure-reports} 
+for details.  For interoperability, the Authentication Failure
+Reporting Format (AFRF) MUST be supported.
 
-ri:  Interval requested between aggregate reports (plain-text 32-bit
-   unsigned integer; OPTIONAL; default is 86400).  Indicates a
-   request to Receivers to generate aggregate reports separated by no
-   more than the requested number of seconds.  DMARC implementations
-   MUST be able to provide daily reports and SHOULD be able to
-   provide hourly reports when requested.  However, anything other
-   than a daily report is understood to be accommodated on a best-
-   effort basis.
+ri:  
+:   Interval requested between aggregate reports (plain-text 32-bit
+unsigned integer; OPTIONAL; default is 86400).  Indicates a
+request to Receivers to generate aggregate reports separated by no
+more than the requested number of seconds.  DMARC implementations
+MUST be able to provide daily reports and SHOULD be able to
+provide hourly reports when requested.  However, anything other
+than a daily report is understood to be accommodated on a best-
+effort basis.
 
-rua:  Addresses to which aggregate feedback is to be sent (comma-
-   separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
-   exclamation point that is part of such a DMARC URI MUST be encoded
-   per Section 2.1 of [@!RFC3986] so as to distinguish it from the list
-   delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  See {#external-report-addresses} 
-   for additional considerations.  Any valid URI can be specified.  A
-   Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
-   the ability to send a DMARC report via electronic mail.  If not
-   provided, Mail Receivers MUST NOT generate aggregate feedback
-   reports.  URIs not supported by Mail Receivers MUST be ignored.
-   The aggregate feedback report format is described in {#aggregate-reports} 
+rua:  
+:   Addresses to which aggregate feedback is to be sent (comma-
+separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
+exclamation point that is part of such a DMARC URI MUST be encoded
+per Section 2.1 of [@!RFC3986] so as to distinguish it from the list
+delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  See {#external-report-addresses} 
+for additional considerations.  Any valid URI can be specified.  A
+Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
+the ability to send a DMARC report via electronic mail.  If not
+provided, Mail Receivers MUST NOT generate aggregate feedback
+reports.  URIs not supported by Mail Receivers MUST be ignored.
+The aggregate feedback report format is described in {#aggregate-reports} 
 
-ruf:  Addresses to which message-specific failure information is to
-   be reported (comma-separated plain-text list of DMARC URIs;
-   OPTIONAL).  If present, the Domain Owner is requesting Mail
-   Receivers to send detailed failure reports about messages that
-   fail the DMARC evaluation in specific ways (see the "fo" tag
-   above).  The format of the message to be generated MUST follow the
-   format specified for the "rf" tag.  {#verifying-external-destinations} discusses
-   considerations that apply when the domain name of a URI differs
-   from that of the domain advertising the policy.  A Mail Receiver
-   MUST implement support for a "mailto:" URI, i.e., the ability to
-   send a DMARC report via electronic mail.  If not provided, Mail
-   Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
-   additional considerations.
+ruf:  
+:   Addresses to which message-specific failure information is to
+be reported (comma-separated plain-text list of DMARC URIs;
+OPTIONAL).  If present, the Domain Owner is requesting Mail
+Receivers to send detailed failure reports about messages that
+fail the DMARC evaluation in specific ways (see the "fo" tag
+above).  The format of the message to be generated MUST follow the
+format specified for the "rf" tag.  {#verifying-external-destinations} discusses
+considerations that apply when the domain name of a URI differs
+from that of the domain advertising the policy.  A Mail Receiver
+MUST implement support for a "mailto:" URI, i.e., the ability to
+send a DMARC report via electronic mail.  If not provided, Mail
+Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
+additional considerations.
 
-sp:  Requested Mail Receiver policy for all subdomains (plain-text;
-   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
-   the request of the Domain Owner.  It applies only to subdomains of
-   the domain queried and not to the domain itself.  Its syntax is
-   identical to that of the "p" tag defined above.  If absent, the
-   policy specified by the "p" tag MUST be applied for subdomains.
-   Note that "sp" will be ignored for DMARC records published on
-   subdomains of Organizational Domains due to the effect of the
-   DMARC policy discovery mechanism described in {#policy-discovery}.
+sp:  
+:   Requested Mail Receiver policy for all subdomains (plain-text;
+OPTIONAL).  Indicates the policy to be enacted by the Receiver at
+the request of the Domain Owner.  It applies only to subdomains of
+the domain queried and not to the domain itself.  Its syntax is
+identical to that of the "p" tag defined above.  If absent, the
+policy specified by the "p" tag MUST be applied for subdomains.
+Note that "sp" will be ignored for DMARC records published on
+subdomains of Organizational Domains due to the effect of the
+DMARC policy discovery mechanism described in {#policy-discovery}.
 
-v: Version (plain-text; REQUIRED).  Identifies the record retrieved
-   as a DMARC record.  It MUST have the value of "DMARC1".  The value
-   of this tag MUST match precisely; if it does not or it is absent,
-   the entire retrieved record MUST be ignored.  It MUST be the first
-   tag in the list.
+v: 
+:   Version (plain-text; REQUIRED).  Identifies the record retrieved
+as a DMARC record.  It MUST have the value of "DMARC1".  The value
+of this tag MUST match precisely; if it does not or it is absent,
+the entire retrieved record MUST be ignored.  It MUST be the first
+tag in the list.
 
 A DMARC policy record MUST comply with the formal specification found
 in {#formal-definition} in that the "v" and "p" tags MUST be present and MUST
@@ -882,8 +900,9 @@ a new version of DMARC.
 The formal definition of the DMARC format, using [@!RFC5234], is as
 follows:
 
+~~~
   dmarc-uri       = URI [ "!" 1*DIGIT [ "k" / "m" / "g" / "t" ] ]
-                    ; "URI" is imported from [@!RFC3986]; commas (ASCII
+                    ; "URI" is imported from [RFC3986]; commas (ASCII
                     ; 0x2C) and exclamation points (ASCII 0x21)
                     ; MUST be encoded; the numeric portion MUST fit
                     ; within an unsigned 64-bit integer
@@ -936,6 +955,7 @@ follows:
 
   dmarc-percent   = "pct" *WSP "=" *WSP
                     1*3DIGIT
+~~~
 
 "Keyword" is imported from Section 4.1.2 of [@!RFC5321].
 
@@ -1438,6 +1458,7 @@ aggregate data SHOULD be present using the media type "application/
 gzip" if compressed (see [@!RFC6713]), and "text/xml" otherwise.  The
 filename is typically constructed using the following ABNF:
 
+~~~
   filename = receiver "!" policy-domain "!" begin-timestamp
              "!" end-timestamp [ "!" unique-id ] "." extension
 
@@ -1459,6 +1480,7 @@ filename is typically constructed using the following ABNF:
                   ; in the report
 
   extension = "xml" / "xml.gz"
+~~~
 
 The extension MUST be "xml" for a plain XML file, or "xml.gz" for an
 XML file compressed using GZIP.
@@ -1486,6 +1508,7 @@ fraudulent reports.
 The RFC5322.Subject field for individual report submissions SHOULD
 conform to the following ABNF:
 
+~~~
   dmarc-subject = %x52.65.70.6f.72.74 1*FWS       ; "Report"
                   %x44.6f.6d.61.69.6e.3a 1*FWS    ; "Domain:"
                   domain-name 1*FWS               ; from RFC 6376
@@ -1493,6 +1516,7 @@ conform to the following ABNF:
                   1*FWS domain-name 1*FWS
                   %x52.65.70.6f.72.74.2d.49.44.3a ; "Report-ID:"
                   msg-id                          ; from RFC 5322
+~~~
 
 The first domain-name indicates the DNS domain name about which the
 report was generated.  The second domain-name indicates the DNS
@@ -1505,9 +1529,11 @@ For instance, this is a possible Subject field for a report to the
 Domain Owner "example.com" from the Mail Receiver
 "mail.receiver.example".  It is line-wrapped as allowed by [@!RFC5322]:
 
+~~~
   Subject: Report Domain: example.com
       Submitter: mail.receiver.example
       Report-ID: <2002.02.15.1>
+~~~
 
 This transport mechanism potentially encounters a problem when
 feedback data size exceeds maximum allowable attachment sizes for
@@ -1532,26 +1558,31 @@ MUST be included that contains field-value pairs such as those found
 in Section 2 of [@RFC3464].  The fields required, which may appear in any
 order, are as follows:
 
-Report-Date:  A [@!RFC5322]-formatted date expression indicating when the
-   transport failure occurred.
+Report-Date:  
+:   A [@!RFC5322]-formatted date expression indicating when the
+transport failure occurred.
 
-Report-Domain:  The domain-name about which the failed report was
-   generated.
+Report-Domain:  
+:   The domain-name about which the failed report was generated.
 
-Report-ID:  The Report-ID: that the report tried to use.
+Report-ID:  
+:   The Report-ID: that the report tried to use.
 
-Report-Size:  The size, in bytes, of the report that was unable to be
-   sent.  This MUST represent the number of bytes that the Mail
-   Receiver attempted to send.  Where more than one transport system
-   was attempted, the sizes may be different; in such cases, separate
-   error reports MUST be generated so that this value matches the
-   actual attempt that was made.
+Report-Size:  
+:   The size, in bytes, of the report that was unable to be
+sent.  This MUST represent the number of bytes that the Mail
+Receiver attempted to send.  Where more than one transport system
+was attempted, the sizes may be different; in such cases, separate
+error reports MUST be generated so that this value matches the
+actual attempt that was made.
 
-Submitter:  The domain-name representing the Mail Receiver that
-   generated, but was unable to submit, the report.
+Submitter:
+:   The domain-name representing the Mail Receiver that
+generated, but was unable to submit, the report.
 
-Submitting-URI:  The URI(s) to which the Mail Receiver tried, but
-   failed, to submit the report.
+Submitting-URI:  
+:   The URI(s) to which the Mail Receiver tried, but
+failed, to submit the report.
 
 An additional text/plain part MAY be included that gives a human-
 readable explanation of the above and MAY also include a URI that can
@@ -1628,6 +1659,7 @@ version of [@!RFC6591] as follows:
     separated list of authentication mechanism names that produced an
     aligned identity, or the keyword "none" if none did.  ABNF:
 
+~~~
   id-align     = "Identity-Alignment:" [CFWS]
                  ( "none" /
                    dmarc-method *( [CFWS] "," [CFWS] dmarc-method ) )
@@ -1635,6 +1667,7 @@ version of [@!RFC6591] as follows:
 
   dmarc-method = ( "dkim" / "spf" )
                  ; each may appear at most once in an id-align
+~~~
 
 3.  Authentication Failure Type "dmarc" is defined, which is to be
     used when a failure report is generated because some or all of
@@ -1990,34 +2023,19 @@ when processed by implementations conforming to prior specifications.
 
 The initial set of entries in this registry is as follows:
 
- +----------+-------------+---------+------------------------------+
- | Tag Name | Reference   | Status  | Description                  |
- +----------+-------------+---------+------------------------------+
- |  adkim   |  RFC 7489   | current | DKIM alignment mode          |
- +----------+-------------+---------+------------------------------+
- |   aspf   |  RFC 7489   | current | SPF alignment mode           |
- +----------+-------------+---------+------------------------------+
- |    fo    |  RFC 7489   | current | Failure reporting options    |
- +----------+-------------+---------+------------------------------+
- |     p    |  RFC 7489   | current | Requested handling policy    |
- +----------+-------------+---------+------------------------------+
- |    pct   |  RFC 7489   | current | Sampling rate                |
- +----------+-------------+---------+------------------------------+
- |    rf    |  RFC 7489   | current | Failure reporting format(s)  |
- +----------+-------------+---------+------------------------------+
- |    ri    |  RFC 7489   | current | Aggregate Reporting interval |
- +----------+-------------+---------+------------------------------+
- |    rua   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | aggregate data               |
- +----------+-------------+---------+------------------------------+
- |    ruf   |  RFC 7489   | current | Reporting URI(s) for         |
- |          |             |         | failure data                 |
- +----------+-------------+---------+------------------------------+
- |    sp    |  RFC 7489   | current | Requested handling policy    |
- |          |             |         | for subdomains               |
- +----------+-------------+---------+------------------------------+
- |     v    |  RFC 7489   | current | Specification version        |
- +----------+-------------+---------+------------------------------+
+| Tag Name | Reference | Status  | Description                              |
+|:---------|:----------|:--------|:-----------------------------------------|
+| adkim    | RFC 7489  | current | DKIM alignment mode                      |
+| aspf     | RFC 7489  | current | SPF alignment mode                       |
+| fo       | RFC 7489  | current | Failure reporting options                |
+| p        | RFC 7489  | current | Requested handling policy                |
+| pct      | RFC 7489  | current | Sampling rate                            |
+| rf       | RFC 7489  | current | Failure reporting format(s)              |
+| ri       | RFC 7489  | current | Aggregate Reporting interval             |
+| rua      | RFC 7489  | current | Reporting URI(s) for aggregate data      |
+| ruf      | RFC 7489  | current | Reporting URI(s) for failure data        |
+| sp       | RFC 7489  | current | Requested handling policy for subdomains |
+| v        | RFC 7489  | current | Specification version                    |
 
 ##  DMARC Report Format Registry {#dmarc-report-format-registry}
 
@@ -2038,14 +2056,9 @@ DMARC context by Domain Owners and Mail Receivers.
 
 The initial entry in this registry is as follows:
 
- +--------+-------------+---------+-----------------------------+
- | Format | Reference   | Status  | Description                 |
- |  Name  |             |         |                             |
- +--------+-------------+---------+-----------------------------+
- | afrf   |  RFC 7489   | current | Authentication Failure      |
- |        |             |         | Reporting Format (see       |
- |        |             |         | [@!RFC6591])                     |
- +--------+-------------+---------+-----------------------------+
+| Format Name | Reference | Status  | Description                                               |
+|-------------|-----------|---------|-----------------------------------------------------------|
+| afrf        | RFC 7489  | current | Authentication Failure Reporting Format (see [@!RFC6591]) |
 
 #  Security Considerations {#security-considerations}
 
@@ -2511,17 +2524,21 @@ indicating that:
 The DMARC policy record might look like this when retrieved using a
 common command-line tool:
 
+~~~
   % dig +short TXT _dmarc.example.com.
   "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com"
+~~~
 
 To publish such a record, the DNS administrator for the Domain Owner
 creates an entry like the following in the appropriate zone file
 (following the conventional zone file format):
 
+~~~
   ; DMARC record for the domain example.com
 
   _dmarc  IN TXT ( "v=DMARC1; p=none; "
                    "rua=mailto:dmarc-feedback@example.com" )
+~~~
 
 ###  Entire Domain, Monitoring Only, Per-Message Reports {#entire-domain-monitoring-only-per-message-reports}
 
@@ -2548,19 +2565,23 @@ The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):
 
+~~~
   % dig +short TXT _dmarc.example.com.
   "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
    ruf=mailto:auth-reports@example.com"
+~~~
 
 To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):
 
+~~~
  ; DMARC record for the domain example.com
 
  _dmarc  IN TXT ( "v=DMARC1; p=none; "
                   "rua=mailto:dmarc-feedback@example.com; "
                   "ruf=mailto:auth-reports@example.com" )
+~~~
 
 ###  Per-Message Failure Reports Directed to Third Party {#per-message-failure-reports-directed-to-third-party}
 
@@ -2582,19 +2603,23 @@ The DMARC policy record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):
 
+~~~
   % dig +short TXT _dmarc.example.com.
   "v=DMARC1; p=none; rua=mailto:dmarc-feedback@example.com;
    ruf=mailto:auth-reports@thirdparty.example.net"
+~~~
 
 To publish such a record, the DNS administrator for the Domain Owner
 might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):
 
+~~~
   ; DMARC record for the domain example.com
 
   _dmarc IN TXT ( "v=DMARC1; p=none; "
                   "rua=mailto:dmarc-feedback@example.com; "
                   "ruf=mailto:auth-reports@thirdparty.example.net" )
+~~~
 
 Because the address used in the "ruf" tag is outside the
 Organizational Domain in which this record is published, conforming
@@ -2805,6 +2830,7 @@ A DMARC record can contain a "mailto" reporting address, such as:
 A sample aggregate report from the Mail Receiver at
 mail.receiver.example follows:
 
+~~~
   DKIM-Signature: v=1; ...; d=mail.receiver.example; ...
   From: dmarc-reporting@mail.receiver.example
   Date: Fri, Feb 15 2002 16:54:30 -0800
@@ -2825,7 +2851,6 @@ mail.receiver.example follows:
 
   This is an aggregate report from mail.receiver.example.
 
-~~~
   ------=_NextPart_000_024E_01CC9B0A.AFE54C00
   Content-Type: application/gzip
   Content-Transfer-Encoding: base64
@@ -3121,28 +3146,33 @@ set to 1.
 
 Descriptions of the PolicyOverrideTypes:
 
-forwarded:  The message was relayed via a known forwarder, or local
-   heuristics identified the message as likely having been forwarded.
-   There is no expectation that authentication would pass.
+forwarded:  
+:   The message was relayed via a known forwarder, or local
+heuristics identified the message as likely having been forwarded.
+There is no expectation that authentication would pass.
 
-local_policy:  The Mail Receiver's local policy exempted the message
-   from being subjected to the Domain Owner's requested policy
-   action.
+local_policy: 
+:   The Mail Receiver's local policy exempted the message
+from being subjected to the Domain Owner's requested policy action.
 
-mailing_list:  Local heuristics determined that the message arrived
-   via a mailing list, and thus authentication of the original
-   message was not expected to succeed.
+mailing_list:  
+:   Local heuristics determined that the message arrived
+via a mailing list, and thus authentication of the original
+message was not expected to succeed.
 
-other:  Some policy exception not covered by the other entries in
-   this list occurred.  Additional detail can be found in the
-   PolicyOverrideReason's "comment" field.
+other:  
+:   Some policy exception not covered by the other entries in
+this list occurred.  Additional detail can be found in the
+PolicyOverrideReason's "comment" field.
 
-sampled_out:  The message was exempted from application of policy by
-   the "pct" setting in the DMARC policy record.
+sampled_out:  
+:   The message was exempted from application of policy by
+the "pct" setting in the DMARC policy record.
 
-trusted_forwarder:  Message authentication failure was anticipated by
-   other evidence linking the message to a locally maintained list of
-   known and trusted forwarders.
+trusted_forwarder:  
+:   Message authentication failure was anticipated by
+other evidence linking the message to a locally maintained list of
+known and trusted forwarders.
 
 The "version" for reports generated per this specification MUST be
 the value 1.0.
