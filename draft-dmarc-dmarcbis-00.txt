@@ -5,7 +5,7 @@
 DMARC Working Group                                    M. Kucherawy (ed)
 Internet-Draft                                                          
 Intended status: Standards Track                          E. Zwicky (ed)
-Expires: 9 September 2020                                   8 March 2020
+Expires: 11 September 2020                                 10 March 2020
 
 
 Domain-based Message Authentication, Reporting, and Conformance (DMARC)
@@ -49,11 +49,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 September 2020.
+   This Internet-Draft will expire on 11 September 2020.
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 1]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 1]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 2]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 2]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -145,38 +145,38 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    Appendix A.  Technology Considerations  . . . . . . . . . . . . .  51
      A.1.  S/MIME  . . . . . . . . . . . . . . . . . . . . . . . . .  51
      A.2.  Method Exclusion  . . . . . . . . . . . . . . . . . . . .  52
-     A.3.  Sender Header Field . . . . . . . . . . . . . . . . . . .  52
+     A.3.  Sender Header Field . . . . . . . . . . . . . . . . . . .  53
      A.4.  Domain Existence Test . . . . . . . . . . . . . . . . . .  53
-     A.5.  Issues with ADSP in Operation . . . . . . . . . . . . . .  53
-     A.6.  Organizational Domain Discovery Issues  . . . . . . . . .  54
+     A.5.  Issues with ADSP in Operation . . . . . . . . . . . . . .  54
+     A.6.  Organizational Domain Discovery Issues  . . . . . . . . .  55
        A.6.1.  Public Suffix Lists . . . . . . . . . . . . . . . . .  55
-   Appendix B.  Examples . . . . . . . . . . . . . . . . . . . . . .  55
-     B.1.  Identifier Alignment Examples . . . . . . . . . . . . . .  55
-       B.1.1.  SPF . . . . . . . . . . . . . . . . . . . . . . . . .  55
-       B.1.2.  DKIM  . . . . . . . . . . . . . . . . . . . . . . . .  56
-     B.2.  Domain Owner Example  . . . . . . . . . . . . . . . . . .  57
-       B.2.1.  Entire Domain, Monitoring Only  . . . . . . . . . . .  57
+   Appendix B.  Examples . . . . . . . . . . . . . . . . . . . . . .  56
+     B.1.  Identifier Alignment Examples . . . . . . . . . . . . . .  56
+       B.1.1.  SPF . . . . . . . . . . . . . . . . . . . . . . . . .  56
+       B.1.2.  DKIM  . . . . . . . . . . . . . . . . . . . . . . . .  57
+     B.2.  Domain Owner Example  . . . . . . . . . . . . . . . . . .  58
+       B.2.1.  Entire Domain, Monitoring Only  . . . . . . . . . . .  58
        B.2.2.  Entire Domain, Monitoring Only, Per-Message
-               Reports . . . . . . . . . . . . . . . . . . . . . . .  58
+               Reports . . . . . . . . . . . . . . . . . . . . . . .  59
        B.2.3.  Per-Message Failure Reports Directed to Third
-               Party . . . . . . . . . . . . . . . . . . . . . . . .  59
+               Party . . . . . . . . . . . . . . . . . . . . . . . .  60
        B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report
-               URIs  . . . . . . . . . . . . . . . . . . . . . . . .  60
+               URIs  . . . . . . . . . . . . . . . . . . . . . . . .  61
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 3]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 3]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-     B.3.  Mail Receiver Example . . . . . . . . . . . . . . . . . .  61
+     B.3.  Mail Receiver Example . . . . . . . . . . . . . . . . . .  62
        B.3.1.  Processing of SMTP Time . . . . . . . . . . . . . . .  62
-     B.4.  Utilization of Aggregate Feedback: Example  . . . . . . .  63
+     B.4.  Utilization of Aggregate Feedback: Example  . . . . . . .  64
      B.5.  mailto Transport Example  . . . . . . . . . . . . . . . .  64
-   Appendix C.  DMARC XML Schema . . . . . . . . . . . . . . . . . .  64
-   Appendix D.  Acknowledgements . . . . . . . . . . . . . . . . . .  71
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  71
+   Appendix C.  DMARC XML Schema . . . . . . . . . . . . . . . . . .  65
+   Appendix D.  Acknowledgements . . . . . . . . . . . . . . . . . .  72
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  72
 
 1.  Introduction
 
@@ -221,7 +221,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 4]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 4]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -277,7 +277,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 5]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 5]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -333,7 +333,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 6]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 6]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -389,7 +389,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 7]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 7]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -445,7 +445,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 8]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 8]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -501,7 +501,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020                [Page 9]
+Kucherawy (ed) & Zwicky Expires 11 September 2020               [Page 9]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -557,7 +557,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 10]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 10]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -613,7 +613,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 11]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 11]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -669,7 +669,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 12]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 12]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -725,7 +725,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 13]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 13]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -781,7 +781,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 14]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 14]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -837,7 +837,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 15]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 15]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -893,7 +893,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 16]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 16]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -949,7 +949,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 17]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 17]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1005,7 +1005,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 18]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 18]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1061,7 +1061,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 19]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 19]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1117,7 +1117,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 20]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 20]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1173,7 +1173,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 21]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 21]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1229,7 +1229,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 22]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 22]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1285,7 +1285,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 23]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 23]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1341,7 +1341,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 24]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 24]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1397,7 +1397,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 25]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 25]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1453,7 +1453,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 26]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 26]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1509,7 +1509,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 27]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 27]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1565,7 +1565,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 28]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 28]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1621,7 +1621,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 29]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 29]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1677,7 +1677,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 30]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 30]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1733,7 +1733,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 31]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 31]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1789,7 +1789,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 32]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 32]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1845,7 +1845,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 33]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 33]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1901,7 +1901,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 34]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 34]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1957,7 +1957,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 35]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 35]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -1979,7 +1979,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    reports to the Domain Owner or its delegate in potentially huge
    volumes.  Accordingly, participating Mail Receivers are encouraged to
    aggregate these reports as much as is practical, using the Incidents
-   field of the Abuse Reporting Format ([RFC5695]).  Various aggregation
+   field of the Abuse Reporting Format ([RFC5965]).  Various aggregation
    techniques are possible, including the following:
 
    *  only send a report to the first recipient of multi-recipient
@@ -2013,7 +2013,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 36]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 36]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2069,7 +2069,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 37]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 37]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2125,7 +2125,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 38]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 38]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2181,7 +2181,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 39]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 39]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2237,7 +2237,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 40]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 40]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2293,7 +2293,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 41]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 41]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2349,7 +2349,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 42]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 42]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2405,7 +2405,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 43]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 43]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2461,7 +2461,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 44]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 44]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2517,7 +2517,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 45]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 45]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2573,7 +2573,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 46]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 46]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2629,7 +2629,7 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 47]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 47]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
@@ -2658,19 +2658,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
 11.  Normative References
 
-   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
-              Insensitivity Clarification", RFC 4343,
-              DOI 10.17487/RFC4343, January 2006,
-              <https://www.rfc-editor.org/info/rfc4343>.
-
-   [RFC1035]  Mockapetris, P., "Domain names - implementation and
-              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
-              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
-
    [RFC7208]  Kitterman, S., "Sender Policy Framework (SPF) for
               Authorizing Use of Domains in Email, Version 1", RFC 7208,
               DOI 10.17487/RFC7208, April 2014,
               <https://www.rfc-editor.org/info/rfc7208>.
+
+   [RFC1035]  Mockapetris, P., "Domain names - implementation and
+              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
+              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
 
    [RFC6651]  Kucherawy, M., "Extensions to DomainKeys Identified Mail
               (DKIM) for Failure Reporting", RFC 6651,
@@ -2682,13 +2677,49 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
 
+   [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
+              "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
+              RFC 6376, DOI 10.17487/RFC6376, September 2011,
+              <https://www.rfc-editor.org/info/rfc6376>.
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 48]
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 48]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
+
+   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
+              DOI 10.17487/RFC5321, October 2008,
+              <https://www.rfc-editor.org/info/rfc5321>.
+
+   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
+              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
+              <https://www.rfc-editor.org/info/rfc4949>.
+
+   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part One: Format of Internet Message
+              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
+              <https://www.rfc-editor.org/info/rfc2045>.
+
+   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
+              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
+              <https://www.rfc-editor.org/info/rfc6713>.
+
+   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, DOI 10.17487/RFC3986, January 2005,
+              <https://www.rfc-editor.org/info/rfc3986>.
+
+   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
+              Insensitivity Clarification", RFC 4343,
+              DOI 10.17487/RFC4343, January 2006,
+              <https://www.rfc-editor.org/info/rfc4343>.
+
+   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
+              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
+              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
 
    [RFC5890]  Klensin, J., "Internationalized Domain Names for
               Applications (IDNA): Definitions and Document Framework",
@@ -2699,61 +2730,35 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               DOI 10.17487/RFC5322, October 2008,
               <https://www.rfc-editor.org/info/rfc5322>.
 
-   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
-              Resource Identifier (URI): Generic Syntax", STD 66,
-              RFC 3986, DOI 10.17487/RFC3986, January 2005,
-              <https://www.rfc-editor.org/info/rfc3986>.
-
-   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
-              DOI 10.17487/RFC5321, October 2008,
-              <https://www.rfc-editor.org/info/rfc5321>.
-
-   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
-              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
-              <https://www.rfc-editor.org/info/rfc6713>.
-
-   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
-              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
-              <https://www.rfc-editor.org/info/rfc4949>.
-
    [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
               Authentication Failure Reporting Using the Abuse Reporting
               Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
               <https://www.rfc-editor.org/info/rfc6652>.
 
-   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
-              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
-              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
-
-   [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
-              "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
-              RFC 6376, DOI 10.17487/RFC6376, September 2011,
-              <https://www.rfc-editor.org/info/rfc6376>.
-
    [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234,
-              DOI 10.17487/RFC5234, January 2008,
-              <https://www.rfc-editor.org/info/rfc5234>.
-
-   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
-              Extensions (MIME) Part One: Format of Internet Message
 
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 49]
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 49]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
 
-              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
-              <https://www.rfc-editor.org/info/rfc2045>.
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/info/rfc5234>.
 
 12.  Informative References
 
-   [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
-              DOI 10.17487/RFC5598, July 2009,
-              <https://www.rfc-editor.org/info/rfc5598>.
+   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
+              for Delivery Status Notifications", RFC 3464,
+              DOI 10.17487/RFC3464, January 2003,
+              <https://www.rfc-editor.org/info/rfc3464>.
+
+   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
+              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
+              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
 
    [RFC5863]  Hansen, T., Siegel, E., Hallam-Baker, P., and D. Crocker,
               "DomainKeys Identified Mail (DKIM) Development,
@@ -2766,59 +2771,60 @@ Internet-Draft                tjw-dmarcbis                    March 2020
               DOI 10.17487/RFC7001, September 2013,
               <https://www.rfc-editor.org/info/rfc7001>.
 
-   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
-              for Delivery Status Notifications", RFC 3464,
-              DOI 10.17487/RFC3464, January 2003,
-              <https://www.rfc-editor.org/info/rfc3464>.
-
-   [RFC5695]  Akhter, A., Asati, R., and C. Pignataro, "MPLS Forwarding
-              Benchmarking Methodology for IP Flows", RFC 5695,
-              DOI 10.17487/RFC5695, November 2009,
-              <https://www.rfc-editor.org/info/rfc5695>.
-
-   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
-              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
-              <https://www.rfc-editor.org/info/rfc2142>.
-
-   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
-              Rose, "DNS Security Introduction and Requirements",
-              RFC 4033, DOI 10.17487/RFC4033, March 2005,
-              <https://www.rfc-editor.org/info/rfc4033>.
-
    [RFC4686]  Fenton, J., "Analysis of Threats Motivating DomainKeys
               Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
               September 2006, <https://www.rfc-editor.org/info/rfc4686>.
 
-   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
-              Identified Mail (DKIM) Service Overview", RFC 5585,
-              DOI 10.17487/RFC5585, July 2009,
-              <https://www.rfc-editor.org/info/rfc5585>.
+   [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
+              DOI 10.17487/RFC5598, July 2009,
+              <https://www.rfc-editor.org/info/rfc5598>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+   [RFC5965]  Shafranovich, Y., Levine, J., and M. Kucherawy, "An
+              Extensible Format for Email Feedback Reports", RFC 5965,
+              DOI 10.17487/RFC5965, August 2010,
+              <https://www.rfc-editor.org/info/rfc5965>.
+
+   [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
+              IANA Considerations Section in RFCs", RFC 5226,
+              DOI 10.17487/RFC5226, May 2008,
+              <https://www.rfc-editor.org/info/rfc5226>.
 
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 50]
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 50]
 
 Internet-Draft                tjw-dmarcbis                    March 2020
 
+
+   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
+              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
+              <https://www.rfc-editor.org/info/rfc2142>.
 
    [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
               "DomainKeys Identified Mail (DKIM) Author Domain Signing
               Practices (ADSP)", RFC 5617, DOI 10.17487/RFC5617, August
               2009, <https://www.rfc-editor.org/info/rfc5617>.
 
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
+              Identified Mail (DKIM) Service Overview", RFC 5585,
+              DOI 10.17487/RFC5585, July 2009,
+              <https://www.rfc-editor.org/info/rfc5585>.
 
-   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
-              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
-              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
+   [Best-Guess-SPF]
+              Kitterman, S., "Sender Policy Framework: Best guess record
+              (FAQ entry)", May 2010,
+              <http://www.openspf.org/FAQ/Best_guess_record>.
 
-   [RFC5226]  Narten, T. and H. Alvestrand, "Guidelines for Writing an
-              IANA Considerations Section in RFCs", RFC 5226,
-              DOI 10.17487/RFC5226, May 2008,
-              <https://www.rfc-editor.org/info/rfc5226>.
+   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "DNS Security Introduction and Requirements",
+              RFC 4033, DOI 10.17487/RFC4033, March 2005,
+              <https://www.rfc-editor.org/info/rfc4033>.
 
 Appendix A.  Technology Considerations
 
@@ -2844,20 +2850,20 @@ A.1.  S/MIME
    Infrastructure, which means that distribution of keys used to verify
    signatures needs to be incorporated.  In many instances, this alone
    is a showstopper.  There have been consistent promises that PKI
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 51]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    usability and deployment will improve, but these have yet to
    materialize.  DMARC can revisit this choice after those barriers are
    addressed.
 
    S/MIME has extensive deployment in specific market segments
    (government, for example) but does not enjoy similar widespread
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 51]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    deployment over the general Internet, and this shows no signs of
    changing.  DKIM and SPF both are deployed widely over the general
    Internet, and their adoption rates continue to be positive.
@@ -2895,6 +2901,19 @@ A.2.  Method Exclusion
 
    3.  Deploy DMARC in a reporting-only mode.
 
+
+
+
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 52]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
 A.3.  Sender Header Field
 
    It has been suggested in several message authentication efforts that
@@ -2906,13 +2925,6 @@ A.3.  Sender Header Field
 
    The DMARC development team considered this and decided not to include
    support for doing so, for the following reasons:
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 52]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
 
    1.  The main user protection approach is to be concerned with what
        the user sees when a message is rendered.  There is no consistent
@@ -2949,6 +2961,15 @@ A.4.  Domain Existence Test
    name that never sends legitimate mail and thus has none of these
    records present in the DNS.
 
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 53]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
 A.5.  Issues with ADSP in Operation
 
    DMARC has been characterized as a "super-ADSP" of sorts.
@@ -2962,13 +2983,6 @@ A.5.  Issues with ADSP in Operation
        subdomain.example.com.  If wildcarding is not applied, then
        spammers can trivially bypass ADSP by sending from a subdomain
        with no ADSP record.
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 53]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
 
    2.  Nonexistent subdomains are explicitly out of scope in ADSP.
        There is nothing in ADSP that states receivers should simply
@@ -2992,6 +3006,25 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    7.  The binding between the "From" header domain and DKIM is too
        tight for ADSP; they must match exactly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 54]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
 A.6.  Organizational Domain Discovery Issues
 
@@ -3018,14 +3051,6 @@ A.6.  Organizational Domain Discovery Issues
    the name until the root is reached or a policy is discovered, but
    then one could craft a name that has a large number of nonsense
    labels; this would cause a Mail Receiver to attempt a large number of
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 54]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    queries in search of a policy record.  Sending many such messages
    constitutes an amplified denial-of-service attack.
 
@@ -3047,6 +3072,15 @@ A.6.1.  Public Suffix Lists
 
    Note that if operators use a variety of public suffix lists,
    interoperability will be difficult or impossible to guarantee.
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 55]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
 Appendix B.  Examples
 
@@ -3073,15 +3107,6 @@ B.1.1.  SPF
     To: receiver@example.org
     Subject: here's a sample
 
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 55]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    In this case, the RFC5321.MailFrom parameter and the RFC5322.From
    field have identical DNS domains.  Thus, the identifiers are in
    alignment.
@@ -3101,6 +3126,17 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    Owner, and not in alignment if strict SPF mode is requested.
 
    Example 3: SPF not in alignment:
+
+
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 56]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
     MAIL FROM: <sender@example.net>
 
@@ -3131,13 +3167,6 @@ B.1.2.  DKIM
 
    Example 2: DKIM in alignment (parent):
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 56]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
     DKIM-Signature: v=1; ...; d=example.com; ...
     From: sender@child.example.com
     Date: Fri, Feb 15 2002 16:54:30 -0800
@@ -3156,6 +3185,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
     Date: Fri, Feb 15 2002 16:54:30 -0800
     To: receiver@example.org
     Subject: here's a sample
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 57]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    In this case, the DKIM signature's "d=" parameter includes a DNS
    domain that is neither the same as nor a parent of the RFC5322.From
@@ -3186,14 +3223,6 @@ B.2.1.  Entire Domain, Monitoring Only
    The Domain Owner accomplishes this by constructing a policy record
    indicating that:
 
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 57]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    *  The version of DMARC being used is "DMARC1" ("v=DMARC1;")
 
    *  Receivers should not alter how they treat these messages because
@@ -3211,6 +3240,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    % dig +short TXT _dmarc.example.com.  "v=DMARC1; p=none;
    rua=mailto:dmarc-feedback@example.com"
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 58]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    To publish such a record, the DNS administrator for the Domain Owner
    creates an entry like the following in the appropriate zone file
@@ -3242,14 +3280,6 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
       address "auth-reports@example.com" ("ruf=mailto:auth-
       reports@example.com")
 
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 58]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    The DMARC policy record might look like this when retrieved using a
    common command-line tool (the output shown would appear on a single
    line but is wrapped here for publication):
@@ -3266,6 +3296,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    _dmarc IN TXT ( "v=DMARC1; p=none; " "rua=mailto:dmarc-
    feedback@example.com; " "ruf=mailto:auth-reports@example.com" )
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 59]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
 B.2.3.  Per-Message Failure Reports Directed to Third Party
 
@@ -3297,15 +3336,6 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
 
    ; DMARC record for the domain example.com
 
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 59]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    _dmarc IN TXT ( "v=DMARC1; p=none; " "rua=mailto:dmarc-
    feedback@example.com; " "ruf=mailto:auth-
    reports@thirdparty.example.net" )
@@ -3322,6 +3352,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
       will need to publish a TXT resource record at
       "example.com._report._dmarc.thirdparty.example.net" with the value
       "v=DMARC1;".
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 60]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    The resulting DNS record might look like this when retrieved using a
    common command-line tool (the output shown would appear on a single
@@ -3354,14 +3393,6 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
    sent to mailboxes hosted by participating receivers.  Aggregate
    feedback reports will be sent to a mailbox within the Organizational
    Domain, and to a mailbox at a third party selected and authorized to
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 60]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    receive same by the Domain Owner.  Aggregate reports sent to the
    third party are limited to a maximum size of ten megabytes.
 
@@ -3379,6 +3410,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    *  Aggregate feedback reports should be sent via email to the
       addresses "dmarc-feedback@example.com" and "example-tld-
       test@thirdparty.example.net", with the latter subjected to a
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 61]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
       maximum size limit ("rua=mailto:dmarc-feedback@
       example.com,mailto:tld-test@thirdparty.example.net!10m")
 
@@ -3411,13 +3450,6 @@ B.3.  Mail Receiver Example
    from various email-processing stages to provide feedback to Domain
    Owners (possibly via Report Receivers).
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 61]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
 B.3.1.  Processing of SMTP Time
 
    An optimal DMARC-enabled Mail Receiver performs authentication and
@@ -3432,6 +3464,15 @@ B.3.1.  Processing of SMTP Time
        Identifiers.
 
    3.  A DMARC policy lookup.
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 62]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    The presence of an Author Domain DMARC record indicates that the Mail
    Receiver should continue with DMARC-specific processing before
@@ -3467,13 +3508,6 @@ B.3.1.  Processing of SMTP Time
    and DKIM), then the Mail Receiver may choose to ignore the Domain
    Owner's policy.
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 62]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    The Mail Receiver is now ready to reply to the DATA command.  If the
    DMARC check yields that the message is to be rejected, then the Mail
    Receiver replies with a 5xy code to inform the sender of failure.  If
@@ -3487,6 +3521,15 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    Before exiting DMARC-specific processing, the Mail Receiver checks to
    see if the Author Domain DMARC record requests AFRF-based reporting.
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 63]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    If so, then the Mail Receiver can emit an AFRF to the reporting
    address supplied in the DMARC record.
 
@@ -3522,14 +3565,6 @@ B.4.  Utilization of Aggregate Feedback: Example
    Data on email that fails all underlying authentication checks
    provides baseline visibility on how the Domain Owner's domain is
    being received at the Mail Receiver.  Based on this visibility, the
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 63]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    Domain Owner can begin deployment of authentication technologies
    across uncovered email sources.  Additionally, the Domain Owner may
    come to an understanding of how its domain is being misused.
@@ -3542,6 +3577,14 @@ B.5.  mailto Transport Example
 
    A sample aggregate report from the Mail Receiver at
    mail.receiver.example follows:
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 64]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
    DKIM-Signature: v=1; ...; d=mail.receiver.example; ...  From: dmarc-
    reporting@mail.receiver.example Date: Fri, Feb 15 2002 16:54:30 -0800
@@ -3579,13 +3622,6 @@ Appendix C.  DMARC XML Schema
    The following is the proposed initial schema for producing XML-
    formatted aggregate reports as described in this document.
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 64]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    NOTE: Per the definition of XML, unless otherwise specified in the
    schema below, the minOccurs and maxOccurs values for each element are
    set to 1.
@@ -3598,6 +3634,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
         specified in seconds since epoch. -->
    <xs:complexType name="DateRangeType">
      <xs:all>
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 65]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
        <xs:element name="begin" type="xs:integer"/>
        <xs:element name="end" type="xs:integer"/>
      </xs:all>
@@ -3635,13 +3679,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
      </xs:restriction>
    </xs:simpleType>
 
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 65]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    <!-- The DMARC policy that applied to the messages in
         this report. -->
    <xs:complexType name="PolicyPublishedType">
@@ -3653,6 +3690,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
                    minOccurs="0"/>
        <!-- The SPF alignment mode. -->
        <xs:element name="aspf" type="AlignmentType"
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 66]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
                    minOccurs="0"/>
        <!-- The policy to apply to messages from the domain. -->
        <xs:element name="p" type="DispositionType"/>
@@ -3690,14 +3735,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
         classes of override reasons if they want to be more
         specific than "other"? -->
    <xs:complexType name="PolicyOverrideReason">
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 66]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
      <xs:all>
        <xs:element name="type" type="PolicyOverrideType"/>
        <xs:element name="comment" type="xs:string"
@@ -3709,6 +3746,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
         the results of applying DMARC. -->
    <xs:complexType name="PolicyEvaluatedType">
      <xs:sequence>
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 67]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
        <xs:element name="disposition" type="DispositionType"/>
        <xs:element name="dkim" type="DMARCResultType"/>
        <xs:element name="spf" type="DMARCResultType"/>
@@ -3746,14 +3791,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    </xs:complexType>
 
    <xs:complexType name="IdentifierType">
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 67]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
      <xs:all>
        <!-- The envelope recipient domain. -->
        <xs:element name="envelope_to" type="xs:string"
@@ -3765,6 +3802,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
        <xs:element name="header_from" type="xs:string"
                    minOccurs="1"/>
      </xs:all>
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 68]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
    </xs:complexType>
 
    <!-- DKIM verification result, according to RFC 7001
@@ -3802,14 +3847,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    <!-- SPF domain scope. -->
    <xs:simpleType name="SPFDomainScope">
      <xs:restriction base="xs:string">
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 68]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
        <xs:enumeration value="helo"/>
        <xs:enumeration value="mfrom"/>
      </xs:restriction>
@@ -3821,6 +3858,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
        <xs:enumeration value="none"/>
        <xs:enumeration value="neutral"/>
        <xs:enumeration value="pass"/>
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 69]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
        <xs:enumeration value="fail"/>
        <xs:enumeration value="softfail"/>
        <!-- "TempError" commonly implemented as "unknown". -->
@@ -3858,14 +3903,6 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    <!-- This element contains all the authentication results that
         were evaluated by the receiving system for the given set of
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 69]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
         messages. -->
    <xs:complexType name="RecordType">
      <xs:sequence>
@@ -3877,6 +3914,14 @@ Internet-Draft                tjw-dmarcbis                    March 2020
 
    <!-- Parent -->
    <xs:element name="feedback">
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 70]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
+
      <xs:complexType>
        <xs:sequence>
          <xs:element name="version"
@@ -3913,20 +3958,25 @@ Internet-Draft                tjw-dmarcbis                    March 2020
    the "pct" setting in the DMARC policy record.
 
    trusted_forwarder: Message authentication failure was anticipated by
-
-
-
-
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 70]
-
-Internet-Draft                tjw-dmarcbis                    March 2020
-
-
    other evidence linking the message to a locally maintained list of
    known and trusted forwarders.
 
    The "version" for reports generated per this specification MUST be
    the value 1.0.
+
+
+
+
+
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 71]
+
+Internet-Draft                tjw-dmarcbis                    March 2020
+
 
 Appendix D.  Acknowledgements
 
@@ -3973,4 +4023,10 @@ Authors' Addresses
 
 
 
-Kucherawy (ed) & Zwicky Expires 9 September 2020               [Page 71]
+
+
+
+
+
+
+Kucherawy (ed) & Zwicky Expires 11 September 2020              [Page 72]

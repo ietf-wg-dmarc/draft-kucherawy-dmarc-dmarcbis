@@ -952,7 +952,7 @@ Domain Owner.  See {#general-record-format} for details.</t>
 </li>
 </ol>
 <t>Heuristics applied in the absence of use by a Domain Owner of either
-SPF or DKIM (e.g., [Best-Guess-SPF]) SHOULD NOT be used, as it may be
+SPF or DKIM (e.g., <xref target="Best-Guess-SPF"></xref>) SHOULD NOT be used, as it may be
 the case that the Domain Owner wishes a Message Receiver not to
 consider the results of that underlying authentication protocol at
 all.</t>
@@ -1456,7 +1456,7 @@ DKIM; this would cause participating Mail Receivers to send failure
 reports to the Domain Owner or its delegate in potentially huge
 volumes.  Accordingly, participating Mail Receivers are encouraged to
 aggregate these reports as much as is practical, using the Incidents
-field of the Abuse Reporting Format (<xref target="RFC5695"></xref>).  Various aggregation
+field of the Abuse Reporting Format (<xref target="RFC5965"></xref>).  Various aggregation
 techniques are possible, including the following:</t>
 
 <ul>
@@ -1976,37 +1976,44 @@ could reveal private information.</t>
 
 <back>
 <references><name>Normative References</name>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4343.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7208.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.1035.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6651.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6376.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5321.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4949.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2045.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6713.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3986.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4343.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6591.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5890.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5322.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3986.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5321.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6713.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4949.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6652.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6591.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6376.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5234.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2045.xml"/>
 </references>
 <references><name>Informative References</name>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5598.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3464.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6377.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5863.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7001.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.3464.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5695.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2142.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4033.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4686.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5585.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5617.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5598.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8174.xml"/>
-<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6377.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5965.xml"/>
 <xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5226.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.2142.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5617.xml"/>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.5585.xml"/>
+<reference anchor="Best-Guess-SPF" target="http://www.openspf.org/FAQ/Best_guess_record">
+  <front>
+    <title>Sender Policy Framework: Best guess record (FAQ entry)</title>
+    <author fullname="S. Kitterman" initials="S." surname="Kitterman"></author>
+    <date year="2010" month="May"></date>
+  </front>
+</reference>
+<xi:include href="https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.4033.xml"/>
 </references>
 
 <section anchor="technology-considerations"><name>Technology Considerations</name>

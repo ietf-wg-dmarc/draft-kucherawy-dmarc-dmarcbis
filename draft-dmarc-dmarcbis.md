@@ -1041,7 +1041,7 @@ The steps are as follows:
     Domain Owner.  See {#general-record-format} for details.
 
 Heuristics applied in the absence of use by a Domain Owner of either
-SPF or DKIM (e.g., [Best-Guess-SPF]) SHOULD NOT be used, as it may be
+SPF or DKIM (e.g., [@Best-Guess-SPF]) SHOULD NOT be used, as it may be
 the case that the Domain Owner wishes a Message Receiver not to
 consider the results of that underlying authentication protocol at
 all.
@@ -1592,7 +1592,7 @@ DKIM; this would cause participating Mail Receivers to send failure
 reports to the Domain Owner or its delegate in potentially huge
 volumes.  Accordingly, participating Mail Receivers are encouraged to
 aggregate these reports as much as is practical, using the Incidents
-field of the Abuse Reporting Format ([@RFC5695]).  Various aggregation
+field of the Abuse Reporting Format ([@RFC5965]).  Various aggregation
 techniques are possible, including the following:
 
 *  only send a report to the first recipient of multi-recipient
@@ -3167,3 +3167,11 @@ Additional contributions within the IETF context were made by Kurt
 Anderson, Michael Jack Assels, Les Barstow, Anne Bennett, Jim Fenton,
 J. Gomez, Mike Jones, Scott Kitterman, Eliot Lear, John Levine,
 S. Moonesamy, Rolf Sonneveld, Henry Timmes, and Stephen J. Turnbull.
+
+<reference anchor='Best-Guess-SPF' target='http://www.openspf.org/FAQ/Best_guess_record'>
+  <front>
+   <title>Sender Policy Framework: Best guess record (FAQ entry)</title>
+   <author initials='S.' surname='Kitterman' fullname='S. Kitterman'></author>
+   <date year='2010' month='May'></date>
+  </front>
+</reference>
