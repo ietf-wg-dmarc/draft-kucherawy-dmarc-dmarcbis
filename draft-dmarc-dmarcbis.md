@@ -9,9 +9,6 @@ area = "Application"
 workgroup = "DMARC Working Group"
 keyword = ["Internet-Draft"]
 
-[pi]
-toc = "yes"
-
 [seriesInfo]
 name = "Internet-Draft"
 value = "@DOCNAME@"
@@ -2737,7 +2734,7 @@ SPF and DKIM, and possess the ability to collect relevant information
 from various email-processing stages to provide feedback to Domain
 Owners (possibly via Report Receivers).
 
-###  Processing of SMTP Time {#processing-of-smtp-time}
+##  Processing of SMTP Time {#processing-of-smtp-time}
 
 An optimal DMARC-enabled Mail Receiver performs authentication and
 Identifier Alignment checking during the [@!RFC5322] conversation.
@@ -3196,6 +3193,7 @@ known and trusted forwarders.
 The "version" for reports generated per this specification MUST be
 the value 1.0.
 
+{numbered="false"}
 # Acknowledgements {#acknowledgements}
 
 DMARC and the draft version of this document submitted to the
