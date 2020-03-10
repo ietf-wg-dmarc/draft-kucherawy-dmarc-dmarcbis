@@ -1,6 +1,6 @@
 %%%
 title = "Domain-based Message Authentication, Reporting, and Conformance (DMARC)"
-abbrev = "tjw-dmarcbis"
+abbrev = "DMARCbis"
 docName = "@DOCNAME@"
 category = "std"
 
