@@ -8,6 +8,7 @@ all: $(DOCNAME)-$(VERSION).txt $(DOCNAME)-$(VERSION).html
 
 $(DOCNAME)-$(VERSION).txt: $(DOCNAME).xml
 	@xml2rfc --text -o $@ $<
+	@(echo "\`\`\`" > README.md; cat $@ >> README.md; echo "\`\`\`" >> README.md)
 	@cp $@ README.md 
 
 $(DOCNAME)-$(VERSION).html: $(DOCNAME).xml

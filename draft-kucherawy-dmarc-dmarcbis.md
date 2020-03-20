@@ -19,7 +19,6 @@ status = "standard"
 initials = "M."
 surname = "Kucherawy (ed)"
 fullname = "Murray S. Kucherawy"
-organization = " "
   [author.address]
    email = "superuser@gmail.com"
 
@@ -27,9 +26,16 @@ organization = " "
 initials = "E."
 surname = "Zwicky (ed)"
 fullname = "Elizabeth Zwicky"
-organization = " "
   [author.address]
    email = "zwicky@yahoo-inc.com"
+
+
+[[author]]
+initials = "T."
+surname = "Wicinski (ed)"
+fullname = "Tim Wicinski"
+  [author.address]
+   email = "tjw.ietf@gmail.com"
 
 %%%
 
@@ -904,6 +910,8 @@ a new version of DMARC.
 
 The formal definition of the DMARC format, using [@!RFC5234], is as
 follows:
+
+[FIXTHIS: Reference to [RFC3986] in code block]
 
 ~~~
   dmarc-uri       = URI [ "!" 1*DIGIT [ "k" / "m" / "g" / "t" ] ]
@@ -2429,8 +2437,8 @@ field have identical DNS domains.  Thus, the identifiers are in
 alignment.
 
 Example 2: SPF in alignment (parent):
-~~~
 
+~~~
      MAIL FROM: <sender@child.example.com>
 
      From: sender@example.com
@@ -2849,7 +2857,7 @@ come to an understanding of how its domain is being misused.
 
 A DMARC record can contain a "mailto" reporting address, such as:
 
-  mailto:dmarc-feedback@example.com
+    mailto:dmarc-feedback@example.com
 
 A sample aggregate report from the Mail Receiver at
 mail.receiver.example follows:
