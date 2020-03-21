@@ -27,7 +27,7 @@ initials = "E."
 surname = "Zwicky (ed)"
 fullname = "Elizabeth Zwicky"
   [author.address]
-   email = "zwicky@yahoo-inc.com"
+   email = "zwicky@verizonmedia.com"
 
 
 [[author]]
@@ -771,7 +771,7 @@ of characters that indicate failure reporting options as follows:
     d: 
     :   Generate a DKIM failure report if the message had a signature
        that failed evaluation, regardless of its alignment.  DKIM-
-       specific reporting is described in [@!RFC6651]].
+       specific reporting is described in [@!RFC6651].
 
     s: 
     :   Generate an SPF failure report if the message failed SPF
@@ -1228,7 +1228,7 @@ existing mail processing, discovered policies of "p=none" SHOULD NOT
 modify existing mail disposition processing.
 
 Mail Receivers SHOULD also implement reporting instructions of DMARC,
-even in the absence of a request for DKIM reporting [@!RFC6651]] or
+even in the absence of a request for DKIM reporting [@!RFC6651] or
 SPF reporting [@!RFC6652].  Furthermore, the presence of such requests
 SHOULD NOT affect DMARC reporting.
 
