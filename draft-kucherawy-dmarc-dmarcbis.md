@@ -1195,7 +1195,7 @@ mechanism check even if the Domain Owner has published a "reject"
 policy.  Mail Receivers need to make a best effort not to increase
 the likelihood of accepting abusive mail if they choose not to comply
 with a Domain Owner's reject, against policy.  At a minimum, addition
-of the Authentication-Results header field (see [@RFC7001]) is
+of the Authentication-Results header field (see [@RFC8601]) is
 RECOMMENDED when delivery of failing mail is done.  When this is
 done, the DNS domain name thus recorded MUST be encoded as an
 A-label.
@@ -1930,7 +1930,7 @@ Code:  none
 
 Existing/New Code:  existing
 
-Defined:  [@RFC7001]
+Defined:  [@RFC8601]
 
 Auth Method:  dmarc (added)
 
@@ -1944,7 +1944,7 @@ Code:  pass
 
 Existing/New Code:  existing
 
-Defined:  [@RFC7001]
+Defined:  [@RFC8601]
 
 Auth Method:  dmarc (added)
 
@@ -1958,7 +1958,7 @@ Code:  fail
 
 Existing/New Code:  existing
 
-Defined:  [@RFC7001]
+Defined:  [@RFC8601]
 
 Auth Method:  dmarc (added)
 
@@ -1972,7 +1972,7 @@ Code:  temperror
 
 Existing/New Code:  existing
 
-Defined:  [@RFC7001]
+Defined:  [@RFC8601]
 
 Auth Method:  dmarc (added)
 
@@ -1986,7 +1986,7 @@ Code:  permerror
 
 Existing/New Code:  existing
 
-Defined:  [@RFC7001]
+Defined:  [@RFC8601]
 
 Auth Method:  dmarc (added)
 
@@ -2027,7 +2027,7 @@ been created.
 Names of DMARC tags must be registered with IANA in this new
 sub-registry.  New entries are assigned only for values that have
 been documented in a manner that satisfies the terms of Specification
-Required, per [@RFC5226].  Each registration must include
+Required, per [@RFC8126].  Each registration must include
 the tag name; the specification that defines it; a brief description;
 and its status, which must be one of "current", "experimental", or
 "historic".  The Designated Expert needs to confirm that the provided
@@ -2064,7 +2064,7 @@ Report Format Registry" has been created.
 Names of DMARC failure reporting formats must be registered with IANA
 in this registry.  New entries are assigned only for values that
 satisfy the definition of Specification Required, per
-[@RFC5226].  In addition to a reference to a permanent
+[@RFC8126].  In addition to a reference to a permanent
 specification, each registration must include the format name; a
 brief description; and its status, which must be one of "current",
 "experimental", or "historic".  The Designated Expert needs to
