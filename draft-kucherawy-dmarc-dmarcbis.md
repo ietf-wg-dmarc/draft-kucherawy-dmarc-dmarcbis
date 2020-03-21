@@ -664,12 +664,12 @@ feature of the aggregate report (see {#aggregate-reports}).
 ##  DMARC Policy Record {#dmarc-policy-record}
 
 Domain Owner DMARC preferences are stored as DNS TXT records in
-subdomains named "_dmarc".  For example, the Domain Owner of
+subdomains named "\_dmarc".  For example, the Domain Owner of
 "example.com" would post DMARC preferences in a TXT record at
-"_dmarc.example.com".  Similarly, a Mail Receiver wishing to query
+"\_dmarc.example.com".  Similarly, a Mail Receiver wishing to query
 for DMARC preferences regarding mail with an RFC5322.From domain of
 "example.com" would issue a TXT query to the DNS for the subdomain of
-"_dmarc.example.com".  The DNS-located DMARC preference data will
+"\_dmarc.example.com".  The DNS-located DMARC preference data will
 hereafter be called the "DMARC record".
 
 DMARC's use of the Domain Name Service is driven by DMARC's use of
@@ -1266,7 +1266,7 @@ the following verification steps are to be taken:
     Call this the "destination host", as it refers to a Report
     Receiver.
 
-2.  Prepend the string "_report._dmarc".
+2.  Prepend the string "\_report.\_dmarc".
 
 3.  Prepend the domain name from which the policy was retrieved,
     after conversion to an A-label if needed.
@@ -1301,7 +1301,7 @@ For example, if a DMARC policy query for "blue.example.com" contained
 "rua=mailto:reports@red.example.net", the host extracted from the
 latter ("red.example.net") does not match "blue.example.com", so this
 procedure is enacted.  A TXT query for
-"blue.example.com._report._dmarc.red.example.net" is issued.  If a
+"blue.example.com.\_report.\_dmarc.red.example.net" is issued.  If a
 single reply comes back containing a tag of "v=DMARC1;", then the
 relationship between the two is confirmed.  Moreover,
 "red.example.net" has the opportunity to override the report
@@ -1320,7 +1320,7 @@ receive reports for other domains.
 
 A Report Receiver that is willing to receive reports for any domain
 can use a wildcard DNS record.  For example, a TXT resource record at
-"*._report._dmarc.example.com" containing at least "v=DMARC1;"
+"*.\_report.\_dmarc.example.com" containing at least "v=DMARC1;"
 confirms that example.com is willing to receive DMARC reports for any
 domain.
 
@@ -2659,17 +2659,19 @@ checks, the third party will need to publish an additional DNS record
 as follows:
 
 *  Given the DMARC record published by the Domain Owner at
-   "_dmarc.example.com", the DNS administrator for the third party
+   "\_dmarc.example.com", the DNS administrator for the third party
    will need to publish a TXT resource record at
-   "example.com._report._dmarc.thirdparty.example.net" with the value
+   "example.com.\_report.\_dmarc.thirdparty.example.net" with the value
    "v=DMARC1;".
 
 The resulting DNS record might look like this when retrieved using a
 common command-line tool (the output shown would appear on a single
 line but is wrapped here for publication):
 
+~~~
   % dig +short TXT example.com._report._dmarc.thirdparty.example.net
   "v=DMARC1;"
+~~~
 
 To publish such a record, the DNS administrator for example.net might
 create an entry like the following in the appropriate zone file
@@ -2706,7 +2708,7 @@ indicating that:
 *  The version of DMARC being used is "DMARC1" ("v=DMARC1;")
 
 *  It is applied only to this subdomain (record is published at
-   "_dmarc.test.example.com" and not "_dmarc.example.com")
+   "\_dmarc.test.example.com" and not "\_dmarc.example.com")
 
 *  Receivers should quarantine messages from this Organizational
    Domain that fail to authenticate ("p=quarantine")
