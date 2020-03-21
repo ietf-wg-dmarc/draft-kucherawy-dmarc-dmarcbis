@@ -9,7 +9,6 @@ all: $(DOCNAME)-$(VERSION).txt $(DOCNAME)-$(VERSION).html
 $(DOCNAME)-$(VERSION).txt: $(DOCNAME).xml
 	@xml2rfc --text -o $@ $<
 	@cat .header.txt $@ .header.txt > README.md
-	@cp $@ README.md 
 
 $(DOCNAME)-$(VERSION).html: $(DOCNAME).xml
 	@xml2rfc --html -o $@ $<
