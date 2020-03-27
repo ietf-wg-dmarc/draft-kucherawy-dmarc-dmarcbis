@@ -3,11 +3,12 @@ title = "Domain-based Message Authentication, Reporting, and Conformance (DMARC)
 abbrev = "DMARCbis"
 docName = "@DOCNAME@"
 category = "std"
-
+obsoletes = [7489]
 ipr = "trust200902"
 area = "Application"
-workgroup = "DMARC Working Group"
-keyword = ["Internet-Draft"]
+workgroup = "DMARC"
+submissiontype = "IETF"
+keyword = [""]
 
 [seriesInfo]
 name = "Internet-Draft"
@@ -61,6 +62,8 @@ authenticated email.  DMARC is a mechanism for policy distribution
 that enables increasingly strict handling of messages that fail
 authentication checks, ranging from no action, through altered
 delivery, up to message rejection.
+
+This document obsoletes RFC 7489.
 
 {mainmatter}
 
@@ -148,7 +151,7 @@ DMARC differs from previous approaches to policy advertisement (e.g.,
 Experience with DMARC has revealed some issues of interoperability
 with email in general that require due consideration before
 deployment, particularly with configurations that can cause mail to
-be rejected.  These are discussed in {#other-topics}.
+be rejected.  These are discussed in (#other-topics).
 
 #  Requirements {#requirements}
 
@@ -256,7 +259,7 @@ The following terms are also used:
 Authenticated Identifiers:
 :   Domain-level identifiers that are
 validated using authentication technologies are referred to as
-"Authenticated Identifiers".  See {#authenicated-mechanisms} for details about
+"Authenticated Identifiers".  See (#authenicated-mechanisms) for details about
 the supported mechanisms.
 
 Author Domain:
@@ -292,7 +295,7 @@ heuristics are used to determine this, since it is not always the
 case that the registered domain name is simply a top-level DNS
 domain plus one component (e.g., "example.com", where "com" is a
 top-level domain).  The Organizational Domain is determined by
-applying the algorithm found in {#organizational-domain}.
+applying the algorithm found in (#organizational-domain).
 
 Report Receiver:
 :   An operator that receives reports from another
@@ -342,7 +345,7 @@ there is no reliable way to determine a DMARC policy that applies to
 the message.  Accordingly, DMARC operation is predicated on the input
 being a valid RFC5322 message object, and handling of such
 non-compliant cases is outside of the scope of this specification.
-Further discussion of this can be found in {#extract-author-domain}.
+Further discussion of this can be found in (#extract-author-domain).
 
 Each of the underlying authentication technologies that DMARC takes
 as input yields authenticated domains as their outputs when they
@@ -376,7 +379,7 @@ domain does not exactly match the FQDN of the address.
 
 However, a DKIM signature bearing a value of "d=com" would never
 allow an "in alignment" result, as "com" should appear on all public
-suffix lists (see {#public-suffix-lists}) and therefore cannot be an
+suffix lists (see (#public-suffix-lists)) and therefore cannot be an
 Organizational Domain.
 
 Identifier Alignment is required because a message can bear a valid
@@ -428,7 +431,7 @@ algorithm:
     Kingdom places company registrations under ".co.uk"; other TLDs
     such as ".com" appear in the IANA registry of top-level DNS
     domains.  A public suffix list is the union of all of these.
-    {#public-suffix-lists} contains some discussion about obtaining a public
+    (#public-suffix-lists) contains some discussion about obtaining a public
     suffix list.
 
 2.  Break the subject DNS domain name into a set of "n" ordered
@@ -516,7 +519,7 @@ authentication mechanisms:
 1.  produces a "pass" result, and
 
 2.  produces that result based on an identifier that is in alignment,
-    as defined in {#terminology}.
+    as defined in (#terminology).
 
 ##  Flow Diagram {#flow-diagram}
 
@@ -589,7 +592,7 @@ In essence, the steps are as follows:
      policy from the DNS for that domain.  If none is found, the
      DMARC module determines the Organizational Domain and repeats
      the attempt to retrieve a policy from the DNS.  (This is
-     described in further detail in {#policy-discovery}.)
+     described in further detail in (#policy-discovery).)
 
 8.   If a policy is found, it is combined with the Author's domain
      and the SPF and DKIM results to produce a DMARC policy result (a
@@ -602,7 +605,7 @@ In essence, the steps are as follows:
 
 10.  When requested, Recipient transport service collects data from
      the message delivery session to be used in providing feedback
-     (see {#dmarc-feedback}).
+     (see (#dmarc-feedback)).
 
 #   Use of RFC5322.From {#use-of-rfc5322-from}
 
@@ -629,7 +632,7 @@ scope of this specification.
 Since the sorts of mail typically protected by DMARC participants
 tend to only have single Authors, DMARC participants generally
 operate under a slightly restricted profile of RFC5322 with respect
-to the expected syntax of this field.  See {#mail-receiver-actions} for details.
+to the expected syntax of this field.  See (#mail-receiver-actions) for details.
 
 #   Policy {#policy}
 
@@ -637,7 +640,7 @@ DMARC policies are published by Domain Owners and applied by Mail
 Receivers.
 
 A Domain Owner advertises DMARC participation of one or more of its
-domains by adding a DNS TXT record (described in {#dmarc-policy-record}) to
+domains by adding a DNS TXT record (described in (#dmarc-policy-record)) to
 those domains.  In doing so, Domain Owners make specific requests of
 Mail Receivers regarding the disposition of messages purporting to be
 from one of the Domain Owner's domains and the provision of feedback
@@ -659,7 +662,7 @@ domain-spoofing services, etc.), Mail Receivers MAY deviate from a
 Domain Owner's published policy during message processing and SHOULD
 make available the fact of and reason for the deviation to the Domain
 Owner via feedback reporting, specifically using the "PolicyOverride"
-feature of the aggregate report (see {#aggregate-reports}).
+feature of the aggregate report (see (#aggregate-reports)).
 
 ##  DMARC Policy Record {#dmarc-policy-record}
 
@@ -693,7 +696,7 @@ objects in order and parsing the result as a single string.
 mechanism uses this as the format by which a Domain Owner specifies
 the destination for the two report types that are supported.
 
-The place such URIs are specified (see {#general-record-format}) allows a list of
+The place such URIs are specified (see (#general-record-format)) allows a list of
 these to be provided.  A report is normally sent to each listed URI
 in the order provided by the Domain Owner.  Receivers MAY impose a
 limit on the number of URIs to which they will send reports but MUST
@@ -714,14 +717,14 @@ For example, the URI "mailto:reports@example.com!50m" would request
 that a report be sent via email to "reports@example.com" so long as
 the report payload does not exceed 50 megabytes.
 
-A formal definition is provided in {#formal-definition}.
+A formal definition is provided in (#formal-definition).
 
 ##  General Record Format {#general-record-format}
 
 DMARC records follow the extensible "tag-value" syntax for DNS-based
 key records defined in DKIM [@!RFC6376].
 
-{#iana-considerations} creates a registry for known DMARC tags and registers the
+(#iana-considerations) creates a registry for known DMARC tags and registers the
 initial set defined in this document.  Only tags defined in this
 document or in later extensions, and thus added to that registry, are
 to be processed; unknown tags MUST be ignored.
@@ -731,7 +734,7 @@ The following tags are introduced as the initial valid DMARC tags:
 adkim:
 :   (plain-text; OPTIONAL; default is "r".)  Indicates whether
 strict or relaxed DKIM Identifier Alignment mode is required by
-the Domain Owner.  See {#dkim-identifiers} for details.  Valid values
+the Domain Owner.  See (#dkim-identifiers) for details.  Valid values
 are as follows:
 
     r: relaxed mode
@@ -741,7 +744,7 @@ are as follows:
 aspf:
 :   (plain-text; OPTIONAL; default is "r".)  Indicates whether
 strict or relaxed SPF Identifier Alignment mode is required by the
-Domain Owner.  See {#spf-identifiers} for details.  Valid values are as
+Domain Owner.  See (#spf-identifiers) for details.  Valid values are as
 follows:
 
     r:
@@ -785,7 +788,7 @@ the request of the Domain Owner.  Policy applies to the domain
 queried and to subdomains, unless subdomain policy is explicitly
 described using the "sp" tag.  This tag is mandatory for policy
 records only, but not for third-party reporting records (see
-{#verifying-external-destinations}).  Possible values are as follows:
+(#verifying-external-destinations)).  Possible values are as follows:
 
     none:
     :   The Domain Owner requests no specific action be taken
@@ -801,7 +804,7 @@ records only, but not for third-party reporting records (see
     reject:
     :   The Domain Owner wishes for Mail Receivers to reject
         email that fails the DMARC mechanism check.  Rejection SHOULD
-        occur during the SMTP transaction.  See {#rejecting-messages} for some
+        occur during the SMTP transaction.  See (#rejecting-messages) for some
         discussion of SMTP rejection methods and their implications.
 
 pct:
@@ -814,7 +817,7 @@ which must be sent and received unhindered.  The purpose of the
 enforcement of the DMARC mechanism.  The prospect of "all or
 nothing" is recognized as preventing many organizations from
 experimenting with strong authentication-based mechanisms.  See
-{#message-sampling} for details.  Note that random selection based on
+(#message-sampling) for details.  Note that random selection based on
 this percentage, such as the following pseudocode, is adequate:
 
     if (random mod 100) < pct then
@@ -829,10 +832,10 @@ The value of this tag is a list of one or more report formats as
 requested by the Domain Owner to be used when a message fails both
 [@!RFC3986] and [@!RFC6376] tests to report details of the individual
 failure.  The values MUST be present in the registry of reporting
-formats defined in {#iana-considerations}; a Mail Receiver observing a
+formats defined in (#iana-considerations); a Mail Receiver observing a
 different value SHOULD ignore it or MAY ignore the entire DMARC
 record.  For this version, only "afrf" (the auth-failure report
-type defined in [@!RFC6591]) is presently supported.  See {#failure-reports} 
+type defined in [@!RFC6591]) is presently supported.  See (#failure-reports)
 for details.  For interoperability, the Authentication Failure
 Reporting Format (AFRF) MUST be supported.
 
@@ -851,15 +854,15 @@ rua:
 separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
 exclamation point that is part of such a DMARC URI MUST be encoded
 per Section 2.1 of [@!RFC3986] so as to distinguish it from the list
-delimiter or an OPTIONAL size limit.  {#verifying-external-destinations} discusses
+delimiter or an OPTIONAL size limit.  (#verifying-external-destinations) discusses
 considerations that apply when the domain name of a URI differs
-from that of the domain advertising the policy.  See {#external-report-addresses} 
+from that of the domain advertising the policy.  See (#external-report-addresses)
 for additional considerations.  Any valid URI can be specified.  A
 Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
 the ability to send a DMARC report via electronic mail.  If not
 provided, Mail Receivers MUST NOT generate aggregate feedback
 reports.  URIs not supported by Mail Receivers MUST be ignored.
-The aggregate feedback report format is described in {#aggregate-reports} 
+The aggregate feedback report format is described in (#aggregate-reports)
 
 ruf:
 :   Addresses to which message-specific failure information is to
@@ -868,12 +871,12 @@ OPTIONAL).  If present, the Domain Owner is requesting Mail
 Receivers to send detailed failure reports about messages that
 fail the DMARC evaluation in specific ways (see the "fo" tag
 above).  The format of the message to be generated MUST follow the
-format specified for the "rf" tag.  {#verifying-external-destinations} discusses
+format specified for the "rf" tag.  (#verifying-external-destinations) discusses
 considerations that apply when the domain name of a URI differs
 from that of the domain advertising the policy.  A Mail Receiver
 MUST implement support for a "mailto:" URI, i.e., the ability to
 send a DMARC report via electronic mail.  If not provided, Mail
-Receivers MUST NOT generate failure reports.  See {#external-report-addresses} for
+Receivers MUST NOT generate failure reports.  See (#external-report-addresses) for
 additional considerations.
 
 sp:
@@ -885,7 +888,7 @@ identical to that of the "p" tag defined above.  If absent, the
 policy specified by the "p" tag MUST be applied for subdomains.
 Note that "sp" will be ignored for DMARC records published on
 subdomains of Organizational Domains due to the effect of the
-DMARC policy discovery mechanism described in {#policy-discovery}.
+DMARC policy discovery mechanism described in (#policy-discovery).
 
 v: 
 :   Version (plain-text; REQUIRED).  Identifies the record retrieved
@@ -895,7 +898,7 @@ the entire retrieved record MUST be ignored.  It MUST be the first
 tag in the list.
 
 A DMARC policy record MUST comply with the formal specification found
-in {#formal-definition} in that the "v" and "p" tags MUST be present and MUST
+in (#formal-definition) in that the "v" and "p" tags MUST be present and MUST
 appear in that order.  Unknown tags MUST be ignored.  Syntax errors
 in the remainder of the record SHOULD be discarded in favor of
 default values (if any) or ignored outright.
@@ -1049,7 +1052,7 @@ The steps are as follows:
 
 2.  Query the DNS for a DMARC policy record.  Continue if one is
     found, or terminate DMARC evaluation otherwise.  See
-    {#policy-discovery} for details.
+    (#policy-discovery) for details.
 
 3.  Perform DKIM signature verification checks.  A single email could
     contain multiple DKIM signatures.  The results of this step are
@@ -1063,7 +1066,7 @@ The steps are as follows:
 5.  Conduct Identifier Alignment checks.  With authentication checks
     and policy discovery performed, the Mail Receiver checks to see
     if Authenticated Identifiers fall into alignment as described in
-    {#terminology}.  If one or more of the Authenticated Identifiers align
+    (#terminology).  If one or more of the Authenticated Identifiers align
     with the RFC5322.From domain, the message is considered to pass
     the DMARC mechanism check.  All other conditions (authentication
     failures, identifier mismatches) are considered to be DMARC
@@ -1071,7 +1074,7 @@ The steps are as follows:
 
 6.  Apply policy.  Emails that fail the DMARC mechanism check are
     disposed of in accordance with the discovered DMARC policy of the
-    Domain Owner.  See {#general-record-format} for details.
+    Domain Owner.  See (#general-record-format) for details.
 
 Heuristics applied in the absence of use by a Domain Owner of either
 SPF or DKIM (e.g., [@Best-Guess-SPF]) SHOULD NOT be used, as it may be
@@ -1164,7 +1167,7 @@ to the "quarantine" policy (due to the "pct" tag), the Mail Receiver
 SHOULD apply local message classification as normal.
 
 If email is subject to the DMARC policy of "reject", the Mail
-Receiver SHOULD reject the message (see {#rejecting-messages}).  If the email
+Receiver SHOULD reject the message (see (#rejecting-messages)).  If the email
 is not subject to the "reject" policy (due to the "pct" tag), the
 Mail Receiver SHOULD treat the email as though the "quarantine"
 policy applies.  This behavior allows Domain Owners to experiment
@@ -1179,7 +1182,7 @@ a representative sample across a reporting period.
 
 The results of Mail Receiver-based DMARC processing should be stored
 for eventual presentation back to the Domain Owner in the form of
-aggregate feedback reports.  {#general-record-format} and {#aggregate-reports} discuss aggregate
+aggregate feedback reports.  (#general-record-format) and (#aggregate-reports) discuss aggregate
 feedback.
 
 ##  Policy Enforcement Considerations {#policy-enforcement-considerations}
@@ -1278,7 +1281,7 @@ the following verification steps are to be taken:
 
 5.  For each record returned, parse the result as a series of
     "tag=value" pairs, i.e., the same overall format as the policy
-    record (see {#formal-definition}).  In particular, the "v=DMARC1;" tag is
+    record (see (#formal-definition)).  In particular, the "v=DMARC1;" tag is
     mandatory and MUST appear first in the list.  Discard any that do
     not pass this test.
 
@@ -1361,7 +1364,7 @@ message streams relevant to the Domain Owner.  This information
 includes data about messages that passed DMARC authentication as well
 as those that did not.
 
-The format for these reports is defined in {#dmarc-xml-schema}.
+The format for these reports is defined in (#dmarc-xml-schema).
 
 The report SHOULD include the following data:
 
@@ -1451,7 +1454,7 @@ If transport is not possible because the services advertised by the
 published URIs are not able to accept reports (e.g., the URI refers
 to a service that is unreachable, or all provided URIs specify size
 limits exceeded by the generated record), the Mail Receiver SHOULD
-send a short report (see {#error-reports}) indicating that a report is
+send a short report (see (#error-reports)) indicating that a report is
 available but could not be sent.  The Mail Receiver MAY cache that
 data and try again later, or MAY discard data that could not be sent.
 
@@ -1514,7 +1517,7 @@ parts with the prescribed media type and filename and ignore the
 rest.
 
 Email streams carrying DMARC feedback data MUST conform to the DMARC
-mechanism, thereby resulting in an aligned "pass" (see {#identifier-alignment}).
+mechanism, thereby resulting in an aligned "pass" (see (#identifier-alignment)).
 This practice minimizes the risk of report consumers processing
 fraudulent reports.
 
@@ -1550,7 +1553,7 @@ Domain Owner "example.com" from the Mail Receiver
 
 This transport mechanism potentially encounters a problem when
 feedback data size exceeds maximum allowable attachment sizes for
-either the generator or the consumer.  See {#error-reports} for further
+either the generator or the consumer.  See (#error-reports) for further
 discussion.
 
 ####  Other Methods {#other-methods}
@@ -1621,10 +1624,10 @@ When a Domain Owner requests failure reports for the purpose of
 forensic analysis, and the Mail Receiver is willing to provide such
 reports, the Mail Receiver generates and sends a message using the
 format described in [@!RFC6591]; this document updates that reporting
-format, as described in {#reporting-format-update}.
+format, as described in (#reporting-format-update).
 
 The destination(s) and nature of the reports are defined by the "ruf"
-and "fo" tags as defined in {#general-record-format}.
+and "fo" tags as defined in (#general-record-format).
 
 Where multiple URIs are selected to receive failure reports, the
 report generator MUST make an attempt to deliver to each of them.
@@ -1702,7 +1705,7 @@ A minimum implementation of DMARC has the following characteristics:
    size;
 
 *  If acting as a Mail Receiver, fully implements the provisions of
-   {#mail-receiver-actions}.
+   (#mail-receiver-actions).
 
 #  Privacy Considerations
 
@@ -2168,7 +2171,7 @@ attacks, such as the following:
 To avoid abuse by bad actors, reporting addresses generally have to
 be inside the domains about which reports are requested.  In order to
 accommodate special cases such as a need to get reports about domains
-that cannot actually receive mail, {#verifying-external-destinations} describes a DNS-based
+that cannot actually receive mail, (#verifying-external-destinations) describes a DNS-based
 mechanism for verifying approved external reporting.
 
 The obvious consideration here is an increased DNS load against
@@ -2189,7 +2192,7 @@ attacking the DNS of the subject domain to cause failure data to be
 routed fraudulently to an attacker's systems may be an attractive
 prospect.  Deployment of [@RFC4033] is advisable if this is a concern.
 
-The verification mechanism presented in {#verifying-external-destinations} is currently not
+The verification mechanism presented in (#verifying-external-destinations) is currently not
 mandatory ("MUST") but strongly recommended ("SHOULD").  It is
 possible that it would be elevated to a "MUST" by later security
 review.
@@ -2387,7 +2390,7 @@ queries in search of a policy record.  Sending many such messages
 constitutes an amplified denial-of-service attack.
 
 The Organizational Domain mechanism is a necessary component to the
-goals of DMARC.  The method described in {#organizational-domain} is far from
+goals of DMARC.  The method described in (#organizational-domain) is far from
 perfect but serves this purpose reasonably well without adding undue
 burden or semantics to the DNS.  If a method is created to do so that
 is more reliable and secure than the use of a public suffix list,
@@ -2585,7 +2588,7 @@ justify publishing this record.  The default per-message report
 format ([@!RFC6591]) meets the Domain Owner's needs in this scenario.
 
 The Domain Owner accomplishes this by adding the following to its
-policy record from {#domain-owner-example}:
+policy record from (#domain-owner-example):
 
 *  Per-message failure reports should be sent via email to the
    address "auth-reports@example.com"
@@ -2622,7 +2625,7 @@ this request, but those that do may implement additional checks to
 validate that the third party wishes to receive the failure reports
 for this domain.
 
-The Domain Owner needs to alter its policy record from {#entire-domain-monitoring-only-per-message-reports}
+The Domain Owner needs to alter its policy record from (#entire-domain-monitoring-only-per-message-reports)
 as follows:
 
 *  Per-message failure reports should be sent via email to the
@@ -2654,7 +2657,7 @@ might create an entry like the following in the appropriate zone file
 Because the address used in the "ruf" tag is outside the
 Organizational Domain in which this record is published, conforming
 Receivers will implement additional checks as described in
-{#verifying-external-destinations} of this document.  In order to pass these additional
+(#verifying-external-destinations) of this document.  In order to pass these additional
 checks, the third party will need to publish an additional DNS record
 as follows:
 
@@ -2684,7 +2687,7 @@ create an entry like the following in the appropriate zone file
   example.com._report._dmarc   IN   TXT    "v=DMARC1;"
 ~~~
 
-Intermediaries and other third parties should refer to {#verifying-external-destinations}
+Intermediaries and other third parties should refer to (#verifying-external-destinations)
 for the full details of this mechanism.
 
 ###  Subdomain, Sampling, and Multiple Aggregate Report URIs {#subdomain-sampling-and-multiple-aggregate-report-uris}

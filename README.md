@@ -3,12 +3,12 @@
 
 
 
-DMARC Working Group                                    M. Kucherawy (ed)
+DMARC                                                  M. Kucherawy (ed)
 Internet-Draft                                                          
-Intended status: Standards Track                          E. Zwicky (ed)
-Expires: 22 September 2020                                              
-                                                        T. Wicinski (ed)
-                                                           21 March 2020
+Obsoletes: 7489 (if approved)                             E. Zwicky (ed)
+Intended status: Standards Track                                        
+Expires: 28 September 2020                              T. Wicinski (ed)
+                                                           27 March 2020
 
 
 Domain-based Message Authentication, Reporting, and Conformance (DMARC)
@@ -37,6 +37,8 @@ Abstract
    authentication checks, ranging from no action, through altered
    delivery, up to message rejection.
 
+   This document obsoletes RFC 7489.
+
 Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
@@ -49,17 +51,18 @@ Status of This Memo
 
    Internet-Drafts are draft documents valid for a maximum of six months
    and may be updated, replaced, or obsoleted by other documents at any
-   time.  It is inappropriate to use Internet-Drafts as reference
-   material or to cite them other than as "work in progress."
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 1]
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 1]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   This Internet-Draft will expire on 22 September 2020.
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 28 September 2020.
 
 Copyright Notice
 
@@ -104,17 +107,17 @@ Table of Contents
        6.6.1.  Extract Author Domain . . . . . . . . . . . . . . . .  23
        6.6.2.  Determine Handling Policy . . . . . . . . . . . . . .  24
        6.6.3.  Policy Discovery  . . . . . . . . . . . . . . . . . .  25
-       6.6.4.  Message Sampling  . . . . . . . . . . . . . . . . . .  26
-       6.6.5.  Store Results of DMARC Processing . . . . . . . . . .  27
-     6.7.  Policy Enforcement Considerations . . . . . . . . . . . .  27
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 2]
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 2]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
+       6.6.4.  Message Sampling  . . . . . . . . . . . . . . . . . .  26
+       6.6.5.  Store Results of DMARC Processing . . . . . . . . . .  27
+     6.7.  Policy Enforcement Considerations . . . . . . . . . . . .  27
    7.  DMARC Feedback  . . . . . . . . . . . . . . . . . . . . . . .  28
      7.1.  Verifying External Destinations . . . . . . . . . . . . .  28
      7.2.  Aggregate Reports . . . . . . . . . . . . . . . . . . . .  30
@@ -160,17 +163,17 @@ Internet-Draft                  DMARCbis                      March 2020
        B.1.1.  SPF . . . . . . . . . . . . . . . . . . . . . . . . .  56
        B.1.2.  DKIM  . . . . . . . . . . . . . . . . . . . . . . . .  57
      B.2.  Domain Owner Example  . . . . . . . . . . . . . . . . . .  58
-       B.2.1.  Entire Domain, Monitoring Only  . . . . . . . . . . .  58
-       B.2.2.  Entire Domain, Monitoring Only, Per-Message
-               Reports . . . . . . . . . . . . . . . . . . . . . . .  59
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 3]
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 3]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
+       B.2.1.  Entire Domain, Monitoring Only  . . . . . . . . . . .  58
+       B.2.2.  Entire Domain, Monitoring Only, Per-Message
+               Reports . . . . . . . . . . . . . . . . . . . . . . .  59
        B.2.3.  Per-Message Failure Reports Directed to Third
                Party . . . . . . . . . . . . . . . . . . . . . . . .  60
        B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report
@@ -217,15 +220,15 @@ Internet-Draft                  DMARCbis                      March 2020
 
    1.  Providing receivers with assertions about Domain Owners' policies
 
-   2.  Providing feedback to senders so they can monitor authentication
-       and judge threats
 
 
-
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 4]
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 4]
 
 Internet-Draft                  DMARCbis                      March 2020
 
+
+   2.  Providing feedback to senders so they can monitor authentication
+       and judge threats
 
    The basic outline of DMARC is as follows:
 
@@ -271,17 +274,19 @@ Internet-Draft                  DMARCbis                      March 2020
       used in conjunction with the results of the underlying
       authentication technologies to evaluate results under DMARC.
 
-   Experience with DMARC has revealed some issues of interoperability
-   with email in general that require due consideration before
-   deployment, particularly with configurations that can cause mail to
-   be rejected.  These are discussed in {#other-topics}.
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 5]
+
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 5]
 
 Internet-Draft                  DMARCbis                      March 2020
 
+
+   Experience with DMARC has revealed some issues of interoperability
+   with email in general that require due consideration before
+   deployment, particularly with configurations that can cause mail to
+   be rejected.  These are discussed in Section 10.
 
 2.  Requirements
 
@@ -327,17 +332,17 @@ Internet-Draft                  DMARCbis                      March 2020
    *  attacks in the RFC5322.From field, also known as "display name"
       attacks;
 
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 6]
+
+Internet-Draft                  DMARCbis                      March 2020
+
+
    *  authentication of entities other than domains, since DMARC is
       built upon SPF and DKIM, which authenticate domains; and
 
    *  content analysis.
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 6]
-
-Internet-Draft                  DMARCbis                      March 2020
-
 
 2.3.  Scalability
 
@@ -382,19 +387,19 @@ Internet-Draft                  DMARCbis                      March 2020
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
+
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 7]
+
+Internet-Draft                  DMARCbis                      March 2020
+
+
    Readers are encouraged to be familiar with the contents of [RFC5598].
    In particular, that document defines various roles in the messaging
    infrastructure that can appear the same or separate in various
    contexts.  For example, a Domain Owner could, via the messaging
    security mechanisms on which DMARC is based, delegate the ability to
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 7]
-
-Internet-Draft                  DMARCbis                      March 2020
-
-
    send mail as the Domain Owner to a third party with another role.
    This document does not address the distinctions among such roles; the
    reader is encouraged to become familiar with that material before
@@ -404,8 +409,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
    Authenticated Identifiers:  Domain-level identifiers that are
       validated using authentication technologies are referred to as
-      "Authenticated Identifiers".  See {#authenicated-mechanisms} for
-      details about the supported mechanisms.
+      "Authenticated Identifiers".  See Section 4.1 for details about
+      the supported mechanisms.
 
    Author Domain:  The domain name of the apparent author, as extracted
       from the RFC5322.From field.
@@ -435,22 +440,22 @@ Internet-Draft                  DMARCbis                      March 2020
       case that the registered domain name is simply a top-level DNS
       domain plus one component (e.g., "example.com", where "com" is a
       top-level domain).  The Organizational Domain is determined by
-      applying the algorithm found in {#organizational-domain}.
+      applying the algorithm found in Section 3.2.
+
+
+
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 8]
+
+Internet-Draft                  DMARCbis                      March 2020
+
 
    Report Receiver:  An operator that receives reports from another
       operator implementing the reporting mechanism described in this
       document.  Such an operator might be receiving reports about its
       own messages, or reports about messages related to another
       operator.  This term applies collectively to the system components
-
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 8]
-
-Internet-Draft                  DMARCbis                      March 2020
-
-
       that receive and process these reports and the organizations that
       operate them.
 
@@ -493,20 +498,19 @@ Internet-Draft                  DMARCbis                      March 2020
    the message.  Accordingly, DMARC operation is predicated on the input
    being a valid RFC5322 message object, and handling of such non-
    compliant cases is outside of the scope of this specification.
-   Further discussion of this can be found in {#extract-author-domain}.
+   Further discussion of this can be found in Section 6.6.1.
+
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020               [Page 9]
+
+Internet-Draft                  DMARCbis                      March 2020
+
 
    Each of the underlying authentication technologies that DMARC takes
    as input yields authenticated domains as their outputs when they
    succeed.  From the perspective of DMARC, each can be operated in a
    "strict" mode or a "relaxed" mode.  A Domain Owner would normally
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020               [Page 9]
-
-Internet-Draft                  DMARCbis                      March 2020
-
-
    select strict mode if it wanted Mail Receivers to apply DMARC
    processing only to messages bearing an RFC5322.From domain exactly
    matching the domains those mechanisms will verify.  Relaxed mode can
@@ -535,7 +539,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
    However, a DKIM signature bearing a value of "d=com" would never
    allow an "in alignment" result, as "com" should appear on all public
-   suffix lists (see {#public-suffix-lists}) and therefore cannot be an
+   suffix lists (see Appendix A.6.1) and therefore cannot be an
    Organizational Domain.
 
    Identifier Alignment is required because a message can bear a valid
@@ -552,17 +556,15 @@ Internet-Draft                  DMARCbis                      March 2020
    DMARC permits Identifier Alignment, based on the result of an SPF
    authentication, to be strict or relaxed.
 
-   In relaxed mode, the [RFC3986]-authenticated domain and RFC5322.From
-   domain must have the same Organizational Domain.  In strict mode,
 
 
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 10]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 10]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
+   In relaxed mode, the [RFC3986]-authenticated domain and RFC5322.From
+   domain must have the same Organizational Domain.  In strict mode,
    only an exact DNS domain match is considered to produce Identifier
    Alignment.
 
@@ -596,8 +598,8 @@ Internet-Draft                  DMARCbis                      March 2020
        Kingdom places company registrations under ".co.uk"; other TLDs
        such as ".com" appear in the IANA registry of top-level DNS
        domains.  A public suffix list is the union of all of these.
-       {#public-suffix-lists} contains some discussion about obtaining a
-       public suffix list.
+       Appendix A.6.1 contains some discussion about obtaining a public
+       suffix list.
 
    2.  Break the subject DNS domain name into a set of "n" ordered
        labels.  Number these labels from right to left; e.g., for
@@ -608,16 +610,18 @@ Internet-Draft                  DMARCbis                      March 2020
        largest number of labels found in the subject DNS domain.  Let
        that number be "x".
 
-   4.  Construct a new DNS domain name using the name that matched from
-       the public suffix list and prefixing to it the "x+1"th label from
-       the subject domain.  This new name is the Organizational Domain.
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 11]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 11]
 
 Internet-Draft                  DMARCbis                      March 2020
 
+
+   4.  Construct a new DNS domain name using the name that matched from
+       the public suffix list and prefixing to it the "x+1"th label from
+       the subject domain.  This new name is the Organizational Domain.
 
    Thus, since "com" is an IANA-registered TLD, a subject domain of
    "a.b.c.d.example.com" would have an Organizational Domain of
@@ -663,17 +667,16 @@ Internet-Draft                  DMARCbis                      March 2020
    SPF or DKIM.  When a DMARC policy is published for the domain name
    found in the RFC5322.From field, and that domain name is not
    validated through SPF or DKIM, the disposition of that message can be
-   affected by that DMARC policy when delivered to a participating
-   receiver.
 
 
 
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 12]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 12]
 
 Internet-Draft                  DMARCbis                      March 2020
 
+
+   affected by that DMARC policy when delivered to a participating
+   receiver.
 
    It is important to note that the authentication mechanisms employed
    by DMARC authenticate only a DNS domain and do not authenticate the
@@ -700,7 +703,7 @@ Internet-Draft                  DMARCbis                      March 2020
    1.  produces a "pass" result, and
 
    2.  produces that result based on an identifier that is in alignment,
-       as defined in {#terminology}.
+       as defined in Section 3.
 
 4.3.  Flow Diagram
 
@@ -723,10 +726,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 13]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 13]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -782,7 +782,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 14]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 14]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -808,7 +808,7 @@ Internet-Draft                  DMARCbis                      March 2020
         policy from the DNS for that domain.  If none is found, the
         DMARC module determines the Organizational Domain and repeats
         the attempt to retrieve a policy from the DNS.  (This is
-        described in further detail in {#policy-discovery}.)
+        described in further detail in Section 6.6.3.)
 
    8.   If a policy is found, it is combined with the Author's domain
         and the SPF and DKIM results to produce a DMARC policy result (a
@@ -821,7 +821,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
    10.  When requested, Recipient transport service collects data from
         the message delivery session to be used in providing feedback
-        (see {#dmarc-feedback}).
+        (see Section 7).
 
 5.  Use of RFC5322.From
 
@@ -838,7 +838,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 15]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 15]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -855,8 +855,7 @@ Internet-Draft                  DMARCbis                      March 2020
    Since the sorts of mail typically protected by DMARC participants
    tend to only have single Authors, DMARC participants generally
    operate under a slightly restricted profile of RFC5322 with respect
-   to the expected syntax of this field.  See {#mail-receiver-actions}
-   for details.
+   to the expected syntax of this field.  See Section 6.6 for details.
 
 6.  Policy
 
@@ -864,11 +863,11 @@ Internet-Draft                  DMARCbis                      March 2020
    Receivers.
 
    A Domain Owner advertises DMARC participation of one or more of its
-   domains by adding a DNS TXT record (described in {#dmarc-policy-
-   record}) to those domains.  In doing so, Domain Owners make specific
-   requests of Mail Receivers regarding the disposition of messages
-   purporting to be from one of the Domain Owner's domains and the
-   provision of feedback about those messages.
+   domains by adding a DNS TXT record (described in Section 6.1) to
+   those domains.  In doing so, Domain Owners make specific requests of
+   Mail Receivers regarding the disposition of messages purporting to be
+   from one of the Domain Owner's domains and the provision of feedback
+   about those messages.
 
    A Domain Owner may choose not to participate in DMARC evaluation by
    Mail Receivers.  In this case, the Domain Owner simply declines to
@@ -886,7 +885,7 @@ Internet-Draft                  DMARCbis                      March 2020
    published policy during message processing and SHOULD make available
    the fact of and reason for the deviation to the Domain Owner via
    feedback reporting, specifically using the "PolicyOverride" feature
-   of the aggregate report (see {#aggregate-reports}).
+   of the aggregate report (see Section 7.2).
 
 
 
@@ -894,7 +893,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 16]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 16]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -932,12 +932,12 @@ Internet-Draft                  DMARCbis                      March 2020
    specifies the destination for the two report types that are
    supported.
 
-   The place such URIs are specified (see {#general-record-format})
-   allows a list of these to be provided.  A report is normally sent to
-   each listed URI in the order provided by the Domain Owner.  Receivers
-   MAY impose a limit on the number of URIs to which they will send
-   reports but MUST support the ability to send to at least two.  The
-   list of URIs is separated by commas (ASCII 0x2C).
+   The place such URIs are specified (see Section 6.3) allows a list of
+   these to be provided.  A report is normally sent to each listed URI
+   in the order provided by the Domain Owner.  Receivers MAY impose a
+   limit on the number of URIs to which they will send reports but MUST
+   support the ability to send to at least two.  The list of URIs is
+   separated by commas (ASCII 0x2C).
 
    Each URI can have associated with it a maximum report size that may
    be sent to it.  This is accomplished by appending an exclamation
@@ -950,7 +950,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 17]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 17]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -962,24 +962,24 @@ Internet-Draft                  DMARCbis                      March 2020
    that a report be sent via email to "reports@example.com" so long as
    the report payload does not exceed 50 megabytes.
 
-   A formal definition is provided in {#formal-definition}.
+   A formal definition is provided in Section 6.4.
 
 6.3.  General Record Format
 
    DMARC records follow the extensible "tag-value" syntax for DNS-based
    key records defined in DKIM [RFC6376].
 
-   {#iana-considerations} creates a registry for known DMARC tags and
-   registers the initial set defined in this document.  Only tags
-   defined in this document or in later extensions, and thus added to
-   that registry, are to be processed; unknown tags MUST be ignored.
+   Section 11 creates a registry for known DMARC tags and registers the
+   initial set defined in this document.  Only tags defined in this
+   document or in later extensions, and thus added to that registry, are
+   to be processed; unknown tags MUST be ignored.
 
    The following tags are introduced as the initial valid DMARC tags:
 
    adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
       strict or relaxed DKIM Identifier Alignment mode is required by
-      the Domain Owner.  See {#dkim-identifiers} for details.  Valid
-      values are as follows:
+      the Domain Owner.  See Section 3.1.1 for details.  Valid values
+      are as follows:
 
       r: relaxed mode
 
@@ -987,8 +987,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
    aspf:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
       strict or relaxed SPF Identifier Alignment mode is required by the
-      Domain Owner.  See {#spf-identifiers} for details.  Valid values
-      are as follows:
+      Domain Owner.  See Section 3.1.2 for details.  Valid values are as
+      follows:
 
       r:  relaxed mode
 
@@ -1006,7 +1006,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 18]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 18]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1031,8 +1031,7 @@ Internet-Draft                  DMARCbis                      March 2020
       queried and to subdomains, unless subdomain policy is explicitly
       described using the "sp" tag.  This tag is mandatory for policy
       records only, but not for third-party reporting records (see
-      {#verifying-external-destinations}).  Possible values are as
-      follows:
+      Section 7.1).  Possible values are as follows:
 
       none:  The Domain Owner requests no specific action be taken
          regarding delivery of messages.
@@ -1045,9 +1044,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
       reject:  The Domain Owner wishes for Mail Receivers to reject
          email that fails the DMARC mechanism check.  Rejection SHOULD
-         occur during the SMTP transaction.  See {#rejecting-messages}
-         for some discussion of SMTP rejection methods and their
-         implications.
+         occur during the SMTP transaction.  See Section 10.3 for some
+         discussion of SMTP rejection methods and their implications.
 
    pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
       default is 100).  Percentage of messages from the Domain Owner's
@@ -1058,16 +1056,16 @@ Internet-Draft                  DMARCbis                      March 2020
       enforcement of the DMARC mechanism.  The prospect of "all or
       nothing" is recognized as preventing many organizations from
       experimenting with strong authentication-based mechanisms.  See
-      {#message-sampling} for details.  Note that random selection based
+      Section 6.6.4 for details.  Note that random selection based on
+      this percentage, such as the following pseudocode, is adequate:
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 19]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 19]
 
 Internet-Draft                  DMARCbis                      March 2020
 
-
-      on this percentage, such as the following pseudocode, is adequate:
 
       if (random mod 100) < pct then selected = true else selected =
       false
@@ -1078,12 +1076,12 @@ Internet-Draft                  DMARCbis                      March 2020
       requested by the Domain Owner to be used when a message fails both
       [RFC3986] and [RFC6376] tests to report details of the individual
       failure.  The values MUST be present in the registry of reporting
-      formats defined in {#iana-considerations}; a Mail Receiver
-      observing a different value SHOULD ignore it or MAY ignore the
-      entire DMARC record.  For this version, only "afrf" (the auth-
-      failure report type defined in [RFC6591]) is presently supported.
-      See {#failure-reports} for details.  For interoperability, the
-      Authentication Failure Reporting Format (AFRF) MUST be supported.
+      formats defined in Section 11; a Mail Receiver observing a
+      different value SHOULD ignore it or MAY ignore the entire DMARC
+      record.  For this version, only "afrf" (the auth-failure report
+      type defined in [RFC6591]) is presently supported.  See
+      Section 7.3 for details.  For interoperability, the Authentication
+      Failure Reporting Format (AFRF) MUST be supported.
 
    ri:  Interval requested between aggregate reports (plain-text 32-bit
       unsigned integer; OPTIONAL; default is 86400).  Indicates a
@@ -1098,16 +1096,15 @@ Internet-Draft                  DMARCbis                      March 2020
       separated plain-text list of DMARC URIs; OPTIONAL).  A comma or
       exclamation point that is part of such a DMARC URI MUST be encoded
       per Section 2.1 of [RFC3986] so as to distinguish it from the list
-      delimiter or an OPTIONAL size limit.  {#verifying-external-
-      destinations} discusses considerations that apply when the domain
-      name of a URI differs from that of the domain advertising the
-      policy.  See {#external-report-addresses} for additional
-      considerations.  Any valid URI can be specified.  A Mail Receiver
-      MUST implement support for a "mailto:" URI, i.e., the ability to
-      send a DMARC report via electronic mail.  If not provided, Mail
-      Receivers MUST NOT generate aggregate feedback reports.  URIs not
-      supported by Mail Receivers MUST be ignored.  The aggregate
-      feedback report format is described in {#aggregate-reports}
+      delimiter or an OPTIONAL size limit.  Section 7.1 discusses
+      considerations that apply when the domain name of a URI differs
+      from that of the domain advertising the policy.  See Section 12.5
+      for additional considerations.  Any valid URI can be specified.  A
+      Mail Receiver MUST implement support for a "mailto:" URI, i.e.,
+      the ability to send a DMARC report via electronic mail.  If not
+      provided, Mail Receivers MUST NOT generate aggregate feedback
+      reports.  URIs not supported by Mail Receivers MUST be ignored.
+      The aggregate feedback report format is described in Section 7.2
 
    ruf:  Addresses to which message-specific failure information is to
       be reported (comma-separated plain-text list of DMARC URIs;
@@ -1115,21 +1112,21 @@ Internet-Draft                  DMARCbis                      March 2020
       Receivers to send detailed failure reports about messages that
       fail the DMARC evaluation in specific ways (see the "fo" tag
       above).  The format of the message to be generated MUST follow the
+      format specified for the "rf" tag.  Section 7.1 discusses
+      considerations that apply when the domain name of a URI differs
+      from that of the domain advertising the policy.  A Mail Receiver
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 20]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 20]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-      format specified for the "rf" tag.  {#verifying-external-
-      destinations} discusses considerations that apply when the domain
-      name of a URI differs from that of the domain advertising the
-      policy.  A Mail Receiver MUST implement support for a "mailto:"
-      URI, i.e., the ability to send a DMARC report via electronic mail.
-      If not provided, Mail Receivers MUST NOT generate failure reports.
-      See {#external-report-addresses} for additional considerations.
+      MUST implement support for a "mailto:" URI, i.e., the ability to
+      send a DMARC report via electronic mail.  If not provided, Mail
+      Receivers MUST NOT generate failure reports.  See Section 12.5 for
+      additional considerations.
 
    sp:  Requested Mail Receiver policy for all subdomains (plain-text;
       OPTIONAL).  Indicates the policy to be enacted by the Receiver at
@@ -1139,7 +1136,7 @@ Internet-Draft                  DMARCbis                      March 2020
       policy specified by the "p" tag MUST be applied for subdomains.
       Note that "sp" will be ignored for DMARC records published on
       subdomains of Organizational Domains due to the effect of the
-      DMARC policy discovery mechanism described in {#policy-discovery}.
+      DMARC policy discovery mechanism described in Section 6.6.3.
 
    v:  Version (plain-text; REQUIRED).  Identifies the record retrieved
       as a DMARC record.  It MUST have the value of "DMARC1".  The value
@@ -1148,9 +1145,9 @@ Internet-Draft                  DMARCbis                      March 2020
       tag in the list.
 
    A DMARC policy record MUST comply with the formal specification found
-   in {#formal-definition} in that the "v" and "p" tags MUST be present
-   and MUST appear in that order.  Unknown tags MUST be ignored.  Syntax
-   errors in the remainder of the record SHOULD be discarded in favor of
+   in Section 6.4 in that the "v" and "p" tags MUST be present and MUST
+   appear in that order.  Unknown tags MUST be ignored.  Syntax errors
+   in the remainder of the record SHOULD be discarded in favor of
    default values (if any) or ignored outright.
 
    Note that given the rules of the previous paragraph, addition of a
@@ -1172,15 +1169,16 @@ Internet-Draft                  DMARCbis                      March 2020
                        ; MUST be encoded; the numeric portion MUST fit
                        ; within an unsigned 64-bit integer
 
+     dmarc-record    = dmarc-version dmarc-sep
+                       [dmarc-request]
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 21]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 21]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-     dmarc-record    = dmarc-version dmarc-sep
-                       [dmarc-request]
                        [dmarc-sep dmarc-srequest]
                        [dmarc-sep dmarc-auri]
                        [dmarc-sep dmarc-furi]
@@ -1228,14 +1226,14 @@ Internet-Draft                  DMARCbis                      March 2020
      dmarc-percent   = "pct" *WSP "=" *WSP
                        1*3DIGIT
 
+   "Keyword" is imported from Section 4.1.2 of [RFC5321].
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 22]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 22]
 
 Internet-Draft                  DMARCbis                      March 2020
 
-
-   "Keyword" is imported from Section 4.1.2 of [RFC5321].
 
    A size limitation in a dmarc-uri, if provided, is interpreted as a
    count of units followed by an OPTIONAL unit size ("k" for kilobytes,
@@ -1283,16 +1281,16 @@ Internet-Draft                  DMARCbis                      March 2020
    *  Messages with multiple RFC5322.From fields are typically rejected,
       since that form is forbidden under RFC 5322 [RFC5322];
 
+   *  Messages bearing a single RFC5322.From field containing multiple
+      addresses (and, thus, multiple domain names to be evaluated) are
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 23]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 23]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   *  Messages bearing a single RFC5322.From field containing multiple
-      addresses (and, thus, multiple domain names to be evaluated) are
       typically rejected because the sorts of mail normally protected by
       DMARC do not use this format;
 
@@ -1321,8 +1319,8 @@ Internet-Draft                  DMARCbis                      March 2020
    1.  Extract the RFC5322.From domain from the message (as above).
 
    2.  Query the DNS for a DMARC policy record.  Continue if one is
-       found, or terminate DMARC evaluation otherwise.  See {#policy-
-       discovery} for details.
+       found, or terminate DMARC evaluation otherwise.  See
+       Section 6.6.3 for details.
 
    3.  Perform DKIM signature verification checks.  A single email could
        contain multiple DKIM signatures.  The results of this step are
@@ -1336,23 +1334,22 @@ Internet-Draft                  DMARCbis                      March 2020
    5.  Conduct Identifier Alignment checks.  With authentication checks
        and policy discovery performed, the Mail Receiver checks to see
        if Authenticated Identifiers fall into alignment as described in
-       {#terminology}.  If one or more of the Authenticated Identifiers
-       align with the RFC5322.From domain, the message is considered to
-       pass the DMARC mechanism check.  All other conditions
+       Section 3.  If one or more of the Authenticated Identifiers align
+       with the RFC5322.From domain, the message is considered to pass
+       the DMARC mechanism check.  All other conditions (authentication
+       failures, identifier mismatches) are considered to be DMARC
+       mechanism check failures.
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 24]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 24]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-       (authentication failures, identifier mismatches) are considered
-       to be DMARC mechanism check failures.
-
    6.  Apply policy.  Emails that fail the DMARC mechanism check are
        disposed of in accordance with the discovered DMARC policy of the
-       Domain Owner.  See {#general-record-format} for details.
+       Domain Owner.  See Section 6.3 for details.
 
    Heuristics applied in the absence of use by a Domain Owner of either
    SPF or DKIM (e.g., [Best-Guess-SPF]) SHOULD NOT be used, as it may be
@@ -1395,16 +1392,16 @@ Internet-Draft                  DMARCbis                      March 2020
        a DMARC TXT record at the DNS domain matching the Organizational
        Domain in place of the RFC5322.From domain in the message (if
        different).  This record can contain policy to be asserted for
+       subdomains of the Organizational Domain.  A possibly empty set of
+       records is returned.
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 25]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 25]
 
 Internet-Draft                  DMARCbis                      March 2020
 
-
-       subdomains of the Organizational Domain.  A possibly empty set of
-       records is returned.
 
    4.  Records that do not start with a "v=" tag that identifies the
        current version of DMARC are discarded.
@@ -1452,20 +1449,21 @@ Internet-Draft                  DMARCbis                      March 2020
    to the "quarantine" policy (due to the "pct" tag), the Mail Receiver
    SHOULD apply local message classification as normal.
 
+   If email is subject to the DMARC policy of "reject", the Mail
+   Receiver SHOULD reject the message (see Section 10.3).  If the email
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 26]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 26]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   If email is subject to the DMARC policy of "reject", the Mail
-   Receiver SHOULD reject the message (see {#rejecting-messages}).  If
-   the email is not subject to the "reject" policy (due to the "pct"
-   tag), the Mail Receiver SHOULD treat the email as though the
-   "quarantine" policy applies.  This behavior allows Domain Owners to
-   experiment with progressively stronger policies without relaxing
-   existing policy.
+   is not subject to the "reject" policy (due to the "pct" tag), the
+   Mail Receiver SHOULD treat the email as though the "quarantine"
+   policy applies.  This behavior allows Domain Owners to experiment
+   with progressively stronger policies without relaxing existing
+   policy.
 
    Mail Receivers implement "pct" via statistical mechanisms that
    achieve a close approximation to the requested percentage and provide
@@ -1475,8 +1473,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
    The results of Mail Receiver-based DMARC processing should be stored
    for eventual presentation back to the Domain Owner in the form of
-   aggregate feedback reports.  {#general-record-format} and
-   {#aggregate-reports} discuss aggregate feedback.
+   aggregate feedback reports.  Section 6.3 and Section 7.2 discuss
+   aggregate feedback.
 
 6.7.  Policy Enforcement Considerations
 
@@ -1507,15 +1505,16 @@ Internet-Draft                  DMARCbis                      March 2020
    An operator that wishes to favor DMARC policy over SPF policy, for
    example, will disregard the SPF policy, since enacting an SPF-
    determined rejection prevents evaluation of DKIM; DKIM might
+   otherwise pass, satisfying the DMARC evaluation.  There is a trade-
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 27]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 27]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   otherwise pass, satisfying the DMARC evaluation.  There is a trade-
    off to doing so, namely acceptance and processing of the entire
    message body in exchange for the enhanced protection DMARC provides.
 
@@ -1566,7 +1565,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 28]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 28]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1590,9 +1590,9 @@ Internet-Draft                  DMARCbis                      March 2020
 
    5.  For each record returned, parse the result as a series of
        "tag=value" pairs, i.e., the same overall format as the policy
-       record (see {#formal-definition}).  In particular, the
-       "v=DMARC1;" tag is mandatory and MUST appear first in the list.
-       Discard any that do not pass this test.
+       record (see Section 6.4).  In particular, the "v=DMARC1;" tag is
+       mandatory and MUST appear first in the list.  Discard any that do
+       not pass this test.
 
    6.  If the result includes no TXT resource records that pass basic
        parsing, a positive determination of the external reporting
@@ -1622,7 +1622,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 29]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 29]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1678,7 +1678,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 30]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 30]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1689,7 +1689,7 @@ Internet-Draft                  DMARCbis                      March 2020
    includes data about messages that passed DMARC authentication as well
    as those that did not.
 
-   The format for these reports is defined in {#dmarc-xml-schema}.
+   The format for these reports is defined in Appendix C.
 
    The report SHOULD include the following data:
 
@@ -1734,7 +1734,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 31]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 31]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1786,16 +1786,16 @@ Internet-Draft                  DMARCbis                      March 2020
    published URIs are not able to accept reports (e.g., the URI refers
    to a service that is unreachable, or all provided URIs specify size
    limits exceeded by the generated record), the Mail Receiver SHOULD
-   send a short report (see {#error-reports}) indicating that a report
+   send a short report (see Section 7.2.2) indicating that a report is
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 32]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 32]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   is available but could not be sent.  The Mail Receiver MAY cache that
+   available but could not be sent.  The Mail Receiver MAY cache that
    data and try again later, or MAY discard data that could not be sent.
 
 7.2.1.1.  Email
@@ -1846,7 +1846,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 33]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 33]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1863,9 +1863,9 @@ Internet-Draft                  DMARCbis                      March 2020
    rest.
 
    Email streams carrying DMARC feedback data MUST conform to the DMARC
-   mechanism, thereby resulting in an aligned "pass" (see {#identifier-
-   alignment}).  This practice minimizes the risk of report consumers
-   processing fraudulent reports.
+   mechanism, thereby resulting in an aligned "pass" (see Section 3.1).
+   This practice minimizes the risk of report consumers processing
+   fraudulent reports.
 
    The RFC5322.Subject field for individual report submissions SHOULD
    conform to the following ABNF:
@@ -1895,14 +1895,14 @@ Internet-Draft                  DMARCbis                      March 2020
 
    This transport mechanism potentially encounters a problem when
    feedback data size exceeds maximum allowable attachment sizes for
-   either the generator or the consumer.  See {#error-reports} for
-   further discussion.
+   either the generator or the consumer.  See Section 7.2.2 for further
+   discussion.
 
 
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 34]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 34]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1958,7 +1958,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 35]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 35]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1983,10 +1983,10 @@ Internet-Draft                  DMARCbis                      March 2020
    forensic analysis, and the Mail Receiver is willing to provide such
    reports, the Mail Receiver generates and sends a message using the
    format described in [RFC6591]; this document updates that reporting
-   format, as described in {#reporting-format-update}.
+   format, as described in Section 7.3.1.
 
    The destination(s) and nature of the reports are defined by the "ruf"
-   and "fo" tags as defined in {#general-record-format}.
+   and "fo" tags as defined in Section 6.3.
 
    Where multiple URIs are selected to receive failure reports, the
    report generator MUST make an attempt to deliver to each of them.
@@ -2014,7 +2014,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 36]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 36]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2070,7 +2070,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 37]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 37]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2080,7 +2080,7 @@ Internet-Draft                  DMARCbis                      March 2020
       size;
 
    *  If acting as a Mail Receiver, fully implements the provisions of
-      {#mail-receiver-actions}.
+      Section 6.6.
 
 9.  Privacy Considerations
 
@@ -2126,7 +2126,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 38]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 38]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2182,7 +2182,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 39]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 39]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2238,7 +2238,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 40]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 40]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2294,7 +2294,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 41]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 41]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2350,7 +2350,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 42]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 42]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2406,7 +2406,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 43]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 43]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2462,7 +2462,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 44]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 44]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2518,7 +2518,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 45]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 45]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2574,7 +2574,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 46]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 46]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2630,7 +2630,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 47]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 47]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2649,9 +2649,8 @@ Internet-Draft                  DMARCbis                      March 2020
    To avoid abuse by bad actors, reporting addresses generally have to
    be inside the domains about which reports are requested.  In order to
    accommodate special cases such as a need to get reports about domains
-   that cannot actually receive mail, {#verifying-external-destinations}
-   describes a DNS-based mechanism for verifying approved external
-   reporting.
+   that cannot actually receive mail, Section 7.1 describes a DNS-based
+   mechanism for verifying approved external reporting.
 
    The obvious consideration here is an increased DNS load against
    domains that are claimed as external recipients.  Negative caching
@@ -2671,10 +2670,10 @@ Internet-Draft                  DMARCbis                      March 2020
    routed fraudulently to an attacker's systems may be an attractive
    prospect.  Deployment of [RFC4033] is advisable if this is a concern.
 
-   The verification mechanism presented in {#verifying-external-
-   destinations} is currently not mandatory ("MUST") but strongly
-   recommended ("SHOULD").  It is possible that it would be elevated to
-   a "MUST" by later security review.
+   The verification mechanism presented in Section 7.1 is currently not
+   mandatory ("MUST") but strongly recommended ("SHOULD").  It is
+   possible that it would be elevated to a "MUST" by later security
+   review.
 
 12.6.  Secure Protocols
 
@@ -2686,7 +2685,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 48]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 48]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2697,20 +2697,72 @@ Internet-Draft                  DMARCbis                      March 2020
 
 13.  Normative References
 
+   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
+              DOI 10.17487/RFC5321, October 2008,
+              <https://www.rfc-editor.org/info/rfc5321>.
+
    [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
               "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
               RFC 6376, DOI 10.17487/RFC6376, September 2011,
               <https://www.rfc-editor.org/info/rfc6376>.
+
+   [RFC5322]  Resnick, P., Ed., "Internet Message Format", RFC 5322,
+              DOI 10.17487/RFC5322, October 2008,
+              <https://www.rfc-editor.org/info/rfc5322>.
+
+   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
+              Authentication Failure Reporting Using the Abuse Reporting
+              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
+              <https://www.rfc-editor.org/info/rfc6652>.
+
+   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part One: Format of Internet Message
+              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
+              <https://www.rfc-editor.org/info/rfc2045>.
+
+   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
+              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
+              <https://www.rfc-editor.org/info/rfc4949>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, DOI 10.17487/RFC3986, January 2005,
+              <https://www.rfc-editor.org/info/rfc3986>.
+
+   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
+              Insensitivity Clarification", RFC 4343,
+              DOI 10.17487/RFC4343, January 2006,
+              <https://www.rfc-editor.org/info/rfc4343>.
+
+
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 49]
+
+Internet-Draft                  DMARCbis                      March 2020
+
 
    [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
               Specifications: ABNF", STD 68, RFC 5234,
               DOI 10.17487/RFC5234, January 2008,
               <https://www.rfc-editor.org/info/rfc5234>.
 
-   [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
-              Extensions (MIME) Part One: Format of Internet Message
-              Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
-              <https://www.rfc-editor.org/info/rfc2045>.
+   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
+              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
+              <https://www.rfc-editor.org/info/rfc6713>.
+
+   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
+              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
+              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
+
+   [RFC1035]  Mockapetris, P., "Domain names - implementation and
+              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
+              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
 
    [RFC5890]  Klensin, J., "Internationalized Domain Names for
               Applications (IDNA): Definitions and Document Framework",
@@ -2722,104 +2774,34 @@ Internet-Draft                  DMARCbis                      March 2020
               DOI 10.17487/RFC7208, April 2014,
               <https://www.rfc-editor.org/info/rfc7208>.
 
-   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
-              Insensitivity Clarification", RFC 4343,
-              DOI 10.17487/RFC4343, January 2006,
-              <https://www.rfc-editor.org/info/rfc4343>.
-
-   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
-              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
-              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
-
-   [RFC1035]  Mockapetris, P., "Domain names - implementation and
-              specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
-              November 1987, <https://www.rfc-editor.org/info/rfc1035>.
-
-   [RFC5322]  Resnick, P., Ed., "Internet Message Format", RFC 5322,
-              DOI 10.17487/RFC5322, October 2008,
-              <https://www.rfc-editor.org/info/rfc5322>.
-
-
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 49]
-
-Internet-Draft                  DMARCbis                      March 2020
-
-
-   [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
-              Resource Identifier (URI): Generic Syntax", STD 66,
-              RFC 3986, DOI 10.17487/RFC3986, January 2005,
-              <https://www.rfc-editor.org/info/rfc3986>.
-
    [RFC6651]  Kucherawy, M., "Extensions to DomainKeys Identified Mail
               (DKIM) for Failure Reporting", RFC 6651,
               DOI 10.17487/RFC6651, June 2012,
               <https://www.rfc-editor.org/info/rfc6651>.
 
-   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
-              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
-              <https://www.rfc-editor.org/info/rfc6713>.
-
-   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
-              DOI 10.17487/RFC5321, October 2008,
-              <https://www.rfc-editor.org/info/rfc5321>.
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
-   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
-              Authentication Failure Reporting Using the Abuse Reporting
-              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
-              <https://www.rfc-editor.org/info/rfc6652>.
-
-   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
-              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
-              <https://www.rfc-editor.org/info/rfc4949>.
-
 14.  Informative References
 
-   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
-              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
-              <https://www.rfc-editor.org/info/rfc2142>.
-
-   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
-              Identified Mail (DKIM) Service Overview", RFC 5585,
-              DOI 10.17487/RFC5585, July 2009,
-              <https://www.rfc-editor.org/info/rfc5585>.
+   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
+              for Delivery Status Notifications", RFC 3464,
+              DOI 10.17487/RFC3464, January 2003,
+              <https://www.rfc-editor.org/info/rfc3464>.
 
    [RFC8601]  Kucherawy, M., "Message Header Field for Indicating
               Message Authentication Status", RFC 8601,
               DOI 10.17487/RFC8601, May 2019,
               <https://www.rfc-editor.org/info/rfc8601>.
 
+   [Best-Guess-SPF]
+              Kitterman, S., "Sender Policy Framework: Best guess record
+              (FAQ entry)", May 2010,
+              <http://www.openspf.org/FAQ/Best_guess_record>.
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 50]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 50]
 
 Internet-Draft                  DMARCbis                      March 2020
 
-
-   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
-              Writing an IANA Considerations Section in RFCs", BCP 26,
-              RFC 8126, DOI 10.17487/RFC8126, June 2017,
-              <https://www.rfc-editor.org/info/rfc8126>.
-
-   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
-              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
-              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-   [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
-              "DomainKeys Identified Mail (DKIM) Author Domain Signing
-              Practices (ADSP)", RFC 5617, DOI 10.17487/RFC5617, August
-              2009, <https://www.rfc-editor.org/info/rfc5617>.
 
    [RFC5863]  Hansen, T., Siegel, E., Hallam-Baker, P., and D. Crocker,
               "DomainKeys Identified Mail (DKIM) Development,
@@ -2827,41 +2809,58 @@ Internet-Draft                  DMARCbis                      March 2020
               DOI 10.17487/RFC5863, May 2010,
               <https://www.rfc-editor.org/info/rfc5863>.
 
-   [Best-Guess-SPF]
-              Kitterman, S., "Sender Policy Framework: Best guess record
-              (FAQ entry)", May 2010,
-              <http://www.openspf.org/FAQ/Best_guess_record>.
+   [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
+              "DomainKeys Identified Mail (DKIM) Author Domain Signing
+              Practices (ADSP)", RFC 5617, DOI 10.17487/RFC5617, August
+              2009, <https://www.rfc-editor.org/info/rfc5617>.
 
-   [RFC5965]  Shafranovich, Y., Levine, J., and M. Kucherawy, "An
-              Extensible Format for Email Feedback Reports", RFC 5965,
-              DOI 10.17487/RFC5965, August 2010,
-              <https://www.rfc-editor.org/info/rfc5965>.
+   [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://www.rfc-editor.org/info/rfc8126>.
 
-   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
-              for Delivery Status Notifications", RFC 3464,
-              DOI 10.17487/RFC3464, January 2003,
-              <https://www.rfc-editor.org/info/rfc3464>.
+   [RFC4686]  Fenton, J., "Analysis of Threats Motivating DomainKeys
+              Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
+              September 2006, <https://www.rfc-editor.org/info/rfc4686>.
 
    [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
               Rose, "DNS Security Introduction and Requirements",
               RFC 4033, DOI 10.17487/RFC4033, March 2005,
               <https://www.rfc-editor.org/info/rfc4033>.
 
-   [RFC4686]  Fenton, J., "Analysis of Threats Motivating DomainKeys
-              Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
-              September 2006, <https://www.rfc-editor.org/info/rfc4686>.
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
+   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
+              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
+              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
 
-
-
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 51]
-
-Internet-Draft                  DMARCbis                      March 2020
-
+   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
+              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
+              <https://www.rfc-editor.org/info/rfc2142>.
 
    [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
               DOI 10.17487/RFC5598, July 2009,
               <https://www.rfc-editor.org/info/rfc5598>.
+
+   [RFC5965]  Shafranovich, Y., Levine, J., and M. Kucherawy, "An
+              Extensible Format for Email Feedback Reports", RFC 5965,
+              DOI 10.17487/RFC5965, August 2010,
+              <https://www.rfc-editor.org/info/rfc5965>.
+
+   [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
+              Identified Mail (DKIM) Service Overview", RFC 5585,
+
+
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 51]
+
+Internet-Draft                  DMARCbis                      March 2020
+
+
+              DOI 10.17487/RFC5585, July 2009,
+              <https://www.rfc-editor.org/info/rfc5585>.
 
 Appendix A.  Technology Considerations
 
@@ -2910,7 +2909,8 @@ A.2.  Method Exclusion
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 52]
+
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 52]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2966,7 +2966,7 @@ A.3.  Sender Header Field
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 53]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 53]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3022,7 +3022,7 @@ A.5.  Issues with ADSP in Operation
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 54]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 54]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3067,18 +3067,18 @@ A.6.  Organizational Domain Discovery Issues
    constitutes an amplified denial-of-service attack.
 
    The Organizational Domain mechanism is a necessary component to the
-   goals of DMARC.  The method described in {#organizational-domain} is
-   far from perfect but serves this purpose reasonably well without
-   adding undue burden or semantics to the DNS.  If a method is created
-   to do so that is more reliable and secure than the use of a public
-   suffix list, DMARC should be amended to use that method as soon as it
-   is generally available.
+   goals of DMARC.  The method described in Section 3.2 is far from
+   perfect but serves this purpose reasonably well without adding undue
+   burden or semantics to the DNS.  If a method is created to do so that
+   is more reliable and secure than the use of a public suffix list,
+   DMARC should be amended to use that method as soon as it is generally
+   available.
 
 
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 55]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 55]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3134,7 +3134,7 @@ B.1.1.  SPF
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 56]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 56]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3190,7 +3190,7 @@ B.1.2.  DKIM
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 57]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 57]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3246,7 +3246,7 @@ B.2.1.  Entire Domain, Monitoring Only
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 58]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 58]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3281,7 +3281,7 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
    format ([RFC6591]) meets the Domain Owner's needs in this scenario.
 
    The Domain Owner accomplishes this by adding the following to its
-   policy record from {#domain-owner-example}:
+   policy record from Appendix B.2:
 
    *  Per-message failure reports should be sent via email to the
       address "auth-reports@example.com" ("ruf=mailto:auth-
@@ -3302,7 +3302,7 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 59]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 59]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3322,8 +3322,8 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
    validate that the third party wishes to receive the failure reports
    for this domain.
 
-   The Domain Owner needs to alter its policy record from {#entire-
-   domain-monitoring-only-per-message-reports} as follows:
+   The Domain Owner needs to alter its policy record from Appendix B.2.2
+   as follows:
 
    *  Per-message failure reports should be sent via email to the
       address "auth-reports@thirdparty.example.net" ("ruf=mailto:auth-
@@ -3350,15 +3350,15 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
    Because the address used in the "ruf" tag is outside the
    Organizational Domain in which this record is published, conforming
    Receivers will implement additional checks as described in
-   {#verifying-external-destinations} of this document.  In order to
-   pass these additional checks, the third party will need to publish an
-   additional DNS record as follows:
+   Section 7.1 of this document.  In order to pass these additional
+   checks, the third party will need to publish an additional DNS record
+   as follows:
 
 
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 60]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 60]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3385,8 +3385,8 @@ Internet-Draft                  DMARCbis                      March 2020
 
      example.com._report._dmarc   IN   TXT    "v=DMARC1;"
 
-   Intermediaries and other third parties should refer to {#verifying-
-   external-destinations} for the full details of this mechanism.
+   Intermediaries and other third parties should refer to Section 7.1
+   for the full details of this mechanism.
 
 B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
 
@@ -3414,7 +3414,7 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 61]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 61]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3470,7 +3470,7 @@ B.4.  Processing of SMTP Time
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 62]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 62]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3526,7 +3526,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 63]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 63]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3582,7 +3582,7 @@ B.6.  mailto Transport Example
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 64]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 64]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3638,7 +3638,7 @@ Appendix C.  DMARC XML Schema
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 65]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 65]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3694,7 +3694,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 66]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 66]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3750,7 +3750,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 67]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 67]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3806,7 +3806,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 68]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 68]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3862,7 +3862,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 69]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 69]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3918,7 +3918,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 70]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 70]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3974,7 +3974,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 71]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 71]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -4030,5 +4030,5 @@ Authors' Addresses
 
 
 
-Kucherawy (ed), et al.  Expires 22 September 2020              [Page 72]
+Kucherawy (ed), et al.  Expires 28 September 2020              [Page 72]
 ```
