@@ -2044,6 +2044,7 @@ when processed by implementations conforming to prior specifications.
 
 The initial set of entries in this registry is as follows:
 
+{align="left"}
 | Tag Name | Reference | Status  | Description                              |
 |:---------|:----------|:--------|:-----------------------------------------|
 | adkim    | RFC 7489  | current | DKIM alignment mode                      |
@@ -2057,6 +2058,7 @@ The initial set of entries in this registry is as follows:
 | ruf      | RFC 7489  | current | Reporting URI(s) for failure data        |
 | sp       | RFC 7489  | current | Requested handling policy for subdomains |
 | v        | RFC 7489  | current | Specification version                    |
+Table: "DMARC Tag Registry"
 
 ##  DMARC Report Format Registry {#dmarc-report-format-registry}
 
@@ -2077,9 +2079,22 @@ DMARC context by Domain Owners and Mail Receivers.
 
 The initial entry in this registry is as follows:
 
+{align="left"}
 | Format Name | Reference | Status  | Description                                               |
 |-------------|-----------|---------|-----------------------------------------------------------|
 | afrf        | RFC 7489  | current | Authentication Failure Reporting Format (see [@!RFC6591]) |
+Table: "DMARC Report Format Registry"
+
+## Underscored and Globally Scoped DNS Node Names Registry
+
+Per [!@RFC8552], please add the following entry to the "Underscored
+and Globally Scoped DNS Node Names" registry:
+
+{align="left"}
+| RR Type | \_NODE NAME | Reference  |
+|---------|-------------|------------|
+| TXT     | \_dmarc     | RFC 7489   |
+Table: "Underscored and Globally Scoped DNS Node Names" registry
 
 #  Security Considerations {#security-considerations}
 
