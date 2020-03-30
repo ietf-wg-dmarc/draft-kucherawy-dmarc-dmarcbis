@@ -7,8 +7,8 @@ DMARC                                                  M. Kucherawy (ed)
 Internet-Draft                                                          
 Obsoletes: 7489 (if approved)                             E. Zwicky (ed)
 Intended status: Standards Track                                        
-Expires: 29 September 2020                              T. Wicinski (ed)
-                                                           28 March 2020
+Expires: 1 October 2020                                 T. Wicinski (ed)
+                                                           30 March 2020
 
 
 Domain-based Message Authentication, Reporting, and Conformance (DMARC)
@@ -54,7 +54,7 @@ Status of This Memo
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 1]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 1]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -62,7 +62,7 @@ Internet-Draft                  DMARCbis                      March 2020
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 September 2020.
+   This Internet-Draft will expire on 1 October 2020.
 
 Copyright Notice
 
@@ -110,7 +110,7 @@ Table of Contents
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 2]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 2]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -166,7 +166,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 3]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 3]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -222,7 +222,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 4]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 4]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -278,7 +278,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 5]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 5]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -334,7 +334,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 6]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 6]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -390,7 +390,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 7]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 7]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -446,7 +446,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 8]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 8]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -502,7 +502,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020               [Page 9]
+Kucherawy (ed), et al.   Expires 1 October 2020                 [Page 9]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -558,7 +558,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 10]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 10]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -614,7 +614,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 11]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 11]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -670,7 +670,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 12]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 12]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -726,7 +726,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 13]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 13]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -782,7 +782,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 14]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 14]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -838,7 +838,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 15]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 15]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -894,7 +894,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 16]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 16]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -950,7 +950,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 17]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 17]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1006,7 +1006,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 18]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 18]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1062,7 +1062,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 19]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 19]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1118,7 +1118,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 20]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 20]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1174,7 +1174,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 21]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 21]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1230,7 +1230,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 22]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 22]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1286,7 +1286,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 23]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 23]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1342,7 +1342,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 24]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 24]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1398,7 +1398,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 25]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 25]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1454,7 +1454,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 26]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 26]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1510,7 +1510,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 27]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 27]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1566,7 +1566,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 28]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 28]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1622,7 +1622,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 29]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 29]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1678,7 +1678,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 30]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 30]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1734,7 +1734,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 31]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 31]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1790,7 +1790,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 32]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 32]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1846,7 +1846,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 33]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 33]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1902,7 +1902,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 34]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 34]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -1958,7 +1958,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 35]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 35]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2014,7 +2014,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 36]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 36]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2070,7 +2070,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 37]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 37]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2126,7 +2126,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 38]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 38]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2182,7 +2182,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 39]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 39]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2238,7 +2238,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 40]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 40]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2294,7 +2294,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 41]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 41]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2350,7 +2350,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 42]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 42]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2406,7 +2406,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 43]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 43]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2462,7 +2462,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 44]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 44]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2518,7 +2518,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 45]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 45]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2574,7 +2574,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 46]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 46]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2630,7 +2630,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 47]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 47]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2686,7 +2686,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 48]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 48]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2715,66 +2715,23 @@ Internet-Draft                  DMARCbis                      March 2020
 
 13.  Normative References
 
-   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
-              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
-              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
-
-   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
-              Authentication Failure Reporting Using the Abuse Reporting
-              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
-              <https://www.rfc-editor.org/info/rfc6652>.
-
-   [RFC5890]  Klensin, J., "Internationalized Domain Names for
-              Applications (IDNA): Definitions and Document Framework",
-              RFC 5890, DOI 10.17487/RFC5890, August 2010,
-              <https://www.rfc-editor.org/info/rfc5890>.
-
    [RFC7208]  Kitterman, S., "Sender Policy Framework (SPF) for
               Authorizing Use of Domains in Email, Version 1", RFC 7208,
               DOI 10.17487/RFC7208, April 2014,
               <https://www.rfc-editor.org/info/rfc7208>.
-
-   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
-              DOI 10.17487/RFC5321, October 2008,
-              <https://www.rfc-editor.org/info/rfc5321>.
-
-
-
-
-
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 49]
-
-Internet-Draft                  DMARCbis                      March 2020
-
-
-   [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
-              "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
-              RFC 6376, DOI 10.17487/RFC6376, September 2011,
-              <https://www.rfc-editor.org/info/rfc6376>.
-
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
-   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234,
-              DOI 10.17487/RFC5234, January 2008,
-              <https://www.rfc-editor.org/info/rfc5234>.
 
    [RFC2045]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
               Extensions (MIME) Part One: Format of Internet Message
               Bodies", RFC 2045, DOI 10.17487/RFC2045, November 1996,
               <https://www.rfc-editor.org/info/rfc2045>.
 
-   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
-              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
-              <https://www.rfc-editor.org/info/rfc6713>.
+   [RFC6591]  Fontana, H., "Authentication Failure Reporting Using the
+              Abuse Reporting Format", RFC 6591, DOI 10.17487/RFC6591,
+              April 2012, <https://www.rfc-editor.org/info/rfc6591>.
 
-   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
-              Insensitivity Clarification", RFC 4343,
-              DOI 10.17487/RFC4343, January 2006,
-              <https://www.rfc-editor.org/info/rfc4343>.
+   [RFC5321]  Klensin, J., "Simple Mail Transfer Protocol", RFC 5321,
+              DOI 10.17487/RFC5321, October 2008,
+              <https://www.rfc-editor.org/info/rfc5321>.
 
    [RFC1035]  Mockapetris, P., "Domain names - implementation and
               specification", STD 13, RFC 1035, DOI 10.17487/RFC1035,
@@ -2782,30 +2739,72 @@ Internet-Draft                  DMARCbis                      March 2020
 
    [RFC6651]  Kucherawy, M., "Extensions to DomainKeys Identified Mail
               (DKIM) for Failure Reporting", RFC 6651,
+
+
+
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 49]
+
+Internet-Draft                  DMARCbis                      March 2020
+
+
               DOI 10.17487/RFC6651, June 2012,
               <https://www.rfc-editor.org/info/rfc6651>.
 
-   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
-              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
-              <https://www.rfc-editor.org/info/rfc4949>.
+   [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/info/rfc5234>.
+
+   [RFC5322]  Resnick, P., Ed., "Internet Message Format", RFC 5322,
+              DOI 10.17487/RFC5322, October 2008,
+              <https://www.rfc-editor.org/info/rfc5322>.
+
+   [RFC4343]  Eastlake 3rd, D., "Domain Name System (DNS) Case
+              Insensitivity Clarification", RFC 4343,
+              DOI 10.17487/RFC4343, January 2006,
+              <https://www.rfc-editor.org/info/rfc4343>.
+
+   [RFC6652]  Kitterman, S., "Sender Policy Framework (SPF)
+              Authentication Failure Reporting Using the Abuse Reporting
+              Format", RFC 6652, DOI 10.17487/RFC6652, June 2012,
+              <https://www.rfc-editor.org/info/rfc6652>.
+
+   [RFC6713]  Levine, J., "The 'application/zlib' and 'application/gzip'
+              Media Types", RFC 6713, DOI 10.17487/RFC6713, August 2012,
+              <https://www.rfc-editor.org/info/rfc6713>.
 
    [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
               RFC 3986, DOI 10.17487/RFC3986, January 2005,
               <https://www.rfc-editor.org/info/rfc3986>.
 
+   [RFC6376]  Crocker, D., Ed., Hansen, T., Ed., and M. Kucherawy, Ed.,
+              "DomainKeys Identified Mail (DKIM) Signatures", STD 76,
+              RFC 6376, DOI 10.17487/RFC6376, September 2011,
+              <https://www.rfc-editor.org/info/rfc6376>.
+
+   [RFC4949]  Shirey, R., "Internet Security Glossary, Version 2",
+              FYI 36, RFC 4949, DOI 10.17487/RFC4949, August 2007,
+              <https://www.rfc-editor.org/info/rfc4949>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+   [RFC5890]  Klensin, J., "Internationalized Domain Names for
+              Applications (IDNA): Definitions and Document Framework",
 
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 50]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 50]
 
 Internet-Draft                  DMARCbis                      March 2020
 
 
-   [RFC5322]  Resnick, P., Ed., "Internet Message Format", RFC 5322,
-              DOI 10.17487/RFC5322, October 2008,
-              <https://www.rfc-editor.org/info/rfc5322>.
+              RFC 5890, DOI 10.17487/RFC5890, August 2010,
+              <https://www.rfc-editor.org/info/rfc5890>.
 
 14.  Informative References
 
@@ -2813,23 +2812,19 @@ Internet-Draft                  DMARCbis                      March 2020
               Identified Mail (DKIM)", RFC 4686, DOI 10.17487/RFC4686,
               September 2006, <https://www.rfc-editor.org/info/rfc4686>.
 
-   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
-              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
-              <https://www.rfc-editor.org/info/rfc2142>.
+   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
+              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
+              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
 
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
+              for Delivery Status Notifications", RFC 3464,
+              DOI 10.17487/RFC3464, January 2003,
+              <https://www.rfc-editor.org/info/rfc3464>.
 
-   [RFC5965]  Shafranovich, Y., Levine, J., and M. Kucherawy, "An
-              Extensible Format for Email Feedback Reports", RFC 5965,
-              DOI 10.17487/RFC5965, August 2010,
-              <https://www.rfc-editor.org/info/rfc5965>.
-
-   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
-              Rose, "DNS Security Introduction and Requirements",
-              RFC 4033, DOI 10.17487/RFC4033, March 2005,
-              <https://www.rfc-editor.org/info/rfc4033>.
+   [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
+              "DomainKeys Identified Mail (DKIM) Author Domain Signing
+              Practices (ADSP)", RFC 5617, DOI 10.17487/RFC5617, August
+              2009, <https://www.rfc-editor.org/info/rfc5617>.
 
    [RFC5598]  Crocker, D., "Internet Mail Architecture", RFC 5598,
               DOI 10.17487/RFC5598, July 2009,
@@ -2841,47 +2836,52 @@ Internet-Draft                  DMARCbis                      March 2020
               DOI 10.17487/RFC5863, May 2010,
               <https://www.rfc-editor.org/info/rfc5863>.
 
-   [RFC3464]  Moore, K. and G. Vaudreuil, "An Extensible Message Format
-              for Delivery Status Notifications", RFC 3464,
-              DOI 10.17487/RFC3464, January 2003,
-              <https://www.rfc-editor.org/info/rfc3464>.
-
    [Best-Guess-SPF]
               Kitterman, S., "Sender Policy Framework: Best guess record
               (FAQ entry)", May 2010,
               <http://www.openspf.org/FAQ/Best_guess_record>.
-
-
-
-
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 51]
-
-Internet-Draft                  DMARCbis                      March 2020
-
 
    [RFC8601]  Kucherawy, M., "Message Header Field for Indicating
               Message Authentication Status", RFC 8601,
               DOI 10.17487/RFC8601, May 2019,
               <https://www.rfc-editor.org/info/rfc8601>.
 
+   [RFC2142]  Crocker, D., "Mailbox Names for Common Services, Roles and
+              Functions", RFC 2142, DOI 10.17487/RFC2142, May 1997,
+              <https://www.rfc-editor.org/info/rfc2142>.
+
+
+
+
+
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 51]
+
+Internet-Draft                  DMARCbis                      March 2020
+
+
    [RFC5585]  Hansen, T., Crocker, D., and P. Hallam-Baker, "DomainKeys
               Identified Mail (DKIM) Service Overview", RFC 5585,
               DOI 10.17487/RFC5585, July 2009,
               <https://www.rfc-editor.org/info/rfc5585>.
 
-   [RFC6377]  Kucherawy, M., "DomainKeys Identified Mail (DKIM) and
-              Mailing Lists", BCP 167, RFC 6377, DOI 10.17487/RFC6377,
-              September 2011, <https://www.rfc-editor.org/info/rfc6377>.
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
+
+   [RFC4033]  Arends, R., Austein, R., Larson, M., Massey, D., and S.
+              Rose, "DNS Security Introduction and Requirements",
+              RFC 4033, DOI 10.17487/RFC4033, March 2005,
+              <https://www.rfc-editor.org/info/rfc4033>.
+
+   [RFC5965]  Shafranovich, Y., Levine, J., and M. Kucherawy, "An
+              Extensible Format for Email Feedback Reports", RFC 5965,
+              DOI 10.17487/RFC5965, August 2010,
+              <https://www.rfc-editor.org/info/rfc5965>.
 
    [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
               Writing an IANA Considerations Section in RFCs", BCP 26,
               RFC 8126, DOI 10.17487/RFC8126, June 2017,
               <https://www.rfc-editor.org/info/rfc8126>.
-
-   [RFC5617]  Allman, E., Fenton, J., Delany, M., and J. Levine,
-              "DomainKeys Identified Mail (DKIM) Author Domain Signing
-              Practices (ADSP)", RFC 5617, DOI 10.17487/RFC5617, August
-              2009, <https://www.rfc-editor.org/info/rfc5617>.
 
 Appendix A.  Technology Considerations
 
@@ -2910,7 +2910,7 @@ A.1.  S/MIME
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 52]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 52]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -2966,7 +2966,7 @@ A.2.  Method Exclusion
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 53]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 53]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3022,7 +3022,7 @@ A.4.  Domain Existence Test
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 54]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 54]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3078,7 +3078,7 @@ A.5.  Issues with ADSP in Operation
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 55]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 55]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3134,7 +3134,7 @@ A.6.1.  Public Suffix Lists
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 56]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 56]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3190,7 +3190,7 @@ B.1.1.  SPF
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 57]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 57]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3246,7 +3246,7 @@ B.1.2.  DKIM
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 58]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 58]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3302,7 +3302,7 @@ B.2.1.  Entire Domain, Monitoring Only
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 59]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 59]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3358,7 +3358,7 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 60]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 60]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3414,7 +3414,7 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 61]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 61]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3470,7 +3470,7 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 62]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 62]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3526,7 +3526,7 @@ B.4.  Processing of SMTP Time
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 63]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 63]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3582,7 +3582,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 64]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 64]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3638,7 +3638,7 @@ B.6.  mailto Transport Example
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 65]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 65]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3694,7 +3694,7 @@ Appendix C.  DMARC XML Schema
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 66]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 66]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3750,7 +3750,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 67]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 67]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3806,7 +3806,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 68]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 68]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3862,7 +3862,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 69]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 69]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3918,7 +3918,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 70]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 70]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -3974,7 +3974,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 71]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 71]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -4030,7 +4030,7 @@ Internet-Draft                  DMARCbis                      March 2020
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 72]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 72]
 
 Internet-Draft                  DMARCbis                      March 2020
 
@@ -4086,5 +4086,5 @@ Authors' Addresses
 
 
 
-Kucherawy (ed), et al.  Expires 29 September 2020              [Page 73]
+Kucherawy (ed), et al.   Expires 1 October 2020                [Page 73]
 ```
