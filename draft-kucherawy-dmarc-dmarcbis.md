@@ -69,6 +69,10 @@ This document obsoletes RFC 7489.
 
 # Introduction {#introduction}
 
+RFC EDITOR: PLEASE REMOVE THE FOLLOWING PARAGRAPH BEFORE PUBLISHING:
+The source for this draft is maintained in GitHub at:
+https://github.com/moonshiner/draft-kucherawy-dmarc-dmarcbis
+
 The Sender Policy Framework ([@!RFC7208]) and DomainKeys Identified Mail
 ([@!RFC6376]) provide domain-level authentication.  They enable
 cooperating email receivers to detect mail authorized to use the
