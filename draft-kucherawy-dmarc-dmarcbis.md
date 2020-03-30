@@ -2933,7 +2933,7 @@ NOTE: Per the definition of XML, unless otherwise specified in the
 schema below, the minOccurs and maxOccurs values for each element are
 set to 1.
 
-<{{dmarc-schema-0.1.xsd}} 
+<{{dmarc-xml-0.1.xsd}} 
 
 Descriptions of the PolicyOverrideTypes:
 
