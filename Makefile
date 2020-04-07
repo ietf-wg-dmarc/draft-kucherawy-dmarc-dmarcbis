@@ -1,7 +1,7 @@
 #
 # built using mmark 2.
 
-VERSION = 00
+VERSION = 01
 DOCNAME = draft-kucherawy-dmarc-dmarcbis
 
 all: $(DOCNAME)-$(VERSION).txt $(DOCNAME)-$(VERSION).html
