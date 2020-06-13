@@ -902,8 +902,8 @@ the entire retrieved record MUST be ignored.  It MUST be the first
 tag in the list.
 
 A DMARC policy record MUST comply with the formal specification found
-in (#formal-definition) in that the "v" and "p" tags MUST be present and MUST
-appear in that order.  Unknown tags MUST be ignored.  Syntax errors
+in (#formal-definition) in that the "v" tag MUST be present and MUST
+appear first.  Unknown tags MUST be ignored.  Syntax errors
 in the remainder of the record SHOULD be discarded in favor of
 default values (if any) or ignored outright.
 
@@ -2628,11 +2628,11 @@ might create an entry like the following in the appropriate zone file
 (following the conventional zone file format):
 
 ~~~
- ; DMARC record for the domain example.com
+  ; DMARC record for the domain example.com
 
- _dmarc  IN TXT ( "v=DMARC1; p=none; "
-                  "rua=mailto:dmarc-feedback@example.com; "
-                  "ruf=mailto:auth-reports@example.com" )
+  _dmarc  IN TXT ( "v=DMARC1; p=none; "
+                    "rua=mailto:dmarc-feedback@example.com; "
+                    "ruf=mailto:auth-reports@example.com" )
 ~~~
 
 ###  Per-Message Failure Reports Directed to Third Party {#per-message-failure-reports-directed-to-third-party}
