@@ -17,20 +17,20 @@ stream = "IETF"
 status = "standard"
 
 [[author]]
-initials = "T."
-surname = "Herr (ed)"
-organization = "Valimail"
-fullname = "Todd M. Herr"
-  [author.address]
-   email = "todd.herr@valimail.com"
-
-[[author]]
 initials = "E."
 surname = "Gustafsson (ed)"
 organization = "Google"
 fullname = "Emil Gustafsson"
   [author.address]
    email = "emgu@google.com"
+
+[[author]]
+initials = "T."
+surname = "Herr (ed)"
+organization = "Valimail"
+fullname = "Todd M. Herr"
+  [author.address]
+   email = "todd.herr@valimail.com"
 
 [[author]]
 initials = "J."

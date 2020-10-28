@@ -3,17 +3,17 @@
 
 
 
-DMARC                                                       T. Herr (ed)
-Internet-Draft                                                  Valimail
-Obsoletes: 7489 (if approved)                         E. Gustafsson (ed)
-Intended status: Standards Track                                  Google
-Expires: 30 April 2021                                    J. Levine (ed)
+DMARC                                                 E. Gustafsson (ed)
+Internet-Draft                                                    Google
+Obsoletes: 7489 (if approved)                               T. Herr (ed)
+Intended status: Standards Track                                Valimail
+Expires: 1 May 2021                                       J. Levine (ed)
                                                            Standcore LLC
-                                                         27 October 2020
+                                                         28 October 2020
 
 
 Domain-based Message Authentication, Reporting, and Conformance (DMARC)
-                      draft-ghl-dmarc-dmarcbis-00
+                      draft-ietf-dmarc-dmarcbis-00
 
 Abstract
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 April 2021.
+   This Internet-Draft will expire on 1 May 2021.
 
 Copyright Notice
 
@@ -54,7 +54,7 @@ Copyright Notice
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 1]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 1]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -110,7 +110,7 @@ Table of Contents
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 2]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 2]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -166,7 +166,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 3]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 3]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -222,7 +222,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 4]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 4]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -278,7 +278,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 5]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 5]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -334,7 +334,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 6]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 6]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -390,7 +390,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 7]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 7]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -446,7 +446,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 8]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 8]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -502,7 +502,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                 [Page 9]
+Gustafsson (ed), et al.    Expires 1 May 2021                   [Page 9]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -558,7 +558,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 10]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 10]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -614,7 +614,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 11]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 11]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -670,7 +670,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 12]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 12]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -726,7 +726,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 13]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 13]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -782,7 +782,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 14]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 14]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -838,7 +838,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 15]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 15]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -894,7 +894,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 16]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 16]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -950,7 +950,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 17]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 17]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1006,7 +1006,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 18]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 18]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1062,7 +1062,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 19]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 19]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1118,7 +1118,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 20]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 20]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1174,7 +1174,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 21]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 21]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1230,7 +1230,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 22]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 22]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1286,7 +1286,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 23]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 23]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1342,7 +1342,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 24]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 24]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1398,7 +1398,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 25]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 25]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1454,7 +1454,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 26]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 26]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1510,7 +1510,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 27]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 27]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1566,7 +1566,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 28]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 28]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1622,7 +1622,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 29]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 29]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1678,7 +1678,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 30]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 30]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1734,7 +1734,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 31]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 31]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1790,7 +1790,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 32]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 32]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1846,7 +1846,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 33]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 33]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1902,7 +1902,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 34]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 34]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -1958,7 +1958,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 35]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 35]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2014,7 +2014,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 36]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 36]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2070,7 +2070,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 37]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 37]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2126,7 +2126,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 38]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 38]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2182,7 +2182,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 39]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 39]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2238,7 +2238,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 40]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 40]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2294,7 +2294,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 41]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 41]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2350,7 +2350,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 42]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 42]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2406,7 +2406,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 43]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 43]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2462,7 +2462,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 44]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 44]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2518,7 +2518,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 45]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 45]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2574,7 +2574,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 46]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 46]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2630,7 +2630,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 47]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 47]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2686,7 +2686,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 48]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 48]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2742,7 +2742,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 49]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 49]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2798,7 +2798,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 50]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 50]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2854,7 +2854,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 51]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 51]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2910,7 +2910,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 52]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 52]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -2966,7 +2966,7 @@ A.1.  S/MIME
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 53]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 53]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3022,7 +3022,7 @@ A.3.  Sender Header Field
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 54]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 54]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3078,7 +3078,7 @@ A.5.  Issues with ADSP in Operation
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 55]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 55]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3134,7 +3134,7 @@ A.6.  Organizational Domain Discovery Issues
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 56]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 56]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3190,7 +3190,7 @@ B.1.1.  SPF
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 57]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 57]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3246,7 +3246,7 @@ B.1.2.  DKIM
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 58]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 58]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3302,7 +3302,7 @@ B.2.1.  Entire Domain, Monitoring Only
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 59]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 59]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3358,7 +3358,7 @@ B.2.2.  Entire Domain, Monitoring Only, Per-Message Reports
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 60]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 60]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3414,7 +3414,7 @@ B.2.3.  Per-Message Failure Reports Directed to Third Party
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 61]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 61]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3470,7 +3470,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 62]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 62]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3526,7 +3526,7 @@ B.2.4.  Subdomain, Sampling, and Multiple Aggregate Report URIs
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 63]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 63]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3582,7 +3582,7 @@ B.4.  Processing of SMTP Time
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 64]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 64]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3638,7 +3638,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 65]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 65]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3694,7 +3694,7 @@ B.6.  mailto Transport Example
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 66]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 66]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3750,7 +3750,7 @@ Appendix C.  DMARC XML Schema
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 67]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 67]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3806,7 +3806,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 68]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 68]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3862,7 +3862,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 69]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 69]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3918,7 +3918,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 70]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 70]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -3974,7 +3974,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 71]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 71]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -4030,7 +4030,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 72]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 72]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -4086,7 +4086,7 @@ Internet-Draft                  DMARCbis                    October 2020
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 73]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 73]
 
 Internet-Draft                  DMARCbis                    October 2020
 
@@ -4117,16 +4117,16 @@ Acknowledgements
 
 Authors' Addresses
 
-   Todd M. Herr
-   Valimail
-
-   Email: todd.herr@valimail.com
-
-
    Emil Gustafsson
    Google
 
    Email: emgu@google.com
+
+
+   Todd M. Herr
+   Valimail
+
+   Email: todd.herr@valimail.com
 
 
    John Levine
@@ -4142,5 +4142,5 @@ Authors' Addresses
 
 
 
-Herr (ed), et al.         Expires 30 April 2021                [Page 74]
+Gustafsson (ed), et al.    Expires 1 May 2021                  [Page 74]
 ```
