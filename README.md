@@ -17,15 +17,16 @@ Domain-based Message Authentication, Reporting, and Conformance (DMARC)
 
 Abstract
 
-   Domain-based Message Authentication, Reporting, and Conformance
-   (DMARC) is a protocol that builds on the existing Sender Policy
-   Framework (SPF) and DomainKeys Identified Mail (DKIM) protocols.
-   DMARC is designed to give ADminstrative Management Domains (ADMDs)
-   that originate email the ability to publicize their email
-   authentication policies, specify preferred handling for mail that
-   fails authentication checks, and request reports about mail
-   purportedly originated by the ADMD, based on the RFC5322.From header
-   in the message.
+   This document describes the Domain-based Message Authentication,
+   Reporting, and Conformance (DMARC) protocol.
+
+   DMARC builds on the existing Sender Policy Framework (SPF) and
+   DomainKeys Identified Mail (DKIM) protocols.  It is designed to give
+   ADminstrative Management Domains (ADMDs) that originate email the
+   ability to publicize their email authentication policies, specify
+   preferred handling for mail that fails authentication checks, and
+   request reports about mail purportedly originated by the ADMD, as
+   determined by the RFC5322.From header in the message.
 
    This document obsoletes RFC 7489.
 
@@ -50,7 +51,6 @@ Copyright Notice
 
    Copyright (c) 2020 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
-
 
 
 
