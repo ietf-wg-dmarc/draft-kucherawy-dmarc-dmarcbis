@@ -92,7 +92,7 @@
 				<t>
 	 Operators implementing this specification also implement an augmented
 	 version of <xref target="RFC6591" format="default"/> as follows:</t>
-				<ol spacing="normal" type="1">
+				<ol group="aug" spacing="normal" type="1">
 					<li>
 						<t>A DMARC failure report includes the following ARF header fields,
 			 with the indicated normative requirement levels:</t>
@@ -108,8 +108,7 @@
 					</li>
 					<li>The "Identity-Alignment" field is defined to contain a comma-
 			 separated list of authentication mechanism names that produced an
-			 aligned identity, or the keyword "none" if none did.  ABNF:</li>
-				</ol>
+			 aligned identity, or the keyword "none" if none did.  ABNF:</li></ol>
 				<sourcecode type="abnf" name=""><![CDATA[
   id-align     = "Identity-Alignment:" [CFWS]
                  ( "none" /
@@ -117,9 +116,9 @@
                  [CFWS]
 
   dmarc-method = ( "dkim" / "spf" )
-  ; each may appear at most once in an id-align
+                 ; each may appear at most once in an id-align
 ]]></sourcecode>
-				<ol spacing="normal" type="1">
+				<ol group="aug" spacing="normal" type="1">
 					<li>Authentication Failure Type "dmarc" is defined, which is to be
 			 used when a failure report is generated because some or all of
 			 the authentication mechanisms failed to produce aligned

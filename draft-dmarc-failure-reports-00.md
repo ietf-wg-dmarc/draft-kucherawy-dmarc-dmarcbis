@@ -6,7 +6,7 @@ October 2020
 
 Jones & Vesely
 
-Expires April 29, 2021
+Expires 29 April 2021
 
 \[Page\]
 
@@ -23,13 +23,13 @@ Expires April 29, 2021
     draft-dmarc-failure-reports-00
 
   - Published:  
-    October 26, 2020
+    26 October 2020
 
   - Intended Status:  
     Standards Track
 
   - Expires:  
-    April 29, 2021
+    29 April 2021
 
   - Authors:
     
@@ -93,7 +93,7 @@ time. It is inappropriate to use Internet-Drafts as reference material
 or to cite them other than as "work in
 progress."[¶](#section-boilerplate.1-3)
 
-This Internet-Draft will expire on April 29,
+This Internet-Draft will expire on 29 April
 2021.[¶](#section-boilerplate.1-4)
 
 </div>
@@ -299,14 +299,14 @@ follows:[¶](#section-1.1-1)
                  [CFWS]
 
   dmarc-method = ( "dkim" / "spf" )
-  ; each may appear at most once in an id-align
+                 ; each may appear at most once in an id-align
 ```
 
 [¶](#section-1.1-3)
 
 </div>
 
-1.  <span id="section-1.1-4.1">Authentication Failure Type "dmarc" is
+3.  <span id="section-1.1-4.1">Authentication Failure Type "dmarc" is
     defined, which is to be used when a failure report is generated
     because some or all of the authentication mechanisms failed to
     produce aligned identifiers. Note that a failure report generator
