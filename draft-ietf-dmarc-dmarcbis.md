@@ -44,16 +44,14 @@ fullname = "John Levine"
 
 .# Abstract
 
-This document describes the Domain-based Message Authentication, 
+This document describes the Domain-based Message Authentication,
 Reporting, and Conformance (DMARC) protocol.
 
-DMARC builds on the existing Sender Policy Framework (SPF) and 
-DomainKeys Identified Mail (DKIM) protocols. It is designed to give 
-ADminstrative Management Domains (ADMDs) that originate email the 
-ability to publicize their email authentication policies, specify 
-preferred handling for mail that fails authentication checks, and 
-request reports about mail purportedly originated by the ADMD, as
-determined by the RFC5322.From header in the message.
+DMARC is a scalable mechanism by which a mail-originating organization
+can express domain-level policies and preferences for message validation,
+disposition, and reporting. Mail-receiving organizations can in turn use
+these expressions of policies and preferences to inform their mail handling
+decisions should they choose to do so.
 
 This document obsoletes RFC 7489.
 
@@ -63,86 +61,41 @@ This document obsoletes RFC 7489.
 
 RFC EDITOR: PLEASE REMOVE THE FOLLOWING PARAGRAPH BEFORE PUBLISHING:
 The source for this draft is maintained in GitHub at:
-https://github.com/moonshiner/draft-kucherawy-dmarc-dmarcbis
+https://github.com/ietf-wg-dmarc/draft-ietf-dmarc-dmarcbis
 
-The Sender Policy Framework ([@!RFC7208]) and DomainKeys Identified Mail
-([@!RFC6376]) provide domain-level authentication.  They enable
-cooperating email receivers to detect mail authorized to use the
-domain name, which can permit differential handling.  (A detailed
-discussion of the threats these systems attempt to address can be
-found in [@RFC4686].)  However, there has been no single widely
-accepted or publicly available mechanism to communication of
-domain-specific message-handling policies for receivers, or to
-request reporting of authentication and disposition of received mail.
-Absent the ability to obtain feedback reports, originators who have
-implemented email authentication have difficulty determining how
-effective their authentication is.  As a consequence, use of
-authentication failures to filter mail typically does not succeed.
+The Sender Policy Framework ([@!RFC7208]) and DomainKeys Identified
+Mail ([@!RFC6376]) protocols provide domain-level authentication, and
+DMARC builds on these protocols. DMARC is designed to give ADminstrative
+Management Domains (ADMDs) that originate email the ability to publicize
+in a DNS TXT record their email authentication policies, specify preferred
+handling for mail that fails authentication checks, and request reports
+about mail purportedly originated by the ADMD, as determined by the
+RFC5322.From header in the message.
 
-Over time, one-on-one relationships were established between select
-senders and receivers with privately communicated means to assert
-policy and receive message traffic and authentication disposition
-reporting.  Although these ad hoc practices have been generally
-successful, they require significant manual coordination between
-parties, and this model does not scale for general use on the
-Internet.
+As with SPF and DKIM, DMARC authentication checks result in verdicts of
+"pass" or "fail". A DMARC pass verdict requires not only that SPF or DKIM
+pass for the message in question, but also that the domain involved in the
+passing SPF or DKIM check be in alignment with the domain in the RFC5322.From
+header. In the DMARC protocol, two domains are said to be "in alignment"
+if they have the same Organizational Domain (a.k.a., relaxed alignment) or
+they are identical (a.k.a., strict alignment).
 
-This document defines Domain-based Message Authentication, Reporting,
-and Conformance (DMARC), a mechanism by which email operators
-leverage existing authentication and policy advertisement
-technologies to enable both message-stream feedback and enforcement
-of policies against unauthenticated email.
+A DMARC pass verdict asserts only that the RFC5322.From domain can be trusted
+to be authentic for that message; there is no explicit or implied value
+assertion attributed to a message that receives such a verdict. A mail-receiving
+organization that performs DMARC validation checks on inbound mail can
+choose to use the results and the preferences expressed by the originating
+domain for message disposition to inform its mail handling decision for
+that message. For messages that pass DMARC validation checks, the
+mail-receiving organization can be confident in applying handling based
+on its known history for similarly authenticated messages, whereas messages
+that fail such checks cannot be reliably associated with a domain with a history
+of sending DMARC-validated messages.
 
-DMARC allows Domain Owners and receivers to collaborate by:
-
-1.  Providing receivers with assertions about Domain Owners' policies
-
-2.  Providing feedback to senders so they can monitor authentication
-    and judge threats
-
-The basic outline of DMARC is as follows:
-
-1.  Domain Owners publish policy assertions about domains via the
-    DNS.
-
-2.  Receivers compare the RFC5322.From address in the mail to the SPF
-    and DKIM results, if present, and the DMARC policy in DNS.
-
-3.  These receivers can use these results to determine how the mail
-    should be handled.
-
-4.  The receiver sends reports to the Domain Owner or its designee
-    about mail claiming to be from their domain.
-
-Security terms used in this document are defined in [@!RFC4949].
-
-DMARC differs from previous approaches to policy advertisement (e.g.,
-[@!RFC7208] and [@RFC5617]) in that:
-
-*  Authentication technologies are:
-
-   1.  decoupled from any technology-specific policy mechanisms, and
-
-   2.  used solely to establish reliable per-message domain-level
-       identifiers.
-
-*  Multiple authentication technologies are used to:
-
-   1.  reduce the impact of transient authentication errors
-
-   2.  reduce the impact of site-specific configuration errors and
-       deployment gaps
-
-   3.  enable more use cases than any individual technology supports
-       alone
-
-*  Receiver-generated feedback is supported, allowing senders to
-   establish confidence in authentication practices.
-
-*  The domain name extracted from a message's RFC5322.From field is
-   the primary identifier in the DMARC mechanism.  This identifier is
-   used in conjunction with the results of the underlying
-   authentication technologies to evaluate results under DMARC.
+DMARC also describes a reporting framework in which mail-receiving domains
+can generate regular reports containing data about messages seen that claim
+to be from domains that publish DMARC policies, reports that can be emailed
+to mailboxes specified in the ADMD's DMARC policy record.
 
 Experience with DMARC has revealed some issues of interoperability
 with email in general that require due consideration before
@@ -746,7 +699,7 @@ follows:
     r:
     :   relaxed mode
 
-    s: 
+    s:
     :   strict mode
 
 fo:
@@ -762,22 +715,22 @@ of characters that indicate failure reporting options as follows:
        authentication mechanisms fail to produce an aligned "pass"
        result.
 
-    1: 
+    1:
     :   Generate a DMARC failure report if any underlying
         authentication mechanism produced something other than an
         aligned "pass" result.
 
-    d: 
+    d:
     :   Generate a DKIM failure report if the message had a signature
        that failed evaluation, regardless of its alignment.  DKIM-
        specific reporting is described in [@!RFC6651].
 
-    s: 
+    s:
     :   Generate an SPF failure report if the message failed SPF
        evaluation, regardless of its alignment.  SPF-specific
        reporting is described in [@!RFC6652].
 
-p: 
+p:
 :   Requested Mail Receiver policy (plain-text; REQUIRED for policy
 records).  Indicates the policy to be enacted by the Receiver at
 the request of the Domain Owner.  Policy applies to the domain
@@ -886,7 +839,7 @@ Note that "sp" will be ignored for DMARC records published on
 subdomains of Organizational Domains due to the effect of the
 DMARC policy discovery mechanism described in (#policy-discovery).
 
-v: 
+v:
 :   Version (plain-text; REQUIRED).  Identifies the record retrieved
 as a DMARC record.  It MUST have the value of "DMARC1".  The value
 of this tag MUST match precisely; if it does not or it is absent,
@@ -2925,7 +2878,7 @@ NOTE: Per the definition of XML, unless otherwise specified in the
 schema below, the minOccurs and maxOccurs values for each element are
 set to 1.
 
-<{{dmarc-xml-0.1.xsd}} 
+<{{dmarc-xml-0.1.xsd}}
 
 Descriptions of the PolicyOverrideTypes:
 
@@ -2934,7 +2887,7 @@ forwarded:
 heuristics identified the message as likely having been forwarded.
 There is no expectation that authentication would pass.
 
-local_policy: 
+local_policy:
 :   The Mail Receiver's local policy exempted the message
 from being subjected to the Domain Owner's requested policy action.
 
