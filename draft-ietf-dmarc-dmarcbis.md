@@ -66,7 +66,7 @@ https://github.com/ietf-wg-dmarc/draft-ietf-dmarc-dmarcbis
 The Sender Policy Framework ([@!RFC7208]) and DomainKeys Identified
 Mail ([@!RFC6376]) protocols provide domain-level authentication, and
 DMARC builds on these protocols. DMARC is designed to give ADminstrative
-Management Domains (ADMDs) that originate email the ability to publicize
+Management Domains (ADMDs) that originate email the ability to publish
 in a DNS TXT record their email authentication policies, specify preferred
 handling for mail that fails authentication checks, and request reports
 about mail purportedly originated by the ADMD, as determined by the
@@ -74,28 +74,27 @@ RFC5322.From header in the message.
 
 As with SPF and DKIM, DMARC authentication checks result in verdicts of
 "pass" or "fail". A DMARC pass verdict requires not only that SPF or DKIM
-pass for the message in question, but also that the domain involved in the
-passing SPF or DKIM check be in alignment with the domain in the RFC5322.From
-header. In the DMARC protocol, two domains are said to be "in alignment"
-if they have the same Organizational Domain (a.k.a., relaxed alignment) or
-they are identical (a.k.a., strict alignment).
+pass for the message in question, but also that the domain validated by the
+SPF or DKIM check is aligned with the domain in the RFC5322.From header. In
+the DMARC protocol, two domains are said to be "in alignment" if they have
+the same Organizational Domain (a.k.a., relaxed alignment) or they are
+identical (a.k.a., strict alignment).
 
-A DMARC pass verdict asserts only that the RFC5322.From domain can be trusted
-to be authentic for that message; there is no explicit or implied value
-assertion attributed to a message that receives such a verdict. A mail-receiving
-organization that performs DMARC validation checks on inbound mail can
-choose to use the results and the preferences expressed by the originating
-domain for message disposition to inform its mail handling decision for
-that message. For messages that pass DMARC validation checks, the
-mail-receiving organization can be confident in applying handling based
-on its known history for similarly authenticated messages, whereas messages
-that fail such checks cannot be reliably associated with a domain with a history
-of sending DMARC-validated messages.
+A DMARC pass verdict asserts only that the RFC5322.From domain is authentic
+for that message; there is no explicit or implied value assertion attributed
+to a message that receives such a verdict. A mail-receiving organization that
+performs DMARC validation checks on inbound mail can choose to use the results
+and the preferences expressed by the originating domain for message disposition
+to inform its mail handling decision for that message. For messages that pass
+DMARC validation checks, the mail-receiving organization can be confident in
+applying handling based on its known history for similarly authenticated
+messages, whereas messages that fail such checks cannot be reliably associated
+with a domain with a history of sending DMARC-validated messages.
 
 DMARC also describes a reporting framework in which mail-receiving domains
 can generate regular reports containing data about messages seen that claim
-to be from domains that publish DMARC policies, reports that can be emailed
-to mailboxes specified in the ADMD's DMARC policy record.
+to be from domains that publish DMARC policies, and send those reports to the
+ADMD as requested by its DMARC policy record.
 
 Experience with DMARC has revealed some issues of interoperability
 with email in general that require due consideration before
