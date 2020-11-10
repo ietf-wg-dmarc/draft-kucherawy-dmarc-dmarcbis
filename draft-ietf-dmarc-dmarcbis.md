@@ -80,10 +80,10 @@ the DMARC protocol, two domains are said to be "in alignment" if they have
 the same Organizational Domain (a.k.a., relaxed alignment) or they are
 identical (a.k.a., strict alignment).
 
-A DMARC pass verdict asserts only that the RFC5322.From domain is authentic
-for that message; there is no explicit or implied value assertion attributed
-to a message that receives such a verdict. A mail-receiving organization that
-performs DMARC validation checks on inbound mail can choose to use the results
+A DMARC pass verdict asserts only that the RFC5322.From domain has been
+authenticated in that message; there is no explicit or implied value assertion
+attributed to a message that receives such a verdict. A mail-receiving organization
+that performs DMARC validation checks on inbound mail can choose to use the results
 and the preferences expressed by the originating domain for message disposition
 to inform its mail handling decision for that message. For messages that pass
 DMARC validation checks, the mail-receiving organization can be confident in
