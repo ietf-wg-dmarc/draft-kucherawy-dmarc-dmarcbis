@@ -75,12 +75,12 @@ mail-receiving organization can use to improve mail handling. This
 document focuses on one type of reporting that can be requested under
 DMARC.
 
-"Failure reports," or "failed messages reports," provide diagnostic
-information about messages that a Mail Receiver has determined to not
+"Failure reports," or "failed message reports," provide diagnostic
+information about messages that a Mail Receiver has determined do not
 pass the DMARC mechanism. These reports are generally sent at the time
 such messages are received and evaluated, to provide the Domain Owner
 with timely notification that such failures are occurring, and to
-provide information that may assis in diagnosing the cause of the
+provide information that may assist in diagnosing the cause of the
 failures.
 
 
@@ -355,8 +355,8 @@ party.
 
 # Security Considerations {#security-considerations}
 
-This section discusses security issues and possible remediations for
-DMARC reporting.
+This section discusses security issues related to DMARC reporting, and
+possible remediations.
 
 ##  Attacks on Reporting URIs {#attacks-on-reporting-uris}
 
@@ -444,7 +444,7 @@ could reveal private information.
 
 #  Examples {#examples}
 
-This section will present some examples related to the use of DMARC
+This section presents some examples related to the use of DMARC
 reporting functions.
 
 ##  Entire Domain, Monitoring Only, Per-Message Reports {#entire-domain-monitoring-only-per-message-reports}
