@@ -1,7 +1,7 @@
 %%%
 title = "Domain-based Message Authentication, Reporting, and Conformance (DMARC) Failure Reporting"
 abbrev = "DMARC Failure Reporting"
-docName = "draft-ietf-dmarc-failure-reporting-latest"
+docName = "draft-ietf-dmarc-failure-reporting-00"
 category = "std"
 obsoletes = [7489]
 ipr = "trust200902"
@@ -10,11 +10,11 @@ workgroup = "DMARC Working Group"
 submissiontype = "IETF"
 keyword = [""]
 
-date = "2020-11-15T00:00:00Z"
+date = "2020-11-12T00:00:00Z"
 
 [seriesInfo]
 name = "Internet-Draft"
-value = "draft-ietf-dmarc-failure-reporting-latest"
+value = "draft-ietf-dmarc-failure-reporting-00"
 stream = "IETF"
 status = "standard"
 
